@@ -1,6 +1,6 @@
-# Food Sharing Web App - Frontend
+# DishDash
 
-Welcome to the frontend repository of our Food Sharing Web App! This repository contains the code for the user interface and client-side functionality of our web application, which allows users to share and discover food resources within their community.
+Welcome to the frontend repository of our Food Donation Web App! This repository contains the code for the user interface and client-side functionality of our web application, which allows users to share and discover food resources within their community.
 
 ## Table of Contents
 
