@@ -1,0 +1,326 @@
+# Translation of Themes - Cube Blog in Spanish (Spain)
+# This file is distributed under the same license as the Themes - Cube Blog package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-09-26 13:03:48+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.9\n"
+"Language: es\n"
+"Project-Id-Version: Themes - Cube Blog\n"
+
+#. Description of the theme
+#, gp-priority: high
+msgid "Cube Blog is a simple, clean and responsive WordPress blog theme built by Kantipur Themes. This theme is perfect for youtube bloggers, travel blog, food blog, fashion blog and writers who need to create personal blog site with simple creative features and effects to make readers feel the pleasure of reading blog posts and articles."
+msgstr "Cube Blog es un tema para blog de WordPress sencillo, limpio y adaptable creado por Kantipur Themes. Este tema es perfecto para blogueros de youtube, blog de viajes, blog de comida, blog de moda y escritores que necesiten crear un sitio de blog personal con características y efectos creativos sencillos para hacer que los lectores sientan el placer de leer entradas y artículos de blog."
+
+#. Theme Name of the theme
+#, gp-priority: high
+msgid "Cube Blog"
+msgstr "Cube Blog"
+
+#: template-parts/content-page.php:21
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: template-parts/content-none.php:44
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Parece que no encontramos lo que estás buscando. Puede que una búsqueda te ayude."
+
+#: template-parts/content-none.php:37
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Lo siento, pero nada coincide con tus términos de búsqueda. Por favor, inténtalo de nuevo con algunas palabras clave diferentes."
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:24
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "¿Preparado para publicar tu primera entrada? <a href=\"%1$s\">Empieza aquí</a>."
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "No se ha encontrado nada"
+
+#: single.php:26
+msgid "Next"
+msgstr "Siguiente"
+
+#: single.php:26
+msgid "Next Post"
+msgstr "Siguiente entrada"
+
+#: single.php:25
+msgid "Previous"
+msgstr "Anteriores"
+
+#: single.php:25
+msgid "Previous Post"
+msgstr "Entrada anterior"
+
+#. translators: %s: search query.
+#: search.php:20
+msgid "Search Results for: %s"
+msgstr "Resultados de la búsqueda para: %s"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:97 template-parts/content-page.php:34
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "Editar <span class=\"screen-reader-text\">%s</span>"
+
+#. translators: %s: post title
+#: inc/template-tags.php:81
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Deja un comentario<span class=\"screen-reader-text\"> en %s</span>"
+
+#. translators: 1: list of tags.
+#: inc/template-tags.php:73
+msgid "%1$s"
+msgstr "%1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:70
+msgctxt "list item separator"
+msgid ", "
+msgstr ", "
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:61
+msgid " / "
+msgstr " / "
+
+#. translators: %s: post author.
+#: inc/template-tags.php:44
+msgctxt "post author"
+msgid "by: %s"
+msgstr "por: %s"
+
+#. translators: %s: post date.
+#: inc/template-tags.php:29
+msgctxt "post date"
+msgid "Posted on: %s"
+msgstr "Publicada el %s"
+
+#: inc/icon-functions.php:42
+msgid "Please define an SVG icon filename."
+msgstr "Por favor, define un nombre de archivo de icono SVG."
+
+#: inc/icon-functions.php:37
+msgid "Please define default parameters in the form of an array."
+msgstr "Por favor, define los parámetros por defecto en forma de array."
+
+#: inc/footer-widgets.php:10
+msgid "Footer"
+msgstr "Pie de página"
+
+#: inc/customizer/theme-options.php:141
+msgid "Note: Min 5 & Max 100."
+msgstr "Nota: mínimo 5 y máximo 100."
+
+#: inc/customizer/theme-options.php:126 inc/customizer/theme-options.php:140
+msgid "Excerpt Length"
+msgstr "Longitud del extracto"
+
+#: inc/customizer/theme-options.php:111
+msgid "Page Sidebar"
+msgstr "Barra lateral de la página"
+
+#: inc/customizer/theme-options.php:86
+msgid "Archive Sidebar"
+msgstr "Barra lateral del archivo"
+
+#: inc/customizer/theme-options.php:61
+msgid "Single Post Sidebar"
+msgstr "Barra lateral para entrada individual"
+
+#: inc/customizer/theme-options.php:43 inc/customizer/theme-options.php:68
+#: inc/customizer/theme-options.php:93 inc/customizer/theme-options.php:118
+msgid "No Sidebar"
+msgstr "Sin barra lateral"
+
+#: inc/customizer/theme-options.php:42 inc/customizer/theme-options.php:67
+#: inc/customizer/theme-options.php:92 inc/customizer/theme-options.php:117
+msgid "Right Sidebar"
+msgstr "Barra lateral derecha"
+
+#: inc/customizer/theme-options.php:41 inc/customizer/theme-options.php:66
+#: inc/customizer/theme-options.php:91 inc/customizer/theme-options.php:116
+msgid "Left Sidebar"
+msgstr "Barra lateral izquierda"
+
+#: inc/customizer/theme-options.php:36
+msgid "Blog Sidebar"
+msgstr "Barra lateral del blog"
+
+#: inc/customizer/theme-options.php:19
+msgid "Sidebar Options"
+msgstr "Opciones de barra lateral"
+
+#: inc/customizer/theme-options.php:11
+msgid "Theme Options"
+msgstr "Opciones del tema"
+
+#: inc/customizer.php:46
+msgid "Buy Pro"
+msgstr "Comprar la versión Pro"
+
+#: inc/customizer.php:45
+msgid "Cube Blog Pro"
+msgstr "Cube Blog Pro"
+
+#: header.php:66
+msgid "Menu"
+msgstr "Menú"
+
+#: header.php:28
+msgid "Skip to content"
+msgstr "Saltar al contenido"
+
+#: functions.php:270
+msgid "Collapse child menu"
+msgstr "Cerrar el menú hijo"
+
+#: functions.php:269
+msgid "Expand child menu"
+msgstr "Expandir menú hijo"
+
+#: functions.php:210
+msgid "Footer 3"
+msgstr "Pie de página 3"
+
+#: functions.php:198
+msgid "Footer 2"
+msgstr "Pie de página 2"
+
+#: functions.php:188 functions.php:200 functions.php:212
+msgid "Add widgets here to appear in your footer."
+msgstr "Añadir widgets aquí para que aparezcan en tu pie de página."
+
+#: functions.php:186
+msgid "Footer 1"
+msgstr "Pie de página 1"
+
+#: functions.php:176
+msgid "Add widgets here."
+msgstr "Añade aquí los widgets."
+
+#: functions.php:174
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: functions.php:140
+msgid "XL"
+msgstr "XL"
+
+#: functions.php:139
+msgid "huge"
+msgstr "enorme"
+
+#: functions.php:134
+msgid "L"
+msgstr "L"
+
+#: functions.php:133
+msgid "larger"
+msgstr "más grande"
+
+#: functions.php:128
+msgid "M"
+msgstr "M"
+
+#: functions.php:127
+msgid "regular"
+msgstr "normal"
+
+#: functions.php:122
+msgid "S"
+msgstr "S"
+
+#: functions.php:121
+msgid "small"
+msgstr "pequeña"
+
+#: functions.php:112
+msgid "Grey"
+msgstr "Gris"
+
+#: functions.php:107
+msgid "Black"
+msgstr "Negro"
+
+#: functions.php:102
+msgid "Orange"
+msgstr "Naranja"
+
+#: functions.php:97
+msgid "Green"
+msgstr "Verde"
+
+#: functions.php:92
+msgid "Blue"
+msgstr "Azul"
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr "Menú principal"
+
+#: footer.php:27
+msgid "Theme Cube Blog by %s"
+msgstr "Tema Cube Blog de %s"
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr "Los comentarios están cerrados."
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:41
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s comentario sobre «%2$s»"
+msgstr[1] "%1$s comentarios sobre «%2$s»"
+
+#. translators: 1: title.
+#: comments.php:35
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr "Un comentario sobre «%1$s»"
+
+#: archive.php:45 index.php:50 search.php:55
+msgid "Page"
+msgstr "Página"
+
+#: archive.php:44 index.php:49 search.php:54
+msgid "Next page"
+msgstr "Siguiente página"
+
+#: archive.php:43 index.php:48 search.php:53
+msgid "Previous page"
+msgstr "Página anterior"
+
+#: 404.php:23
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Parece que aquí no hay nada. ¿Por qué no pruebas uno de estos enlaces o una búsqueda?"
+
+#: 404.php:19
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "¡Vaya! No se ha podido encontrar esa página."
+
+#: 404.php:18
+msgid "404"
+msgstr "404"
+
+#. Author URI of the theme
+#, gp-priority: low
+msgid "https://www.kantipurthemes.com/"
+msgstr "https://www.kantipurthemes.com/"
+
+#. Author of the theme
+#: footer.php:27
+#, gp-priority: low
+msgid "Kantipur Themes"
+msgstr "Kantipur Themes"
+
+#. Theme URI of the theme
+#, gp-priority: low
+msgid "https://www.kantipurthemes.com/downloads/cube-blog"
+msgstr "https://www.kantipurthemes.com/downloads/cube-blog"

@@ -1,0 +1,18 @@
+.wpcafe-multivendor-admin-discount-text,
+.wpcafe-multivendor-admin-location-text {
+  padding: 0px 0px 20px;
+  font-size: 16px;
+  color: #e3106e;
+}
+
+.disable-admin-discount-settings,
+.disable-admin-location-settings {
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.disable-admin-discount-settings .wpc-label-item,
+.disable-admin-location-settings .wpc-label-item {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,265 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: WPCafe MultiVendor\n"
+"POT-Creation-Date: 2022-08-07 15:08+0600\n"
+"PO-Revision-Date: 2022-08-07 15:08+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: wpcafe-multivendor.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: bootstrap.php:89
+msgid "Activate WPCafe"
+msgstr ""
+
+#: bootstrap.php:92
+msgid "Install WPCafe"
+msgstr ""
+
+#: bootstrap.php:99
+msgid ""
+"WPCafe Multivendor requires WpCafe to get all features, which is currently "
+"NOT RUNNING."
+msgstr ""
+
+#: bootstrap.php:129
+msgid "Activate Dokan"
+msgstr ""
+
+#: bootstrap.php:132
+msgid "Install Dokan"
+msgstr ""
+
+#: bootstrap.php:139
+msgid ""
+"WPCafe Multivendor requires Dokan to get all features, which is currently "
+"NOT RUNNING."
+msgstr ""
+
+#: core/base/settings-field.php:59
+msgid "Your information has been saved successfully"
+msgstr ""
+
+#: core/enqueue/enqueue.php:150
+msgid "Please fill the option field"
+msgstr ""
+
+#: core/enqueue/enqueue.php:151
+msgid "Please fill the title field"
+msgstr ""
+
+#: core/enqueue/enqueue.php:152
+msgid "Option name"
+msgstr ""
+
+#: core/enqueue/enqueue.php:152
+msgid "Default selected"
+msgstr ""
+
+#: core/enqueue/enqueue.php:153
+msgid "Quantity Based"
+msgstr ""
+
+#: core/hooks/hooks.php:62
+msgid ""
+"Location settings will be applied from vendor panel. Deactivate multivendor "
+"add-on to use this option from admin panel"
+msgstr ""
+
+#: core/hooks/hooks.php:121
+msgid ""
+"Discount settings will be applied from vendor panel. Deactivate multivendor "
+"add-on to use this option from admin panel"
+msgstr ""
+
+#: core/hooks/hooks.php:255
+#: templates/store-front/wpcafe-settings/store-settings.php:35
+msgid "Restaurant Settings"
+msgstr ""
+
+#: core/modules/food-menu/food-location.php:63
+msgid "Food Delivery Location : "
+msgstr ""
+
+#: core/modules/food-menu/food-location.php:160
+msgid "Order location: "
+msgstr ""
+
+#: core/modules/food-menu/food-location.php:195
+msgid "Food location"
+msgstr ""
+
+#: core/modules/food-menu/food-location.php:197
+#: core/settings/part/menu-settings.php:43
+msgid "Select location"
+msgstr ""
+
+#: core/modules/product-addons/product-addons.php:34
+msgid "WPCafe Product Addons"
+msgstr ""
+
+#: core/settings/key-options.php:47
+msgid "WPCafe Settings"
+msgstr ""
+
+#: core/settings/key-options.php:71 core/settings/key-options.php:82
+msgid "You have no permission to view this page"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:13
+msgid "Food menu list"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:18
+msgid "Food menu list slider"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:24
+msgid "Food Menu Options"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:27
+msgid "Allow location"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:28
+msgid "Show location dropdown on store page and checkout"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:38
+msgid "Food Delivery location"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:39
+msgid "Choose food delivery location for store"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:55
+msgid "Food menu style"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:56
+msgid "Override store page food menu template"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:60
+msgid "Default template"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:71
+msgid "Allow Product Add-ons"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:72
+msgid "Show product add-ons under settings tab"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:90
+msgid "Discount Options"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:94
+msgid "Discount"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:97
+msgid ""
+"Percentage discount will be appllied on simple product from include menus "
+"and include categories"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:111
+msgid "%"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:122
+msgid "Include menus"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:124
+msgid "Include following menu items when calculating discounts:"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:157
+msgid "Include categories"
+msgstr ""
+
+#: core/settings/part/menu-settings.php:159
+msgid ""
+"Include all menu items belonging to following categories when calculating "
+"discounts:"
+msgstr ""
+
+#: core/settings/part/settings.php:37
+msgid "Food Menu Setting"
+msgstr ""
+
+#: core/settings/part/settings.php:40
+msgid "Documentation"
+msgstr ""
+
+#: core/settings/part/settings.php:43
+msgid "Visit "
+msgstr ""
+
+#: core/settings/part/settings.php:43
+msgid " for food menu options of your restaurant."
+msgstr ""
+
+#: core/settings/part/settings.php:113
+msgid "Save Changes"
+msgstr ""
+
+#: helpers/functions.php:31
+msgid "Select a delivery location"
+msgstr ""
+
+#: templates/orders/order-item-html.php:44
+msgid "Main price :"
+msgstr ""
+
+#: templates/orders/order-item-html.php:45
+msgid "Price after discount :"
+msgstr ""
+
+#: templates/store-front/menu-style/list-style-one.php:76
+#: templates/store-front/menu-style/list-style-slider.php:116
+msgid "No products were found of this vendor!"
+msgstr ""
+
+#: templates/store-front/wpcafe-settings/store-settings.php:41
+msgid "Service available in these areas: "
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WPCafe MultiVendor"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://product.themewinter.com/wpcafe-multivendor"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "WordPress Restaurant solution plugin multivendor addon."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Themewinter"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://themewinter.com/"
+msgstr ""
