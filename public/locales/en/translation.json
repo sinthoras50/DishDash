@@ -1,0 +1,560 @@
+{
+  "admin": {
+    "drawer": {
+      "menu": {
+        "calendar": "Calendar",
+        "dashboard": "Dashboard",
+        "help": "Help",
+        "home": "Home",
+        "projects": "Projects",
+        "settings": "Settings",
+        "userManagement": "Users"
+      }
+    },
+    "header": {
+      "notifications": {
+        "empty": {
+          "title": "Your notification list is empty"
+        },
+        "seeAll": "See all notifications"
+      }
+    },
+    "home": {
+      "achievement": {
+        "action": "View Profile",
+        "description": "You have completed {{progress}}% of your profile. Your current progress is great.",
+        "title": "Congratulations {{name}}"
+      },
+      "followers": {
+        "units": {
+          "likes": "Likes",
+          "love": "Love",
+          "smiles": "Smiles"
+        }
+      },
+      "meeting": {
+        "title": "Meetings"
+      },
+      "targets": {
+        "income": "Income",
+        "followers": "Followers",
+        "title": "Targets",
+        "views": "Views"
+      },
+      "views": {
+        "action": "View Dashboard",
+        "unit": "Views"
+      },
+      "welcome": {
+        "message": "This page is designed to give some important information about the application. Let's make someting together!",
+        "subTitle": "Welcome back!",
+        "title": "Hi {{name}},"
+      }
+    }
+  },
+  "auth": {
+    "forgotPassword": {
+      "form": {
+        "action": "Send Confirmation",
+        "back": "Back to login",
+        "email": {
+          "label": "E-mail Address"
+        }
+      },
+      "notifications": {
+        "success": "Email has been sent!"
+      },
+      "subTitle": "To get a validation code, enter the e-mail address associated to your account.",
+      "title": "Get validation code"
+    },
+    "forgotPasswordSubmit": {
+      "form": {
+        "action": "Reset Password",
+        "back": "Back to login",
+        "code": {
+          "label": "Code"
+        },
+        "confirmPassword": {
+          "label": "Confirm Password"
+        },
+        "newPassword": {
+          "label": "New Password"
+        }
+      },
+      "notifications": {
+        "success": "Your password has been changed!"
+      },
+      "subTitle": "Enter the code you received by mail and choose a new password.",
+      "title": "Change your password",
+      "invalidCode": "Invalid validation code"
+    },
+    "login": {
+      "forgotPasswordLink": "Forgot password?",
+      "form": {
+        "email": {
+          "label": "E-mail Address"
+        },
+        "password": {
+          "label": "Password"
+        }
+      },
+      "newAccount": "Don't have an account?",
+      "newAccountLink": "Sign Up!",
+      "submit": "Sign in",
+      "title": "Sign in",
+      "subTitle": "Welcome back! Sign in, to access your account.",
+      "invalidCredentials": "Incorrect e-mail address or password"
+    },
+    "register": {
+      "back": "Back to login",
+      "form": {
+        "firstName": {
+          "label": "First Name"
+        },
+        "lastName": {
+          "label": "Last Name"
+        },
+        "email": {
+          "label": "E-mail Address"
+        },
+        "phone": {
+          "label": "Phone"
+        },
+        "password": {
+          "label": "Password"
+        },
+        "role": {
+          "label": "Role",
+          "options": {
+            "donor": "Donor",
+            "receiver": "Receiver"
+          }
+        }
+      },
+      "notifications": {
+        "success": "Your account has been created successfully!"
+      },
+      "submit": "Sign up",
+      "title": "Sign up",
+      "subTitle": "Join us by signing up either as a donator or a receiver.",
+      "existingAccount": "Already have an account?",
+      "existingAccountLink": "Sign In!"
+    }
+  },
+  "calendar": {
+    "confirmations": {
+      "delete": "Are you sure you want to delete this event?"
+    },
+    "form": {
+      "color": {
+        "label": "Color"
+      },
+      "description": {
+        "label": "Description"
+      },
+      "end": {
+        "label": "End Date"
+      },
+      "start": {
+        "label": "Start Date"
+      },
+      "title": {
+        "label": "Title"
+      }
+    },
+    "modal": {
+      "add": {
+        "action": "Add",
+        "title": "Add Event"
+      },
+      "edit": {
+        "action": "Edit",
+        "title": "Edit Event"
+      }
+    },
+    "notifications": {
+      "addSuccess": "{{event}} has been added!",
+      "deleteSuccess": "Event has been deleted!",
+      "updateSuccess": "{{event}} has been updated!"
+    },
+    "title": "Calendar"
+  },
+  "common": {
+    "backHome": "Back to Home",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "confirmation": "Confirmation",
+    "delete": "Delete",
+    "edit": "Edit",
+    "errors": {
+      "forbidden": {
+        "subTitle": "You don't have access to view this page"
+      },
+      "notFound": {
+        "subTitle": "Sorry, we couldn’t find the page you’re looking for. Perhaps you’ve mistyped the URL? Be sure to check your spelling.",
+        "title": "Oops!"
+      },
+      "unexpected": {
+        "subTitle": "Something went wrong! If the problem persists, contact us!",
+        "title": "Oops!"
+      },
+      "underConstructions": {
+        "subTitle": "We are actively working on this page.",
+        "title": "Under constructions!"
+      }
+    },
+    "reset": "Reset",
+    "retry": "Try Again",
+    "selected": "Selected",
+    "snackbar": {
+      "error": "Error",
+      "success": "Success"
+    },
+    "today": "Today",
+    "update": "Update",
+    "validations": {
+      "email": "Invalid email address",
+      "phone": "Invalid phone number",
+      "max": "Must be {{size}} characters or less",
+      "min": "Must be {{size}} characters or more",
+      "passwordMatch": "Password does not match",
+      "required": "Required"
+    }
+  },
+  "dashboard": {
+    "activity": {
+      "title": "Activity"
+    },
+    "budget": {
+      "legend": {
+        "unit": "Budget ($K)"
+      },
+      "title": "Budget"
+    },
+    "orderProgress": {
+      "title": "Orders"
+    },
+    "overview": {
+      "orders": "Orders",
+      "sales": "Sales",
+      "users": "Users",
+      "visits": "Visits"
+    },
+    "progress": {
+      "title": "Progress"
+    },
+    "salesByAge": {
+      "title": "Sales by Age"
+    },
+    "salesByCategory": {
+      "legend": {
+        "books": "Books",
+        "movies": "Movies & TV",
+        "software": "Software"
+      },
+      "title": "Sales by Category"
+    },
+    "salesHistory": {
+      "title": "Sales History",
+      "unit": "$ today"
+    },
+    "salesProgress": {
+      "title": "Sales"
+    },
+    "teams": {
+      "columns": {
+        "progress": "Progress",
+        "team": "Team",
+        "value": "Value"
+      },
+      "title": "Teams Progress"
+    },
+    "users": {
+      "title": "Recent Users"
+    },
+    "visitProgress": {
+      "title": "Visits"
+    },
+    "title": "Dashboard"
+  },
+  "faq": {
+    "noAnswerLink": "Can't find it here? Check out our Help Center.",
+    "questions": {
+      "title1": "What is React Admin?",
+      "answer1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
+      "title2": "How does it work?",
+      "answer2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
+      "title3": "What are the features available?",
+      "answer3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
+      "title4": "Who is maintaining the project?",
+      "answer4": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
+      "title5": "What is the license of the project?",
+      "answer5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
+      "title6": "How can I contribute to the project?",
+      "answer6": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget."
+    },
+    "title": "Frequently Asked Questions"
+  },
+  "help": {
+    "menu": {
+      "contact": "Contact",
+      "faq": "FAQ",
+      "guide": "Guide",
+      "support": "Support"
+    },
+    "title": "Help Center"
+  },
+  "landing": {
+    "nav": {
+      "howItWorks": "How it works",
+      "aboutUs": "About us",
+      "community": "Community",
+      "cta": "Sign in"
+    },
+    "hero": {
+      "title": "Join is in the fight against hunger!",
+      "subTitle": "Whether you have food to share or need assistance, our platform is here to help. Be a part of our community, and together, we can nourish lives and spread hope.",
+      "imgAlt": "A woman handing a cardboard donation box to a man, symbolizing a charitable act of giving and community support.",
+      "cta": "Get started"
+    },
+    "howItWorks": {
+      "title": "How it works?",
+      "donor": {
+        "toggleText": "Donor",
+        "steps": {
+          "1": {
+            "message": "Donation - Step 1",
+            "imgAlt": "Creating a donation screen"
+          },
+          "2": {
+            "message": "Donation - Step 2",
+            "imgAlt": "Setting donation details screen"
+          },
+          "3": {
+            "message": "Donation - Step 3",
+            "imgAlt": "Map with a pick-up location screen"
+          },
+          "4": {
+            "message": "Donation - Step 4",
+            "imgAlt": "Donation confirmation screen"
+          }
+        }
+      },
+      "receiver": {
+        "toggleText": "Receiver",
+        "steps": {
+          "1": {
+            "message": "Reservation - Step 1",
+            "imgAlt": "Alt"
+          },
+          "2": {
+            "message": "Reservation - Step 2",
+            "imgAlt": "Alt"
+          },
+          "3": {
+            "message": "Reservation - Step 3",
+            "imgAlt": "Alt"
+          },
+          "4": {
+            "message": "Reservation - Step 4",
+            "imgAlt": "Alt"
+          }
+        }
+      }
+    },
+    "aboutUs": {
+      "title": "About us",
+      "paragraphs": {
+        "1": {
+          "title": "Our story",
+          "text": "Founded in 2023, DishDash was born out of a simple yet powerful idea: to bridge the gap between surplus food and those in need. We recognized that food waste is a growing problem, while many people in our community go to bed hungry every night. This realization led to the inception of our organization, with a mission to reduce food waste and alleviate hunger.",
+          "imgAlt": ""
+        },
+        "2": {
+          "title": "Our mission",
+          "text": "At DishDash, our mission is clear: to connect surplus food resources with individuals and families who are struggling with food insecurity. We are driven by a deep commitment to ensure that no one in our community goes to bed hungry. We believe that every meal saved from being wasted can make a significant difference in the lives of those who need it the most.",
+          "imgAlt": ""
+        },
+        "3": {
+          "title": "What we do",
+          "text": "At DishDash, our mission is clear: to connect surplus food resources with individuals and families who are struggling with food insecurity. We are driven by a deep commitment to ensure that no one in our community goes to bed hungry. We believe that every meal saved from being wasted can make a significant difference in the lives of those who need it the most.",
+          "imgAlt": ""
+        },
+        "4": {
+          "title": "How you can help",
+          "text": "We understand that no change is possible without the support of our community. Whether you're an individual looking to make a difference, a business with surplus food resources, or a volunteer eager to join our cause, there are many ways to get involved. Your contribution, whether it's a donation, your time, or simply spreading the word about our cause, can play a pivotal role in our efforts to combat hunger and food waste.",
+          "imgAlt": ""
+        }
+      }
+    },
+    "getInTouch": {
+      "title": "Get in touch",
+      "form": {
+        "email": {
+          "label": "Email Address"
+        },
+        "message": {
+          "label": "Message"
+        },
+        "submit": "Send"
+      }
+    },
+    "notifications": {
+      "formSubmitted": "Message has been successfully sent."
+    }
+  },
+  "notifications": {
+    "newComment": "<bold>{{user}}</bold> has written a new comment on your profile",
+    "unreadMessages": "You have <bold>{{quantity}}</bold> unread messages"
+  },
+  "profile": {
+    "activity": {
+      "empty": "Logs of your activity will show up here!",
+      "logs": {
+        "eventAdded": "<bold>You</bold> added a new event: <bold>{{resource}}</bold>",
+        "eventUpdated": "<bold>You</bold> updated event: <bold>{{resource}}</bold>",
+        "userAdded": "<bold>You</bold> added a new user: <bold>{{resource}}</bold>",
+        "userDeleted": "<bold>You</bold> deleted user: <bold>{{resource}}</bold>",
+        "userUpdated": "<bold>You</bold> updated user: <bold>{{resource}}</bold>"
+      }
+    },
+    "completion": {
+      "title": "Profile Completion"
+    },
+    "info": {
+      "form": {
+        "email": {
+          "label": "Email Address"
+        },
+        "firstName": {
+          "label": "First Name"
+        },
+        "gender": {
+          "label": "Gender",
+          "options": {
+            "f": "Female",
+            "m": "Male",
+            "n": "NC"
+          }
+        },
+        "lastName": {
+          "label": "Last Name"
+        }
+      },
+      "title": "Update profile"
+    },
+    "menu": {
+      "activity": "Activity",
+      "info": "Information",
+      "password": "Password"
+    },
+    "notifications": {
+      "informationUpdated": "Information updated!",
+      "passwordChanged": "Password changed!"
+    },
+    "password": {
+      "form": {
+        "current": {
+          "label": "Current Password"
+        },
+        "confirm": {
+          "label": "Confirm Password"
+        },
+        "new": {
+          "label": "New Password"
+        }
+      },
+      "title": "Change your password"
+    }
+  },
+  "settings": {
+    "drawer": {
+      "direction": {
+        "label": "Direction",
+        "options": {
+          "ltr": "LTR",
+          "rtl": "RTL"
+        }
+      },
+      "language": {
+        "label": "Language",
+        "options": {
+          "en": "English",
+          "fr": "Français"
+        }
+      },
+      "mode": {
+        "label": "Mode",
+        "options": {
+          "dark": "Dark",
+          "light": "Light"
+        }
+      },
+      "sidebar": {
+        "label": "Sidebar",
+        "options": {
+          "collapsed": "Collapsed",
+          "full": "Full"
+        }
+      },
+      "title": "Settings"
+    }
+  },
+  "userManagement": {
+    "confirmations": {
+      "delete": "Are you sure you want to delete this user?"
+    },
+    "form": {
+      "disabled": {
+        "label": "Disabled"
+      },
+      "email": {
+        "label": "Email Address"
+      },
+      "firstName": {
+        "label": "First Name"
+      },
+      "gender": {
+        "label": "Gender",
+        "options": {
+          "f": "Female",
+          "m": "Male",
+          "n": "NC"
+        }
+      },
+      "lastName": {
+        "label": "Last Name"
+      },
+      "role": {
+        "label": "Role"
+      }
+    },
+    "modal": {
+      "add": {
+        "action": "Add",
+        "title": "Add User"
+      },
+      "edit": {
+        "action": "Edit",
+        "title": "Edit User"
+      }
+    },
+    "notifications": {
+      "addSuccess": "{{user}} has been added!",
+      "deleteSuccess": "User(s) have been deleted!",
+      "updateSuccess": "{{user}} has been updated!"
+    },
+    "table": {
+      "headers": {
+        "actions": "Actions",
+        "gender": "Gender",
+        "role": "Role",
+        "status": "Status",
+        "user": "User"
+      }
+    },
+    "toolbar": {
+      "title": "Users"
+    }
+  }
+}
