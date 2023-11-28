@@ -44,7 +44,7 @@ mock.onPost("/api/login").reply((config) => {
   );
 
   if (user) {
-    return [200, "AUTHKEY123"];
+    return [200, {token: user.token}];
   } else {
     return [401, { error: "Invalid credentials" }];
   }
@@ -52,8 +52,17 @@ mock.onPost("/api/login").reply((config) => {
 mock.onPost("/api/logout").reply(200);
 mock.onPost("/api/register").reply(201);
 mock
-  .onGet("/api/user-info", { params: { key: "AUTHKEY123" } })
-  .reply(200, userInfo);
+  .onGet("/api/user-info")
+  .reply(config => {
+    const { key } = config.params;
+    const user = users.find(user => user.token === key);
+
+    if (key && user) {
+      return [200, user];
+    } else {
+      return [404, { error: "User not found" }];
+    }
+  });
 
 // Events
 mock.onDelete("/api/events").reply(({ data }) => [200, data]);

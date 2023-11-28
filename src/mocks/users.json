@@ -8,7 +8,8 @@
     "gender": "M",
     "lastName": "Arriaga",
     "role": "donor",
-    "password": "Password123"
+    "password": "Password123",
+    "token": "v52kcQbqvMPIP0"
   },
   {
     "id": "2",
@@ -19,7 +20,8 @@
     "gender": "F",
     "lastName": "Core",
     "role": "donor",
-    "password": "Password123"
+    "password": "Password123",
+    "token": "sPVQ5grgG7Gpyp"
   },
   {
     "id": "3",
@@ -30,7 +32,8 @@
     "gender": "M",
     "lastName": "Jagger",
     "role": "donor",
-    "password": "Password123"
+    "password": "Password123",
+    "token": "Rerh3XOZc1ZbcK"
   },
   {
     "id": "4",
@@ -41,7 +44,8 @@
     "gender": "M",
     "lastName": "Jimenez",
     "role": "donor",
-    "password": "Password123"
+    "password": "Password123",
+    "token": "Uqbt7b7zio2wfO"
   },
   {
     "id": "5",
@@ -52,7 +56,8 @@
     "gender": "F",
     "lastName": "Mcguire",
     "role": "donor",
-    "password": "Password123"
+    "password": "Password123",
+    "token": "cP7BVkzoVhbioR"
   },
   {
     "id": "6",
@@ -63,7 +68,8 @@
     "gender": "M",
     "lastName": "Moreno",
     "role": "donor",
-    "password": "Password123"
+    "password": "Password123",
+    "token": "OsVODSoRg41dC0"
   },
   {
     "id": "7",
@@ -74,7 +80,8 @@
     "gender": "F",
     "lastName": "Murray",
     "role": "donor",
-    "password": "Password123"
+    "password": "Password123",
+    "token": "VeBSxw71J5ydH8"
   },
   {
     "id": "8",
@@ -85,7 +92,8 @@
     "gender": "F",
     "lastName": "Owen",
     "role": "donor",
-    "password": "Password123"
+    "password": "Password123",
+    "token": "ygeFmqMsM6LBE3"
   },
   {
     "id": "9",
@@ -96,7 +104,8 @@
     "gender": "M",
     "lastName": "Romero",
     "role": "donor",
-    "password": "Password123"
+    "password": "Password123",
+    "token": "O7tpwMtIrR2Y8F"
   },
   {
     "id": "10",
@@ -107,7 +116,8 @@
     "gender": "F",
     "lastName": "Spence",
     "role": "donor",
-    "password": "Password123"
+    "password": "Password123",
+    "token": "dTKwHHxhx6hQ2K"
   },
   {
     "id": "11",
@@ -118,6 +128,7 @@
     "gender": "F",
     "lastName": "Wade",
     "role": "donor",
-    "password": "Password123"
+    "password": "Password123",
+    "token": "VsY1Rm1VJRlYdk"
   }
 ]

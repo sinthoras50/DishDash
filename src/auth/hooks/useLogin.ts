@@ -7,7 +7,7 @@ const login = async ({
 }: {
   email: string;
   password: string;
-}): Promise<string> => {
+}): Promise<{ token: string }> => {
   const { data } = await axios.post("/api/login", { email, password });
   return data;
 };

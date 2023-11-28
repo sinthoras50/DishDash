@@ -21,9 +21,7 @@ type AuthProviderProps = {
 };
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [authKey, setAuthKey] = useLocalStorage<string>("authkey", "");
-  console.log(authKey);
-
+  const [authKey, setAuthKey] = useLocalStorage<string>("authKey", "");
   const { isLoggingIn, login } = useLogin();
   const { isLoggingOut, logout } = useLogout();
   const { data: userInfo } = useUserInfo(authKey);
@@ -39,25 +37,23 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
   const handleLogin = async (email: string, password: string) => {
-    return login({ email, password })
-      .then((key: string) => {
-        setAuthKey(key);
-        return key;
-      })
-      .catch((err) => {
-        throw err;
-      });
+    try {
+      const { token } = await login({ email, password });
+      setAuthKey(token);
+      return token;
+    } catch (err: any) {
+      throw err;
+    }
   };
 
   const handleLogout = async () => {
-    return logout()
-      .then((data) => {
-        setAuthKey("");
-        return data;
-      })
-      .catch((err) => {
-        throw err;
-      });
+    try {
+      const data = logout();
+      setAuthKey("");
+      return data;
+    } catch (err: any) {
+      throw err;
+    }
   };
 
   return (
