@@ -36,8 +36,10 @@ const UnderConstructions = lazy(
 // Landing
 const Landing = lazy(() => import("./landing/pages/Landing"));
 
-// Users
-const UserManagement = lazy(() => import("./users/pages/UserManagement"));
+// Donations
+const DonationManagement = lazy(
+  () => import("./users/pages/DonationManagement")
+);
 
 const AppRoutes = () => {
   return (
@@ -63,7 +65,7 @@ const AppRoutes = () => {
             />
           }
         />
-        <PrivateRoute path="user-management" element={<UserManagement />} />
+        <PrivateRoute path="donations" element={<DonationManagement />} />
       </PrivateRoute>
       <Route path="forgot-password" element={<ForgotPassword />} />
       <Route path="forgot-password-submit" element={<ForgotPasswordSubmit />} />

@@ -1,10 +1,10 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import activityLogs from "./activityLogs.json";
+import donations from "./donations.json";
 import events from "./events.json";
 import notifications from "./notifications.json";
 import profileInfo from "./profileInfo.json";
-import userInfo from "./userInfo.json";
 import users from "./users.json";
 
 const now = Date.now();
@@ -44,25 +44,23 @@ mock.onPost("/api/login").reply((config) => {
   );
 
   if (user) {
-    return [200, {token: user.token}];
+    return [200, { token: user.token }];
   } else {
     return [401, { error: "Invalid credentials" }];
   }
 });
 mock.onPost("/api/logout").reply(200);
 mock.onPost("/api/register").reply(201);
-mock
-  .onGet("/api/user-info")
-  .reply(config => {
-    const { key } = config.params;
-    const user = users.find(user => user.token === key);
+mock.onGet("/api/user-info").reply((config) => {
+  const { key } = config.params;
+  const user = users.find((user) => user.token === key);
 
-    if (key && user) {
-      return [200, user];
-    } else {
-      return [404, { error: "User not found" }];
-    }
-  });
+  if (key && user) {
+    return [200, user];
+  } else {
+    return [404, { error: "User not found" }];
+  }
+});
 
 // Events
 mock.onDelete("/api/events").reply(({ data }) => [200, data]);
@@ -83,9 +81,9 @@ mock.onGet("/api/profile-info").reply(200, profileInfo);
 mock.onPut("/api/profile-info").reply(({ data }) => [200, data]);
 
 // Users
-mock.onDelete("/api/users").reply(({ data }) => [200, data]);
-mock.onGet("/api/users").reply(200, users);
+mock.onDelete("/api/donations").reply(({ data }) => [200, data]);
+mock.onGet("/api/donations").reply(200, donations);
 mock
-  .onPost("/api/users")
+  .onPost("/api/donations")
   .reply(({ data }) => [201, { ...JSON.parse(data), id: generateId() }]);
-mock.onPut("/api/users").reply(({ data }) => [200, data]);
+mock.onPut("/api/donations").reply(({ data }) => [200, data]);

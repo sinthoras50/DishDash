@@ -2,10 +2,9 @@ import {
   Delete as DeleteIcon,
   Edit as EditIcon,
   MoreVert as MoreVertIcon,
-  Person as PersonIcon,
+  Photo as PhotoIcon,
 } from "@mui/icons-material";
 import {
-  Avatar,
   Box,
   Checkbox,
   Chip,
@@ -26,7 +25,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Empty from "../../core/components/Empty";
 import * as selectUtils from "../../core/utils/selectUtils";
-import { User } from "../types/user";
+import { Donation } from "../types/donation";
 
 interface HeadCell {
   id: string;
@@ -36,24 +35,19 @@ interface HeadCell {
 
 const headCells: HeadCell[] = [
   {
-    id: "user",
+    id: "donation",
     align: "left",
-    label: "userManagement.table.headers.user",
+    label: "donationManagement.table.headers.donation",
   },
   {
-    id: "gender",
+    id: "date",
     align: "center",
-    label: "userManagement.table.headers.gender",
-  },
-  {
-    id: "role",
-    align: "center",
-    label: "userManagement.table.headers.role",
+    label: "donationManagement.table.headers.date",
   },
   {
     id: "status",
     align: "center",
-    label: "userManagement.table.headers.status",
+    label: "donationManagement.table.headers.status",
   },
 ];
 
@@ -80,7 +74,7 @@ function EnhancedTableHead({
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
             inputProps={{
-              "aria-label": "select all users",
+              "aria-label": "select all donations",
             }}
           />
         </TableCell>
@@ -90,32 +84,32 @@ function EnhancedTableHead({
           </TableCell>
         ))}
         <TableCell align="right" sx={{ py: 0 }}>
-          {t("userManagement.table.headers.actions")}
+          {t("donationManagement.table.headers.actions")}
         </TableCell>
       </TableRow>
     </TableHead>
   );
 }
 
-type UserRowProps = {
+type DonationRowProps = {
   index: number;
   onCheck: (id: string) => void;
-  onDelete: (userIds: string[]) => void;
-  onEdit: (user: User) => void;
+  onDelete: (donationIds: string[]) => void;
+  onEdit: (donation: Donation) => void;
   processing: boolean;
   selected: boolean;
-  user: User;
+  donation: Donation;
 };
 
-const UserRow = ({
+const DonationRow = ({
   index,
   onCheck,
   onDelete,
   onEdit,
   processing,
   selected,
-  user,
-}: UserRowProps) => {
+  donation,
+}: DonationRowProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { t } = useTranslation();
 
@@ -132,19 +126,19 @@ const UserRow = ({
 
   const handleDelete = () => {
     handleCloseActions();
-    onDelete([user.id]);
+    onDelete([donation.id]);
   };
 
   const handleEdit = () => {
     handleCloseActions();
-    onEdit(user);
+    onEdit(donation);
   };
 
   return (
     <TableRow
       aria-checked={selected}
       tabIndex={-1}
-      key={user.id}
+      key={donation.id}
       selected={selected}
       sx={{ "& td": { bgcolor: "background.paper", border: 0 } }}
     >
@@ -158,31 +152,30 @@ const UserRow = ({
           inputProps={{
             "aria-labelledby": labelId,
           }}
-          onClick={() => onCheck(user.id)}
+          onClick={() => onCheck(donation.id)}
         />
       </TableCell>
       <TableCell>
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Avatar sx={{ mr: 3 }}>
-            <PersonIcon />
-          </Avatar>
+          <PhotoIcon sx={{ mr: 3, fontSize: "2.5rem" }} />
           <Box>
             <Typography component="div" variant="h6">
-              {`${user.lastName} ${user.firstName}`}
+              {donation.foodItems}
             </Typography>
             <Typography color="textSecondary" variant="body2">
-              {user.email}
+              {donation.description}
             </Typography>
           </Box>
         </Box>
       </TableCell>
-      <TableCell align="center">{user.gender}</TableCell>
-      <TableCell align="center">{user.role}</TableCell>
       <TableCell align="center">
-        {user.disabled ? (
-          <Chip label="Disabled" />
-        ) : (
+        {new Date(donation.date).toISOString()}
+      </TableCell>
+      <TableCell align="center">
+        {donation.active ? (
           <Chip color="primary" label="Active" />
+        ) : (
+          <Chip label="Fullfielded" />
         )}
       </TableCell>
       <TableCell
@@ -190,9 +183,9 @@ const UserRow = ({
         sx={{ borderTopRightRadius: "1rem", borderBottomRightRadius: "1rem" }}
       >
         <IconButton
-          id="user-row-menu-button"
-          aria-label="user actions"
-          aria-controls="user-row-menu"
+          id="donation-row-menu-button"
+          aria-label="donation actions"
+          aria-controls="donation-row-menu"
           aria-haspopup="true"
           aria-expanded={openActions ? "true" : "false"}
           disabled={processing}
@@ -201,9 +194,9 @@ const UserRow = ({
           <MoreVertIcon />
         </IconButton>
         <Menu
-          id="user-row-menu"
+          id="donation-row-menu"
           anchorEl={anchorEl}
-          aria-labelledby="user-row-menu-button"
+          aria-labelledby="donation-row-menu-button"
           open={openActions}
           onClose={handleCloseActions}
           anchorOrigin={{
@@ -233,29 +226,29 @@ const UserRow = ({
   );
 };
 
-type UserTableProps = {
+type DonationTableProps = {
   processing: boolean;
-  onDelete: (userIds: string[]) => void;
-  onEdit: (user: User) => void;
+  onDelete: (donationIds: string[]) => void;
+  onEdit: (donation: Donation) => void;
   onSelectedChange: (selected: string[]) => void;
   selected: string[];
-  users?: User[];
+  donations?: Donation[];
 };
 
-const UserTable = ({
+const DonationTable = ({
   onDelete,
   onEdit,
   onSelectedChange,
   processing,
   selected,
-  users = [],
-}: UserTableProps) => {
+  donations = [],
+}: DonationTableProps) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelecteds = selectUtils.selectAll(users);
+      const newSelecteds = selectUtils.selectAll(donations);
       onSelectedChange(newSelecteds);
       return;
     }
@@ -280,8 +273,8 @@ const UserTable = ({
 
   const isSelected = (id: string) => selected.indexOf(id) !== -1;
 
-  if (users.length === 0) {
-    return <Empty title="No user yet" />;
+  if (donations.length === 0) {
+    return <Empty title="No donation yet" />;
   }
 
   return (
@@ -298,21 +291,21 @@ const UserTable = ({
           <EnhancedTableHead
             numSelected={selected.length}
             onSelectAllClick={handleSelectAllClick}
-            rowCount={users.length}
+            rowCount={donations.length}
           />
           <TableBody>
-            {users
+            {donations
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((user, index) => (
-                <UserRow
+              .map((donation, index) => (
+                <DonationRow
                   index={index}
-                  key={user.id}
+                  key={donation.id}
                   onCheck={handleClick}
                   onDelete={onDelete}
                   onEdit={onEdit}
                   processing={processing}
-                  selected={isSelected(user.id)}
-                  user={user}
+                  selected={isSelected(donation.id)}
+                  donation={donation}
                 />
               ))}
           </TableBody>
@@ -321,7 +314,7 @@ const UserTable = ({
       <TablePagination
         rowsPerPageOptions={[5, 10, 25]}
         component="div"
-        count={users.length}
+        count={donations.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
@@ -331,4 +324,4 @@ const UserTable = ({
   );
 };
 
-export default UserTable;
+export default DonationTable;

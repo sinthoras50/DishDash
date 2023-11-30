@@ -8,7 +8,7 @@
         "home": "Home",
         "projects": "Projects",
         "settings": "Settings",
-        "userManagement": "Users"
+        "donationManagement": "Donations"
       }
     },
     "header": {
@@ -218,7 +218,8 @@
       "max": "Must be {{size}} characters or less",
       "min": "Must be {{size}} characters or more",
       "passwordMatch": "Password does not match",
-      "required": "Required"
+      "required": "Required",
+      "invalid": "Invalid value"
     }
   },
   "dashboard": {
@@ -500,61 +501,58 @@
       "title": "Settings"
     }
   },
-  "userManagement": {
+  "donationManagement": {
     "confirmations": {
-      "delete": "Are you sure you want to delete this user?"
+      "delete": "Are you sure you want to delete this donation?"
     },
     "form": {
-      "disabled": {
-        "label": "Disabled"
+      "foodItems": {
+        "label": "Food items"
       },
-      "email": {
-        "label": "Email Address"
+      "description": {
+        "label": "Description"
       },
-      "firstName": {
-        "label": "First Name"
+      "weight": {
+        "label": "Weight"
       },
-      "gender": {
-        "label": "Gender",
-        "options": {
-          "f": "Female",
-          "m": "Male",
-          "n": "NC"
-        }
+      "location": {
+        "label": "Location"
       },
-      "lastName": {
-        "label": "Last Name"
+      "instructions": {
+        "label": "Instructions"
       },
-      "role": {
-        "label": "Role"
+      "from": {
+        "label": "Available from"
+      },
+      "until": {
+        "label": "Available until"
       }
     },
     "modal": {
       "add": {
         "action": "Add",
-        "title": "Add User"
+        "title": "Add Donation"
       },
       "edit": {
         "action": "Edit",
-        "title": "Edit User"
+        "title": "Edit Donation"
       }
     },
     "notifications": {
-      "addSuccess": "{{user}} has been added!",
-      "deleteSuccess": "User(s) have been deleted!",
-      "updateSuccess": "{{user}} has been updated!"
+      "addSuccess": "{{donation}} has been added!",
+      "deleteSuccess": "Donation(s) have been deleted!",
+      "updateSuccess": "{{donation}} has been updated!"
     },
     "table": {
       "headers": {
         "actions": "Actions",
-        "gender": "Gender",
-        "role": "Role",
-        "status": "Status",
-        "user": "User"
+        "donation": "Donation",
+        "date": "Date",
+        "status": "Status"
       }
     },
     "toolbar": {
-      "title": "Users"
+      "title": "Donations"
     }
   }
 }

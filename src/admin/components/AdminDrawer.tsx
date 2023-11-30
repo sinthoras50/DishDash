@@ -6,6 +6,7 @@ import {
   Home as HomeIcon,
   People as PeopleIcon,
   Person as PersonIcon,
+  VolunteerActivism as VolunteerActivismIcon, 
   Settings as SettingsIcon,
 } from "@mui/icons-material";
 import {
@@ -42,9 +43,9 @@ export const menuItems = [
     path: "/admin/dashboard",
   },
   {
-    icon: PeopleIcon,
-    key: "admin.drawer.menu.userManagement",
-    path: "/admin/user-management",
+    icon: VolunteerActivismIcon,
+    key: "admin.drawer.menu.donationManagement",
+    path: "/admin/donations",
   },
   {
     icon: EventIcon,
