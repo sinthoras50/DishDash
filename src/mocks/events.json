@@ -1,10 +1,62 @@
 [
   {
-    "id": "1",
-    "title": "React Summit",
-    "description": "Lorem ipsum dolor sid amet",
-    "start": 1519211809934,
-    "end": 1519211809934,
-    "color": "primary"
+    "title": "Event 1",
+    "description": "Description for Event 1",
+    "imageUrl": "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
+    "imageAlt": "None"
+  },
+  {
+    "title": "Event 2",
+    "description": "Description for Event 2",
+    "imageUrl": "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
+    "imageAlt": "None"
+  },
+  {
+    "title": "Event 3",
+    "description": "Description for Event 3",
+    "imageUrl": "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
+    "imageAlt": "None"
+  },
+  {
+    "title": "Event 4",
+    "description": "Description for Event 4",
+    "imageUrl": "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
+    "imageAlt": "None"
+  },
+  {
+    "title": "Event 5",
+    "description": "Description for Event 5",
+    "imageUrl": "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
+    "imageAlt": "None"
+  },
+  {
+    "title": "Event 6",
+    "description": "Description for Event 6",
+    "imageUrl": "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
+    "imageAlt": "None"
+  },
+  {
+    "title": "Event 7",
+    "description": "Description for Event 7",
+    "imageUrl": "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
+    "imageAlt": "None"
+  },
+  {
+    "title": "Event 8",
+    "description": "Description for Event 8",
+    "imageUrl": "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
+    "imageAlt": "None"
+  },
+  {
+    "title": "Event 9",
+    "description": "Description for Event 9",
+    "imageUrl": "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
+    "imageAlt": "None"
+  },
+  {
+    "title": "Event 10",
+    "description": "Description for Event 10",
+    "imageUrl": "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
+    "imageAlt": "None"
   }
 ]

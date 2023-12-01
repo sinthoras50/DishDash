@@ -1,13 +1,10 @@
 import {
-  AccountTree as AccountTreeIcon,
   BarChart as BarChartIcon,
-  Event as EventIcon,
   HelpCenter as HelpCenterIcon,
   Home as HomeIcon,
-  People as PeopleIcon,
   Person as PersonIcon,
-  VolunteerActivism as VolunteerActivismIcon, 
   Settings as SettingsIcon,
+  VolunteerActivism as VolunteerActivismIcon,
 } from "@mui/icons-material";
 import {
   Avatar,
@@ -48,16 +45,6 @@ export const menuItems = [
     path: "/admin/donations",
   },
   {
-    icon: EventIcon,
-    key: "admin.drawer.menu.calendar",
-    path: "/admin/calendar",
-  },
-  {
-    icon: AccountTreeIcon,
-    key: "admin.drawer.menu.projects",
-    path: "/admin/projects",
-  },
-  {
     icon: HelpCenterIcon,
     key: "admin.drawer.menu.help",
     path: "/admin/help",
@@ -87,6 +74,7 @@ const AdminDrawer = ({
             activeClassName="Mui-selected"
             end={true}
             to={`/${process.env.PUBLIC_URL}${item.path}`}
+            sx={{ my: 1 }}
           >
             <ListItemAvatar>
               <Avatar sx={{ color: "inherit", bgcolor: "transparent" }}>

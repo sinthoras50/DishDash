@@ -46,9 +46,24 @@
         "unit": "Views"
       },
       "welcome": {
-        "message": "This page is designed to give some important information about the application. Let's make someting together!",
-        "subTitle": "Welcome back!",
-        "title": "Hi {{name}},"
+        "subTitle": "Welcome back, feeling generous?",
+        "title": "Hi {{name}},",
+        "cta": "Let's donate"
+      },
+      "toolbar": {
+        "title": "Home"
+      },
+      "carousels": {
+        "activeDonations": {
+          "title": "Active donations"
+        },
+        "upcomingEvents": {
+          "title": "Upcoming Events"
+        }
+      },
+      "view": "View",
+      "community": {
+        "title": "Community"
       }
     }
   },
@@ -220,6 +235,10 @@
       "passwordMatch": "Password does not match",
       "required": "Required",
       "invalid": "Invalid value"
+    },
+    "carousel": {
+      "prevPage": "Previous",
+      "nextPage": "Next"
     }
   },
   "dashboard": {

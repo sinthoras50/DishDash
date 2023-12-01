@@ -7,7 +7,7 @@ const Admin = lazy(() => import("./admin/pages/Admin"));
 const Dashboard = lazy(() => import("./admin/pages/Dashboard"));
 const Faq = lazy(() => import("./admin/pages/Faq"));
 const HelpCenter = lazy(() => import("./admin/pages/HelpCenter"));
-const Home = lazy(() => import("./admin/pages/Home"));
+const Home = lazy(() => import("./admin/pages/Home copy"));
 const Profile = lazy(() => import("./admin/pages/Profile"));
 const ProfileActivity = lazy(() => import("./admin/pages/ProfileActivity"));
 const ProfileInformation = lazy(
@@ -56,22 +56,12 @@ const AppRoutes = () => {
           <PrivateRoute path="information" element={<ProfileInformation />} />
           <PrivateRoute path="password" element={<ProfilePassword />} />
         </PrivateRoute>
-        <PrivateRoute
-          path="projects"
-          element={
-            <Navigate
-              to={`/${process.env.PUBLIC_URL}/under-construction`}
-              replace
-            />
-          }
-        />
         <PrivateRoute path="donations" element={<DonationManagement />} />
       </PrivateRoute>
       <Route path="forgot-password" element={<ForgotPassword />} />
       <Route path="forgot-password-submit" element={<ForgotPasswordSubmit />} />
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
-      <Route path="under-construction" element={<UnderConstructions />} />
       <Route path="403" element={<Forbidden />} />
       <Route path="404" element={<NotFound />} />
       <Route

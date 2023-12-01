@@ -14,7 +14,7 @@ const typography = {
   },
   h3: {
     fontWeight: 800,
-    fontSize: "1.375rem",
+    fontSize: "1.75rem",
     letterSpacing: 0,
   },
   h4: {
