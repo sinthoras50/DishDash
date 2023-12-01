@@ -9,4 +9,5 @@ export interface UserInfo {
   role: string;
   phone: string;
   password: string;
+  token: string;
 }

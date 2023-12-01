@@ -9,6 +9,7 @@
     "lastName": "Arriaga",
     "role": "donor",
     "password": "Password123",
+    "phone": "+421951589025",
     "token": "v52kcQbqvMPIP0"
   },
   {
@@ -21,6 +22,7 @@
     "lastName": "Core",
     "role": "donor",
     "password": "Password123",
+    "phone": "+421951459005",
     "token": "sPVQ5grgG7Gpyp"
   },
   {
@@ -32,6 +34,7 @@
     "gender": "M",
     "lastName": "Jagger",
     "role": "donor",
+    "phone": "+421951589000",
     "password": "Password123",
     "token": "Rerh3XOZc1ZbcK"
   },
@@ -44,6 +47,7 @@
     "gender": "M",
     "lastName": "Jimenez",
     "role": "donor",
+    "phone": "+420875652184",
     "password": "Password123",
     "token": "Uqbt7b7zio2wfO"
   },
@@ -56,6 +60,7 @@
     "gender": "F",
     "lastName": "Mcguire",
     "role": "donor",
+    "phone": "+421951589000",
     "password": "Password123",
     "token": "cP7BVkzoVhbioR"
   },
@@ -68,6 +73,7 @@
     "gender": "M",
     "lastName": "Moreno",
     "role": "donor",
+    "phone": "+421951589000",
     "password": "Password123",
     "token": "OsVODSoRg41dC0"
   },
@@ -80,6 +86,7 @@
     "gender": "F",
     "lastName": "Murray",
     "role": "donor",
+    "phone": "+421951589000",
     "password": "Password123",
     "token": "VeBSxw71J5ydH8"
   },
@@ -92,6 +99,7 @@
     "gender": "F",
     "lastName": "Owen",
     "role": "donor",
+    "phone": "+421951589000",
     "password": "Password123",
     "token": "ygeFmqMsM6LBE3"
   },
@@ -104,6 +112,7 @@
     "gender": "M",
     "lastName": "Romero",
     "role": "donor",
+    "phone": "+421951589000",
     "password": "Password123",
     "token": "O7tpwMtIrR2Y8F"
   },
@@ -116,6 +125,7 @@
     "gender": "F",
     "lastName": "Spence",
     "role": "donor",
+    "phone": "+421951589000",
     "password": "Password123",
     "token": "dTKwHHxhx6hQ2K"
   },
@@ -128,6 +138,7 @@
     "gender": "F",
     "lastName": "Wade",
     "role": "donor",
+    "phone": "+421951589000",
     "password": "Password123",
     "token": "VsY1Rm1VJRlYdk"
   }

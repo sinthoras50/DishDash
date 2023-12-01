@@ -1,9 +1,9 @@
 export interface ProfileInfo {
   id: string;
+  firstName: string;
+  lastName: string;
   avatar?: string;
   email: string;
-  firstName: string;
   gender?: "F" | "M" | "NC";
   job: string;
-  lastName: string;
 }

@@ -11,14 +11,14 @@ import { formatDistanceToNow } from "date-fns";
 import { Trans, useTranslation } from "react-i18next";
 import Empty from "../../core/components/Empty";
 import { useDateLocale } from "../../core/hooks/useDateLocale";
-import { useActivityLogs } from "../hooks/useActivityLogs";
 import { logKeys } from "../config/activity";
+import { useActivity } from "../hooks/useActivity";
 
 const ProfileActivity = () => {
   const locale = useDateLocale();
   const { t } = useTranslation();
 
-  const { data } = useActivityLogs();
+  const { data } = useActivity();
 
   if (!data || data.length === 0) {
     return <Empty title={t("profile.activity.empty")} />;

@@ -5,64 +5,60 @@ import {
   CardActions,
   CardContent,
   CardHeader,
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  Radio,
-  RadioGroup,
   TextField,
 } from "@mui/material";
 import { useFormik } from "formik";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
-import { useUpdateProfileInfo } from "../../admin/hooks/useUpdateProfileInfo";
+import { useAuth } from "../../auth/contexts/AuthProvider";
+import { UserInfo } from "../../auth/types/userInfo";
 import { useSnackbar } from "../../core/contexts/SnackbarProvider";
-import { useProfileInfo } from "../hooks/useProfileInfo";
-import { ProfileInfo } from "../types/profileInfo";
-
-const genders = [
-  { label: "profile.info.form.gender.options.f", value: "F" },
-  { label: "profile.info.form.gender.options.m", value: "M" },
-  { label: "profile.info.form.gender.options.n", value: "NC" },
-];
+import { useUpdateUserInfo } from "../hooks/updateUserInfo";
 
 const ProfileInformation = () => {
   const snackbar = useSnackbar();
   const { t } = useTranslation();
 
-  const { data } = useProfileInfo();
-  const { isUpdating, updateProfileInfo } = useUpdateProfileInfo();
+  const { userInfo } = useAuth();
+  const { isUpdating, updateUserInfo } = useUpdateUserInfo();
+
+  const phoneReg = /^\+(?:[0-9] ?){6,14}[0-9]$/;
 
   const formik = useFormik({
     initialValues: {
-      email: data ? data.email : "",
-      firstName: data ? data.firstName : "",
-      gender: data ? data.gender : undefined,
-      job: data ? data.job : "",
-      lastName: data ? data.lastName : "",
+      firstName: userInfo ? userInfo.firstName : "",
+      lastName: userInfo ? userInfo.lastName : "",
+      email: userInfo ? userInfo.email : "",
+      phone: userInfo ? userInfo.phone : "",
     },
     validationSchema: Yup.object({
-      email: Yup.string()
-        .email(t("common.validations.email"))
-        .required(t("common.validations.required")),
       firstName: Yup.string()
         .max(20, t("common.validations.max", { size: 20 }))
         .required(t("common.validations.required")),
       lastName: Yup.string()
         .max(30, t("common.validations.max", { size: 30 }))
         .required(t("common.validations.required")),
+      email: Yup.string()
+        .email(t("common.validations.email"))
+        .required(t("common.validations.required")),
+      phone: Yup.string()
+        .matches(phoneReg, t("common.validations.phone"))
+        .required(t("common.validations.required")),
     }),
     onSubmit: (values) => handleSubmit(values),
   });
 
-  const handleSubmit = async (values: Partial<ProfileInfo>) => {
-    updateProfileInfo({ ...values, id: data?.id } as ProfileInfo)
-      .then(() => {
-        snackbar.success(t("profile.notifications.informationUpdated"));
-      })
-      .catch(() => {
-        snackbar.error(t("common.errors.unexpected.subTitle"));
-      });
+  const handleSubmit = async (values: Partial<UserInfo>) => {
+    try {
+      await updateUserInfo({
+        ...values,
+        id: userInfo?.id,
+        token: userInfo?.token,
+      } as UserInfo);
+      snackbar.success(t("profile.notifications.informationUpdated"));
+    } catch (err: any) {
+      snackbar.error(t("common.errors.unexpected.subTitle"));
+    }
   };
 
   return (
@@ -73,21 +69,7 @@ const ProfileInformation = () => {
           <TextField
             margin="normal"
             required
-            fullWidth
-            id="lastName"
-            label={t("profile.info.form.lastName.label")}
-            name="lastName"
-            autoComplete="family-name"
             autoFocus
-            disabled={isUpdating}
-            value={formik.values.lastName}
-            onChange={formik.handleChange}
-            error={formik.touched.lastName && Boolean(formik.errors.lastName)}
-            helperText={formik.touched.lastName && formik.errors.lastName}
-          />
-          <TextField
-            margin="normal"
-            required
             fullWidth
             id="firstName"
             label={t("profile.info.form.firstName.label")}
@@ -99,27 +81,20 @@ const ProfileInformation = () => {
             error={formik.touched.firstName && Boolean(formik.errors.firstName)}
             helperText={formik.touched.firstName && formik.errors.firstName}
           />
-          <FormControl component="fieldset" margin="normal">
-            <FormLabel component="legend">
-              {t("profile.info.form.gender.label")}
-            </FormLabel>
-            <RadioGroup
-              row
-              aria-label="gender"
-              name="gender"
-              value={formik.values.gender}
-              onChange={formik.handleChange}
-            >
-              {genders.map((gender) => (
-                <FormControlLabel
-                  key={gender.value}
-                  value={gender.value}
-                  control={<Radio />}
-                  label={t(gender.label)}
-                />
-              ))}
-            </RadioGroup>
-          </FormControl>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="lastName"
+            label={t("profile.info.form.lastName.label")}
+            name="lastName"
+            autoComplete="family-name"
+            disabled={isUpdating}
+            value={formik.values.lastName}
+            onChange={formik.handleChange}
+            error={formik.touched.lastName && Boolean(formik.errors.lastName)}
+            helperText={formik.touched.lastName && formik.errors.lastName}
+          />
           <TextField
             margin="normal"
             required
@@ -133,6 +108,20 @@ const ProfileInformation = () => {
             onChange={formik.handleChange}
             error={formik.touched.email && Boolean(formik.errors.email)}
             helperText={formik.touched.email && formik.errors.email}
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="phone"
+            label={t("profile.info.form.phone.label")}
+            name="phone"
+            autoComplete="tel"
+            disabled={isUpdating}
+            value={formik.values.phone}
+            onChange={formik.handleChange}
+            error={formik.touched.phone && Boolean(formik.errors.phone)}
+            helperText={formik.touched.phone && formik.errors.phone}
           />
         </CardContent>
         <CardActions>

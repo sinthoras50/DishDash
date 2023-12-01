@@ -4,7 +4,6 @@ import activityLogs from "./activityLogs.json";
 import donations from "./donations.json";
 import events from "./events.json";
 import notifications from "./notifications.json";
-import profileInfo from "./profileInfo.json";
 import users from "./users.json";
 
 const now = Date.now();
@@ -20,7 +19,7 @@ let mock = new MockAdapter(axios, { delayResponse: 2000 });
 mock.onPost("/api/message").reply(200);
 
 // Activity
-mock.onGet("/api/activity-logs").reply(200, activityLogs);
+mock.onGet("/api/activity").reply(200, activityLogs);
 
 // Auth
 mock.onPut("/api/password").reply(({ data }) => [200, data]);
@@ -51,16 +50,6 @@ mock.onPost("/api/login").reply((config) => {
 });
 mock.onPost("/api/logout").reply(200);
 mock.onPost("/api/register").reply(201);
-mock.onGet("/api/user-info").reply((config) => {
-  const { key } = config.params;
-  const user = users.find((user) => user.token === key);
-
-  if (key && user) {
-    return [200, user];
-  } else {
-    return [404, { error: "User not found" }];
-  }
-});
 
 // Events
 mock.onDelete("/api/events").reply(({ data }) => [200, data]);
@@ -76,11 +65,20 @@ mock.onPut("/api/events").reply(({ data }) => [200, data]);
 // Notifications
 mock.onGet("/api/notifications").reply(200, notifications);
 
-// Profile
-mock.onGet("/api/profile-info").reply(200, profileInfo);
-mock.onPut("/api/profile-info").reply(({ data }) => [200, data]);
+// User
+mock.onGet("/api/user").reply((config) => {
+  const { key } = config.params;
+  const user = users.find((user) => user.token === key);
 
-// Users
+  if (key && user) {
+    return [200, user];
+  } else {
+    return [404, { error: "User not found" }];
+  }
+});
+mock.onPut("/api/user").reply(({ data }) => [200, data]);
+
+// Donations
 mock.onDelete("/api/donations").reply(({ data }) => [200, data]);
 mock.onGet("/api/donations").reply(200, donations);
 mock

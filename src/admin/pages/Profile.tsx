@@ -11,7 +11,6 @@ import QueryWrapper from "../../core/components/QueryWrapper";
 import { useSnackbar } from "../../core/contexts/SnackbarProvider";
 import AdminAppBar from "../components/AdminAppBar";
 import AdminToolbar from "../components/AdminToolbar";
-import CircleProgressWidget from "../widgets/CircleProgressWidget";
 
 const profileMenuItems = [
   {
@@ -33,10 +32,12 @@ const Profile = () => {
   const snackbar = useSnackbar();
   const { t } = useTranslation();
 
-  const handleLogout = () => {
-    logout().catch(() =>
-      snackbar.error(t("common.errors.unexpected.subTitle"))
-    );
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (err: any) {
+      snackbar.error(t("common.errors.unexpected.subTitle"));
+    }
   };
 
   return (
@@ -61,7 +62,7 @@ const Profile = () => {
               flexDirection: "column",
               alignItems: "center",
               textAlign: "center",
-              mb: 6,
+              mt: 12,
             }}
           >
             <Avatar
@@ -78,13 +79,8 @@ const Profile = () => {
               component="div"
               variant="h4"
             >{`${userInfo?.firstName} ${userInfo?.lastName}`}</Typography>
-            <Typography variant="body2">{userInfo?.role}</Typography>
+            <Typography variant="body2">{userInfo?.email}</Typography>
           </Box>
-          <CircleProgressWidget
-            height={244}
-            title={t("profile.completion.title")}
-            value={75}
-          />
         </Grid>
         <Grid item xs={12} md={8} marginTop={3}>
           <Box sx={{ mb: 4 }}>
