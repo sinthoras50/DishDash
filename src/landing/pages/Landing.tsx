@@ -176,7 +176,7 @@ const Landing = () => {
                   alt={t(`landing.howItWorks.${userRole}.steps.${step}.imgAlt`)}
                 />
                 <CardContent>
-                  <Typography variant="h6">
+                  <Typography variant="h4">
                     {t(`landing.howItWorks.${userRole}.steps.${step}.title`)}
                   </Typography>
                   <Typography variant="body1">
@@ -215,7 +215,7 @@ const Landing = () => {
               {index % 2 === 0 ? (
                 <>
                   <Grid item xs={12} sm={7}>
-                    <Typography variant="h4">{t(item.title)}</Typography>
+                    <Typography variant="h3">{t(item.title)}</Typography>
                     <Typography variant="body1">{t(item.text)}</Typography>
                   </Grid>
                   <Grid item xs={12} sm={5}>
@@ -236,7 +236,7 @@ const Landing = () => {
                     />
                   </Grid>
                   <Grid item xs={12} sm={7}>
-                    <Typography variant="h4">{t(item.title)}</Typography>
+                    <Typography variant="h3">{t(item.title)}</Typography>
                     <Typography variant="body1">{t(item.text)}</Typography>
                   </Grid>
                 </>
@@ -254,7 +254,6 @@ const Landing = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          mb: 10,
         }}
       >
         <Box

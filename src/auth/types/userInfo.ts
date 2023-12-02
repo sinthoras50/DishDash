@@ -1,13 +1,11 @@
 export interface UserInfo {
   id: string;
-  avatar?: string;
-  email: string;
   firstName: string;
-  job: string;
   lastName: string;
-  progress: number;
-  role: string;
+  email: string;
   phone: string;
   password: string;
+  role: string;
   token: string;
+  avatar?: string;
 }

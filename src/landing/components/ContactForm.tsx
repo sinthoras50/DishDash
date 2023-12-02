@@ -23,7 +23,7 @@ const ContactForm = () => {
   const handleSendMessage = async (data: FormData) => {
     try {
       await sendMessage(data);
-      snackbar.success(t("landing.notifications.formSubmitted"));
+      snackbar.success(t("landing.notifications.messageSend"));
       formik.resetForm();
     } catch {
       snackbar.error(t("common.errors.unexpected.subTitle"));

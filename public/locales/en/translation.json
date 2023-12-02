@@ -4,8 +4,9 @@
       "getStarted": "Get started",
       "howItWorks": "How it works",
       "aboutUs": "About us",
-      "community": "Community",
-      "cta": "Sign in"
+      "cta": "Sign in",
+      "settingsAria": "Settings",
+      "tabsAria": "Navigation links"
     },
     "hero": {
       "title": "<Hero title>",
@@ -106,7 +107,99 @@
       }
     },
     "notifications": {
-      "formSubmitted": "Message has been sent successfully."
+      "messageSend": "Message has been sent successfully."
+    }
+  },
+  "auth": {
+    "register": {
+      "form": {
+        "firstName": {
+          "label": "First Name"
+        },
+        "lastName": {
+          "label": "Last Name"
+        },
+        "email": {
+          "label": "E-mail Address"
+        },
+        "phone": {
+          "label": "Phone"
+        },
+        "password": {
+          "label": "Password"
+        },
+        "role": {
+          "label": "Role",
+          "aria": "Role",
+          "options": {
+            "donor": "Donor",
+            "receiver": "Receiver"
+          }
+        },
+        "submit": "Sign up"
+      },
+      "notifications": {
+        "success": "Your account has been created successfully!"
+      },
+      "title": "Sign up",
+      "subTitle": "<Sign up subtitle>",
+      "existingAccount": {
+        "question": "Already have an account?",
+        "action": "Sign In!"
+      }
+    },
+
+    "forgotPassword": {
+      "form": {
+        "action": "Send Confirmation",
+        "back": "Back to login",
+        "email": {
+          "label": "E-mail Address"
+        }
+      },
+      "notifications": {
+        "success": "Email has been sent!"
+      },
+      "subTitle": "To get a validation code, enter the e-mail address associated to your account.",
+      "title": "Get validation code"
+    },
+    "forgotPasswordSubmit": {
+      "form": {
+        "action": "Reset Password",
+        "back": "Back to login",
+        "code": {
+          "label": "Code"
+        },
+        "confirmPassword": {
+          "label": "Confirm Password"
+        },
+        "newPassword": {
+          "label": "New Password"
+        }
+      },
+      "notifications": {
+        "success": "Your password has been changed!"
+      },
+      "subTitle": "Enter the code you received by mail and choose a new password.",
+      "title": "Change your password",
+      "invalidCode": "Invalid validation code"
+    },
+    "login": {
+      "forgotPasswordLink": "Forgot password?",
+      "form": {
+        "email": {
+          "label": "E-mail Address"
+        },
+        "password": {
+          "label": "Password"
+        }
+      },
+      "newAccount": "Don't have an account?",
+      "newAccountLink": "Sign Up!",
+      "submit": "Sign in",
+      "title": "Sign in",
+      "subTitle": "Welcome back! Sign in, to access your account.",
+      "invalidCredentials": "Incorrect e-mail address or password"
     }
   },
   "admin": {
@@ -175,95 +268,6 @@
       "community": {
         "title": "Community"
       }
-    }
-  },
-  "auth": {
-    "forgotPassword": {
-      "form": {
-        "action": "Send Confirmation",
-        "back": "Back to login",
-        "email": {
-          "label": "E-mail Address"
-        }
-      },
-      "notifications": {
-        "success": "Email has been sent!"
-      },
-      "subTitle": "To get a validation code, enter the e-mail address associated to your account.",
-      "title": "Get validation code"
-    },
-    "forgotPasswordSubmit": {
-      "form": {
-        "action": "Reset Password",
-        "back": "Back to login",
-        "code": {
-          "label": "Code"
-        },
-        "confirmPassword": {
-          "label": "Confirm Password"
-        },
-        "newPassword": {
-          "label": "New Password"
-        }
-      },
-      "notifications": {
-        "success": "Your password has been changed!"
-      },
-      "subTitle": "Enter the code you received by mail and choose a new password.",
-      "title": "Change your password",
-      "invalidCode": "Invalid validation code"
-    },
-    "login": {
-      "forgotPasswordLink": "Forgot password?",
-      "form": {
-        "email": {
-          "label": "E-mail Address"
-        },
-        "password": {
-          "label": "Password"
-        }
-      },
-      "newAccount": "Don't have an account?",
-      "newAccountLink": "Sign Up!",
-      "submit": "Sign in",
-      "title": "Sign in",
-      "subTitle": "Welcome back! Sign in, to access your account.",
-      "invalidCredentials": "Incorrect e-mail address or password"
-    },
-    "register": {
-      "back": "Back to login",
-      "form": {
-        "firstName": {
-          "label": "First Name"
-        },
-        "lastName": {
-          "label": "Last Name"
-        },
-        "email": {
-          "label": "E-mail Address"
-        },
-        "phone": {
-          "label": "Phone"
-        },
-        "password": {
-          "label": "Password"
-        },
-        "role": {
-          "label": "Role",
-          "options": {
-            "donor": "Donor",
-            "receiver": "Receiver"
-          }
-        }
-      },
-      "notifications": {
-        "success": "Your account has been created successfully!"
-      },
-      "submit": "Sign up",
-      "title": "Sign up",
-      "subTitle": "Join us by signing up either as a donator or a receiver.",
-      "existingAccount": "Already have an account?",
-      "existingAccountLink": "Sign In!"
     }
   },
   "calendar": {

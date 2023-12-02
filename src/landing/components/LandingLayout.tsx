@@ -1,19 +1,24 @@
-import { Login as LoginIcon } from "@mui/icons-material";
+import {
+  Login as LoginIcon,
+  Settings as SettingsIcon,
+} from "@mui/icons-material";
 import {
   AppBar,
   Box,
   Button,
+  IconButton,
   Paper,
   Tab,
   Tabs,
   Toolbar,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, Link as RouterLink } from "react-router-dom";
 import Footer from "../../core/components/Footer";
 import Logo from "../../core/components/Logo";
+import SettingsDrawer from "../../core/components/SettingsDrawer";
 
 type LandingLayoutProps = {
   children: React.ReactNode;
@@ -32,14 +37,15 @@ const landingNavItems = [
     key: "landing.nav.aboutUs",
     path: "./information",
   },
-  {
-    key: "landing.nav.community",
-    path: "./password",
-  },
 ];
 
 const LandingLayout = ({ children }: LandingLayoutProps) => {
   const { t } = useTranslation();
+  const [settingsOpen, setSettingsOpen] = useState(false);
+
+  const handleSettingsToggle = () => {
+    setSettingsOpen(!settingsOpen);
+  };
 
   return (
     <Paper square>
@@ -70,7 +76,7 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
               </Typography>
             </Box>
 
-            <Tabs aria-label="profile nav tabs" value={false}>
+            <Tabs aria-label={t("landing.nav.tabsAria")} value={false}>
               {landingNavItems.map((item) => (
                 <Tab
                   key={item.key}
@@ -83,17 +89,34 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
               ))}
             </Tabs>
 
-            <Button
-              component={RouterLink}
-              to={`/${process.env.PUBLIC_URL}/login`}
-              variant="contained"
-              startIcon={<LoginIcon />}
-            >
-              {t("landing.nav.cta")}
-            </Button>
+            <Box>
+              <Button
+                component={RouterLink}
+                to={`/${process.env.PUBLIC_URL}/login`}
+                variant="contained"
+                startIcon={<LoginIcon />}
+                sx={{ mr: 1 }}
+              >
+                {t("landing.nav.cta")}
+              </Button>
+
+              <IconButton
+                color="default"
+                aria-label={t("landing.nav.settingsAria")}
+                component="span"
+                onClick={handleSettingsToggle}
+              >
+                <SettingsIcon />
+              </IconButton>
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>
+
+      <SettingsDrawer
+        onDrawerToggle={handleSettingsToggle}
+        open={settingsOpen}
+      />
 
       <Box component="main" sx={{ px: "5%" }}>
         {children}
