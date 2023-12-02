@@ -209,7 +209,7 @@ const Landing = () => {
           {t("landing.aboutUs.title")}
         </Typography>
 
-        <Grid container spacing={3}>
+        <Grid container rowSpacing={10} columnSpacing={3}>
           {aboutUsData.map((item, index) => (
             <React.Fragment key={index}>
               {index % 2 === 0 ? (

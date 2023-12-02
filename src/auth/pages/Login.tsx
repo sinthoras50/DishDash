@@ -23,9 +23,20 @@ const Login = () => {
   const { t } = useTranslation();
   const [loginStatus, setLoginStatus] = useState("");
 
-  const handleLogin = async (email: string, password: string) => {
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .email(t("common.validations.email"))
+      .required(t("common.validations.required")),
+    password: Yup.string()
+      .min(8, t("common.validations.min", { size: 8 }))
+      .required(t("common.validations.required")),
+  });
+
+  type FormData = Yup.InferType<typeof validationSchema>;
+
+  const handleLogin = async (data: FormData) => {
     try {
-      await login(email, password);
+      await login(data.email, data.password);
       navigate(`/${process.env.PUBLIC_URL}/admin`, { replace: true });
     } catch (err: any) {
       if (err.response && err.response.status === 401) {
@@ -41,15 +52,8 @@ const Login = () => {
       email: "laura@core.com",
       password: "Password123",
     },
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .email(t("common.validations.email"))
-        .required(t("common.validations.required")),
-      password: Yup.string()
-        .min(8, t("common.validations.min", { size: 8 }))
-        .required(t("common.validations.required")),
-    }),
-    onSubmit: (values) => handleLogin(values.email, values.password),
+    validationSchema,
+    onSubmit: handleLogin,
   });
 
   return (
@@ -102,6 +106,7 @@ const Login = () => {
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
           />
+
           <Box sx={{ textAlign: "right" }}>
             <Link
               component={RouterLink}
@@ -109,9 +114,10 @@ const Login = () => {
               variant="body1"
               sx={{ fontWeight: "medium" }}
             >
-              {t("auth.login.forgotPasswordLink")}
+              {t("auth.login.forgotPassword")}
             </Link>
           </Box>
+
           <LoadingButton
             type="submit"
             fullWidth
@@ -119,7 +125,7 @@ const Login = () => {
             variant="contained"
             sx={{ mt: 3 }}
           >
-            {t("auth.login.submit")}
+            {t("auth.login.form.submit")}
           </LoadingButton>
         </Box>
 
@@ -127,15 +133,15 @@ const Login = () => {
           component="h1"
           variant="body1"
           textAlign="center"
-          sx={{ mt: 3, mb: 2 }}
+          sx={{ mt: 3, mb: 15 }}
         >
-          {t("auth.login.newAccount")}
+          {t("auth.login.newAccount.question")}
           <Link
             component={RouterLink}
             to={`/${process.env.PUBLIC_URL}/register`}
             sx={{ ml: 1, fontWeight: "medium" }}
           >
-            {t("auth.login.newAccountLink")}
+            {t("auth.login.newAccount.action")}
           </Link>
         </Typography>
       </BoxedLayout>

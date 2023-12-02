@@ -40,7 +40,12 @@ const ContactForm = () => {
   });
 
   return (
-    <Box component="form" noValidate onSubmit={formik.handleSubmit}>
+    <Box
+      component="form"
+      noValidate
+      onSubmit={formik.handleSubmit}
+      sx={{ textAlign: "right" }}
+    >
       <TextField
         margin="normal"
         variant="filled"

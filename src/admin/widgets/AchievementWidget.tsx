@@ -26,7 +26,7 @@ const AchievementWidget = () => {
         </Typography>
         <Typography marginBottom={3} variant="body2">
           {t("admin.home.achievement.description", {
-            progress: userInfo?.progress,
+            progress: "75",
           })}
         </Typography>
         <Button

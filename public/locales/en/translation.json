@@ -4,6 +4,7 @@
       "getStarted": "Get started",
       "howItWorks": "How it works",
       "aboutUs": "About us",
+      "contact": "Contact",
       "cta": "Sign in",
       "settingsAria": "Settings",
       "tabsAria": "Navigation links"
@@ -112,6 +113,8 @@
   },
   "auth": {
     "register": {
+      "title": "Sign up",
+      "subTitle": "<Sign up subtitle>",
       "form": {
         "firstName": {
           "label": "First Name"
@@ -138,17 +141,33 @@
         },
         "submit": "Sign up"
       },
-      "notifications": {
-        "success": "Your account has been created successfully!"
-      },
-      "title": "Sign up",
-      "subTitle": "<Sign up subtitle>",
       "existingAccount": {
         "question": "Already have an account?",
         "action": "Sign In!"
+      },
+      "notifications": {
+        "success": "Your account has been created successfully!"
       }
     },
-
+    "login": {
+      "title": "Sign in",
+      "subTitle": "<Sign in subtitle>",
+      "form": {
+        "email": {
+          "label": "E-mail Address"
+        },
+        "password": {
+          "label": "Password"
+        },
+        "submit": "Sign in"
+      },
+      "forgotPassword": "Forgot password?",
+      "newAccount": {
+        "question": "Don't have an account?",
+        "action": "Sign up"
+      },
+      "invalidCredentials": "Incorrect e-mail address or password"
+    },
     "forgotPassword": {
       "form": {
         "action": "Send Confirmation",
@@ -183,23 +202,6 @@
       "subTitle": "Enter the code you received by mail and choose a new password.",
       "title": "Change your password",
       "invalidCode": "Invalid validation code"
-    },
-    "login": {
-      "forgotPasswordLink": "Forgot password?",
-      "form": {
-        "email": {
-          "label": "E-mail Address"
-        },
-        "password": {
-          "label": "Password"
-        }
-      },
-      "newAccount": "Don't have an account?",
-      "newAccountLink": "Sign Up!",
-      "submit": "Sign in",
-      "title": "Sign in",
-      "subTitle": "Welcome back! Sign in, to access your account.",
-      "invalidCredentials": "Incorrect e-mail address or password"
     }
   },
   "admin": {

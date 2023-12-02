@@ -35,7 +35,11 @@ const landingNavItems = [
   },
   {
     key: "landing.nav.aboutUs",
-    path: "./information",
+    path: "./aboutUs",
+  },
+  {
+    key: "landing.nav.contact",
+    path: "./contact",
   },
 ];
 
