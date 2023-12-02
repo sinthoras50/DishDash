@@ -21,8 +21,12 @@ type LandingLayoutProps = {
 
 const landingNavItems = [
   {
+    key: "landing.nav.getStarted",
+    path: "./register",
+  },
+  {
     key: "landing.nav.howItWorks",
-    path: "/#howItWorks",
+    path: "./howItWorks",
   },
   {
     key: "landing.nav.aboutUs",
@@ -39,7 +43,7 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
 
   return (
     <Paper square>
-      <AppBar color="transparent" position="relative">
+      <AppBar color="transparent" position="relative" sx={{ mb: 5 }}>
         <Toolbar>
           <Box
             sx={{
@@ -91,7 +95,9 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
         </Toolbar>
       </AppBar>
 
-      <Box component="main">{children}</Box>
+      <Box component="main" sx={{ px: "5%" }}>
+        {children}
+      </Box>
 
       <Footer />
     </Paper>

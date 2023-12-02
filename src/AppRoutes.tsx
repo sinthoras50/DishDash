@@ -29,9 +29,6 @@ const CalendarApp = lazy(() => import("./calendar/pages/CalendarApp"));
 // Core
 const Forbidden = lazy(() => import("./core/pages/Forbidden"));
 const NotFound = lazy(() => import("./core/pages/NotFound"));
-const UnderConstructions = lazy(
-  () => import("./core/pages/UnderConstructions")
-);
 
 // Landing
 const Landing = lazy(() => import("./landing/pages/Landing"));

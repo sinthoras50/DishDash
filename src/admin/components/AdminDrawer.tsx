@@ -1,5 +1,4 @@
 import {
-  BarChart as BarChartIcon,
   HelpCenter as HelpCenterIcon,
   Home as HomeIcon,
   Person as PersonIcon,
@@ -33,11 +32,6 @@ export const menuItems = [
     icon: HomeIcon,
     key: "admin.drawer.menu.home",
     path: "/admin",
-  },
-  {
-    icon: BarChartIcon,
-    key: "admin.drawer.menu.dashboard",
-    path: "/admin/dashboard",
   },
   {
     icon: VolunteerActivismIcon,
