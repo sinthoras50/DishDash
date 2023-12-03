@@ -1,13 +1,6 @@
 import { LoadingButton } from "@mui/lab";
-import {
-  Box,
-  Button,
-  FormHelperText,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import { useFormik } from "formik";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
@@ -20,7 +13,6 @@ const ForgotPassword = () => {
   const navigate = useNavigate();
   const snackbar = useSnackbar();
   const { t } = useTranslation();
-  const [validationStatus, setValidationStatus] = useState("");
   const { forgotPassword, isLoading } = useForgotPassword();
 
   const validationSchema = Yup.object({
@@ -38,11 +30,10 @@ const ForgotPassword = () => {
       navigate(`/${process.env.PUBLIC_URL}/forgot-password-submit`);
     } catch (err: any) {
       if (err.response && err.response.status === 400) {
-        setValidationStatus(t("common.validations.email"));
+        formik.setFieldError("email", t("common.validations.email"));
         return;
       }
       snackbar.error(t("common.errors.unexpected.subTitle"));
-      setValidationStatus("");
     }
   };
 
@@ -73,16 +64,6 @@ const ForgotPassword = () => {
         >
           {t("auth.forgotPassword.subTitle")}
         </Typography>
-
-        {validationStatus && (
-          <FormHelperText
-            error={Boolean(validationStatus)}
-            component="h1"
-            sx={{ mb: 2 }}
-          >
-            <Typography variant="body1">{validationStatus}</Typography>
-          </FormHelperText>
-        )}
 
         <Box component="form" noValidate onSubmit={formik.handleSubmit}>
           <TextField

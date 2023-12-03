@@ -170,7 +170,7 @@
     },
     "forgotPassword": {
       "title": "Get validation code",
-      "subTitle": "To get a validation code, enter the e-mail address associated to your account.",
+      "subTitle": "<Forgot password subtitle>.",
       "form": {
         "email": {
           "label": "E-mail Address"
@@ -183,24 +183,24 @@
       "backToLogin": "Back to login"
     },
     "forgotPasswordSubmit": {
+      "title": "Change your password",
+      "subTitle": "<Change password subtitle>",
       "form": {
-        "action": "Reset Password",
-        "back": "Back to login",
         "code": {
           "label": "Code"
+        },
+        "newPassword": {
+          "label": "New Password"
         },
         "confirmPassword": {
           "label": "Confirm Password"
         },
-        "newPassword": {
-          "label": "New Password"
-        }
+        "submit": "Change password"
       },
       "notifications": {
-        "success": "Your password has been changed!"
+        "success": "Your password has been changed successfully!"
       },
-      "subTitle": "Enter the code you received by mail and choose a new password.",
-      "title": "Change your password",
+      "backToLogin": "Back to login",
       "invalidCode": "Invalid validation code"
     }
   },

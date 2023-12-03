@@ -1,13 +1,6 @@
 import { LoadingButton } from "@mui/lab";
-import {
-  Box,
-  Button,
-  FormHelperText,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import { useFormik } from "formik";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
@@ -20,8 +13,40 @@ const ForgotPasswordSubmit = () => {
   const navigate = useNavigate();
   const snackbar = useSnackbar();
   const { t } = useTranslation();
-  const [codeStatus, setCodeStatus] = useState("");
   const { forgotPasswordSubmit, isLoading } = useForgotPasswordSubmit();
+
+  const validationSchema = Yup.object({
+    code: Yup.string().required(t("common.validations.required")),
+    newPassword: Yup.string()
+      .min(8, t("common.validations.min", { size: 8 }))
+      .required(t("common.validations.required")),
+    confirmPassword: Yup.string()
+      .oneOf(
+        [Yup.ref("newPassword"), null],
+        t("common.validations.passwordMatch")
+      )
+      .required(t("common.validations.required")),
+  });
+
+  type FormData = Yup.InferType<typeof validationSchema>;
+
+  const handleSubmitPassword = async (data: FormData) => {
+    try {
+      await forgotPasswordSubmit(data);
+      snackbar.success(t("auth.forgotPasswordSubmit.notifications.success"));
+      navigate(`/${process.env.PUBLIC_URL}/login`);
+    } catch (err: any) {
+      if (err.response && err.response.status === 400) {
+        formik.setFieldError(
+          "code",
+          t("auth.forgotPasswordSubmit.invalidCode")
+        );
+
+        return;
+      }
+      snackbar.error(t("common.errors.unexpected.subTitle"));
+    }
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -29,35 +54,9 @@ const ForgotPasswordSubmit = () => {
       newPassword: "",
       confirmPassword: "",
     },
-    validationSchema: Yup.object({
-      code: Yup.string().required(t("common.validations.required")),
-      newPassword: Yup.string()
-        .min(8, t("common.validations.min", { size: 8 }))
-        .required(t("common.validations.required")),
-      confirmPassword: Yup.string()
-        .oneOf(
-          [Yup.ref("newPassword"), null],
-          t("common.validations.passwordMatch")
-        )
-        .required(t("common.validations.required")),
-    }),
-    onSubmit: ({ code, newPassword }) =>
-      handleSubmitPassword(code, newPassword),
+    validationSchema,
+    onSubmit: handleSubmitPassword,
   });
-
-  const handleSubmitPassword = async (code: string, newPassword: string) => {
-    try {
-      await forgotPasswordSubmit({ code, newPassword });
-      snackbar.success(t("auth.forgotPasswordSubmit.notifications.success"));
-      navigate(`/${process.env.PUBLIC_URL}/login`);
-    } catch (err: any) {
-      if (err.response && err.response.status === 400) {
-        setCodeStatus(t("auth.forgotPasswordSubmit.invalidCode"));
-        return;
-      }
-      snackbar.error(t("common.errors.unexpected.subTitle"));
-    }
-  };
 
   return (
     <LandingLayout>
@@ -73,22 +72,13 @@ const ForgotPasswordSubmit = () => {
         <Typography
           component="h1"
           variant="body1"
-          sx={{ mb: 2 }}
+          sx={{ mb: 3 }}
           textAlign="center"
         >
           {t("auth.forgotPasswordSubmit.subTitle")}
         </Typography>
 
-        <FormHelperText error={Boolean(codeStatus)} component="h1">
-          <Typography variant="body1">{codeStatus}</Typography>
-        </FormHelperText>
-
-        <Box
-          component="form"
-          marginTop={1}
-          noValidate
-          onSubmit={formik.handleSubmit}
-        >
+        <Box component="form" noValidate onSubmit={formik.handleSubmit}>
           <TextField
             margin="normal"
             required
@@ -145,9 +135,9 @@ const ForgotPasswordSubmit = () => {
             color="primary"
             disabled={isLoading}
             loading={isLoading}
-            sx={{ mt: 2 }}
+            sx={{ mt: 3 }}
           >
-            {t("auth.forgotPasswordSubmit.form.action")}
+            {t("auth.forgotPasswordSubmit.form.submit")}
           </LoadingButton>
           <Button
             variant="outlined"
@@ -155,9 +145,9 @@ const ForgotPasswordSubmit = () => {
             to={`/${process.env.PUBLIC_URL}/login`}
             color="primary"
             fullWidth
-            sx={{ mt: 2 }}
+            sx={{ mt: 3 }}
           >
-            {t("auth.forgotPasswordSubmit.form.back")}
+            {t("auth.forgotPasswordSubmit.backToLogin")}
           </Button>
         </Box>
       </BoxedLayout>
