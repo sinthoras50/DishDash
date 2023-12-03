@@ -12,6 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "../../auth/contexts/AuthProvider";
 import { drawerWidth } from "../config/layout";
 import { useSettings } from "../contexts/SettingsProvider";
 
@@ -30,6 +31,7 @@ const SettingsDrawer = ({ onDrawerToggle, open }: SettingsDrawerProps) => {
     mode,
   } = useSettings();
   const { i18n, t } = useTranslation();
+  const { userInfo } = useAuth();
 
   const handleDirectionChange = (_: any, direction: "ltr" | "rtl") => {
     changeDirection(direction);
@@ -83,7 +85,7 @@ const SettingsDrawer = ({ onDrawerToggle, open }: SettingsDrawerProps) => {
         </Typography>
         <FormControl>
           <RadioGroup
-            aria-label="language"
+            aria-label={t("settings.drawer.language.aria")}
             name="language-radio-group"
             onChange={handleLanguageChange}
             value={i18n.language}
@@ -134,28 +136,33 @@ const SettingsDrawer = ({ onDrawerToggle, open }: SettingsDrawerProps) => {
             {t("settings.drawer.direction.options.rtl")}
           </ToggleButton>
         </ToggleButtonGroup>
-        <Typography
-          gutterBottom
-          id="settings-sidebar"
-          marginTop={3}
-          variant="h6"
-        >
-          {t("settings.drawer.sidebar.label")}
-        </Typography>
-        <ToggleButtonGroup
-          color="primary"
-          value={collapsed}
-          exclusive
-          fullWidth
-          onChange={handleSidebarChange}
-        >
-          <ToggleButton value={true}>
-            {t("settings.drawer.sidebar.options.collapsed")}
-          </ToggleButton>
-          <ToggleButton value={false}>
-            {t("settings.drawer.sidebar.options.full")}
-          </ToggleButton>
-        </ToggleButtonGroup>
+
+        {userInfo && (
+          <>
+            <Typography
+              gutterBottom
+              id="settings-sidebar"
+              marginTop={3}
+              variant="h6"
+            >
+              {t("settings.drawer.sidebar.label")}
+            </Typography>
+            <ToggleButtonGroup
+              color="primary"
+              value={collapsed}
+              exclusive
+              fullWidth
+              onChange={handleSidebarChange}
+            >
+              <ToggleButton value={true}>
+                {t("settings.drawer.sidebar.options.collapsed")}
+              </ToggleButton>
+              <ToggleButton value={false}>
+                {t("settings.drawer.sidebar.options.full")}
+              </ToggleButton>
+            </ToggleButtonGroup>
+          </>
+        )}
       </Box>
     </Drawer>
   );

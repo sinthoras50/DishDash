@@ -23,21 +23,17 @@ const ForgotPassword = () => {
   const [validationStatus, setValidationStatus] = useState("");
   const { forgotPassword, isLoading } = useForgotPassword();
 
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-    },
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .email(t("common.validations.email"))
-        .required(t("common.validations.required")),
-    }),
-    onSubmit: ({ email }) => handleForgotPassword(email),
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .email(t("common.validations.email"))
+      .required(t("common.validations.required")),
   });
 
-  const handleForgotPassword = async (email: string) => {
+  type FormData = Yup.InferType<typeof validationSchema>;
+
+  const handleForgotPassword = async (data: FormData) => {
     try {
-      await forgotPassword({ email });
+      await forgotPassword(data);
       snackbar.success(t("auth.forgotPassword.notifications.success"));
       navigate(`/${process.env.PUBLIC_URL}/forgot-password-submit`);
     } catch (err: any) {
@@ -46,8 +42,17 @@ const ForgotPassword = () => {
         return;
       }
       snackbar.error(t("common.errors.unexpected.subTitle"));
+      setValidationStatus("");
     }
   };
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+    },
+    validationSchema,
+    onSubmit: handleForgotPassword,
+  });
 
   return (
     <LandingLayout>
@@ -55,7 +60,7 @@ const ForgotPassword = () => {
         <Typography
           component="h2"
           variant="h2"
-          sx={{ mb: 2 }}
+          sx={{ mb: 1 }}
           textAlign="center"
         >
           {t("auth.forgotPassword.title")}
@@ -63,22 +68,23 @@ const ForgotPassword = () => {
         <Typography
           component="h1"
           variant="body1"
-          sx={{ mb: 2 }}
+          sx={{ mb: 3 }}
           textAlign="center"
         >
           {t("auth.forgotPassword.subTitle")}
         </Typography>
 
-        <FormHelperText error={Boolean(validationStatus)} component="h1">
-          <Typography variant="body1">{validationStatus}</Typography>
-        </FormHelperText>
+        {validationStatus && (
+          <FormHelperText
+            error={Boolean(validationStatus)}
+            component="h1"
+            sx={{ mb: 2 }}
+          >
+            <Typography variant="body1">{validationStatus}</Typography>
+          </FormHelperText>
+        )}
 
-        <Box
-          component="form"
-          marginTop={1}
-          noValidate
-          onSubmit={formik.handleSubmit}
-        >
+        <Box component="form" noValidate onSubmit={formik.handleSubmit}>
           <TextField
             margin="normal"
             required
@@ -101,9 +107,9 @@ const ForgotPassword = () => {
             color="primary"
             disabled={isLoading}
             loading={isLoading}
-            sx={{ mt: 2 }}
+            sx={{ mt: 3 }}
           >
-            {t("auth.forgotPassword.form.action")}
+            {t("auth.forgotPassword.form.submit")}
           </LoadingButton>
           <Button
             variant="outlined"
@@ -111,9 +117,9 @@ const ForgotPassword = () => {
             to={`/${process.env.PUBLIC_URL}/login`}
             color="primary"
             fullWidth
-            sx={{ mt: 2 }}
+            sx={{ mt: 3, mb: 18 }}
           >
-            {t("auth.forgotPassword.form.back")}
+            {t("auth.forgotPassword.backToLogin")}
           </Button>
         </Box>
       </BoxedLayout>

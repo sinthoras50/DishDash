@@ -215,7 +215,9 @@ const Landing = () => {
               {index % 2 === 0 ? (
                 <>
                   <Grid item xs={12} sm={7}>
-                    <Typography variant="h3">{t(item.title)}</Typography>
+                    <Typography variant="h3" sx={{ mb: 1 }}>
+                      {t(item.title)}
+                    </Typography>
                     <Typography variant="body1">{t(item.text)}</Typography>
                   </Grid>
                   <Grid item xs={12} sm={5}>
@@ -236,7 +238,9 @@ const Landing = () => {
                     />
                   </Grid>
                   <Grid item xs={12} sm={7}>
-                    <Typography variant="h3">{t(item.title)}</Typography>
+                    <Typography variant="h3" sx={{ mb: 1 }}>
+                      {t(item.title)}
+                    </Typography>
                     <Typography variant="body1">{t(item.text)}</Typography>
                   </Grid>
                 </>

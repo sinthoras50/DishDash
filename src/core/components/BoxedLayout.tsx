@@ -1,5 +1,5 @@
 import { Box, Container, GlobalStyles, useTheme } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 
 type BoxedLayoutProps = {
   children: React.ReactNode;
@@ -7,11 +7,6 @@ type BoxedLayoutProps = {
 
 const BoxedLayout = ({ children }: BoxedLayoutProps) => {
   const theme = useTheme();
-  const [settingsOpen, setSettingsOpen] = useState(false);
-
-  const handleSettingsToggle = () => {
-    setSettingsOpen(!settingsOpen);
-  };
 
   return (
     <React.Fragment>

@@ -108,7 +108,7 @@
       }
     },
     "notifications": {
-      "messageSend": "Message has been sent successfully."
+      "messageSend": "Message has been sent successfully!"
     }
   },
   "auth": {
@@ -169,18 +169,18 @@
       "invalidCredentials": "Incorrect e-mail address or password"
     },
     "forgotPassword": {
+      "title": "Get validation code",
+      "subTitle": "To get a validation code, enter the e-mail address associated to your account.",
       "form": {
-        "action": "Send Confirmation",
-        "back": "Back to login",
         "email": {
           "label": "E-mail Address"
-        }
+        },
+        "submit": "Send Confirmation"
       },
       "notifications": {
-        "success": "Email has been sent!"
+        "success": "Email has been sent successfully!"
       },
-      "subTitle": "To get a validation code, enter the e-mail address associated to your account.",
-      "title": "Get validation code"
+      "backToLogin": "Back to login"
     },
     "forgotPasswordSubmit": {
       "form": {
@@ -515,6 +515,7 @@
       },
       "language": {
         "label": "Language",
+        "aria": "Language",
         "options": {
           "en": "English",
           "fr": "Français"
