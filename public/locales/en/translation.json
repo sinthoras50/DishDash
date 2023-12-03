@@ -204,6 +204,30 @@
       "invalidCode": "Invalid validation code"
     }
   },
+  "donor": {
+    "home": {
+      "welcome": {
+        "subTitle": "Welcome back, feeling generous?",
+        "title": "Hi {{name}},",
+        "cta": "Let's donate"
+      },
+      "toolbar": {
+        "title": "Home"
+      },
+      "activeDonations": {
+        "title": "Active donations",
+        "action": "View"
+      },
+      "upcomingEvents": {
+        "title": "Upcoming Events",
+        "action": "Learn more"
+      },
+      "community": {
+        "title": "Community",
+        "action": "Read more"
+      }
+    }
+  },
   "admin": {
     "drawer": {
       "menu": {

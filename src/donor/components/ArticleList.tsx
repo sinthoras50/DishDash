@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardActions,
@@ -13,12 +14,26 @@ interface ArticleCardProps {
   text: string;
   imageUrl: string;
   imageAlt: string;
+  actionText: string;
 }
 
-const ArticleCard = ({ title, text, imageUrl, imageAlt }: ArticleCardProps) => {
+const ArticleCard = ({
+  title,
+  text,
+  imageUrl,
+  imageAlt,
+  actionText,
+}: ArticleCardProps) => {
   return (
-    <Card sx={{ display: "flex", flexDirection: "column", height: "200px" }}>
-      <Grid container spacing={2}>
+    <Card
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        height: "200px",
+        overflow: "hidden",
+      }}
+    >
+      <Grid container spacing={3}>
         <Grid item md={4}>
           <img
             style={{
@@ -32,19 +47,31 @@ const ArticleCard = ({ title, text, imageUrl, imageAlt }: ArticleCardProps) => {
           />
         </Grid>
         <Grid item xs>
-          <CardContent style={{ display: "flex", flexDirection: "column" }}>
-            <Typography variant="h5" component="div">
+          <CardContent
+            sx={{
+              flexGrow: 1,
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
+            <Typography
+              variant="h5"
+              component="div"
+              sx={{
+                mb: 1,
+              }}
+            >
               {title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {text}
             </Typography>
-            <CardActions style={{ marginTop: "auto" }}>
-              <Button size="small" color="primary" sx={{ padding: 0 }}>
-                Learn More
-              </Button>
-            </CardActions>
           </CardContent>
+          <CardActions sx={{ mt: "auto" }}>
+            <Button size="small" variant="outlined" sx={{ py: 0, mt: "auto" }}>
+              {actionText}
+            </Button>
+          </CardActions>
         </Grid>
       </Grid>
     </Card>
@@ -72,7 +99,7 @@ const ArticleList = ({ articles, itemsPerPage }: ArticleListProps) => {
 
   return (
     <>
-      <Grid container spacing={2}>
+      <Grid container gap={3}>
         {currentArticles.map((article, index) => (
           <Grid item xs={12} key={index}>
             <ArticleCard
@@ -80,27 +107,28 @@ const ArticleList = ({ articles, itemsPerPage }: ArticleListProps) => {
               text={article.text}
               imageUrl={article.imageUrl}
               imageAlt={article.imageAlt}
+              actionText={article.actionText}
             />
           </Grid>
         ))}
       </Grid>
-      <div
-        style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
-      >
+      <Box sx={{ display: "flex", justifyContent: "right", marginTop: 3 }}>
         {Array.from(
           { length: Math.ceil(articles.length / itemsPerPage) },
           (_, index) => (
             <Button
               key={index}
+              size="small"
               onClick={() => paginate(index + 1)}
-              variant="outlined"
+              variant={currentPage === index + 1 ? "contained" : "outlined"}
               color="primary"
+              sx={{ py: 0, ml: 1 }}
             >
               {index + 1}
             </Button>
           )
         )}
-      </div>
+      </Box>
     </>
   );
 };

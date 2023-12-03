@@ -2,7 +2,7 @@ import { keyframes } from "@emotion/react";
 import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
 
-const rotateAnimation = keyframes`
+const rotationAnimation = keyframes`
   0% {
     transform: rotate(0deg);
   }
@@ -43,7 +43,7 @@ const RotatingButton = ({ buttonText }: RotatingButtonProps) => {
       variant="contained"
       sx={{
         mb: 7,
-        animation: rotate ? `${rotateAnimation} 0.5s ease-in-out` : "none",
+        animation: rotate ? `${rotationAnimation} 0.5s ease-in-out` : "none",
       }}
     >
       {buttonText}
