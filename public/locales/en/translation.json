@@ -298,58 +298,25 @@
       }
     },
     "donationManagement": {
+      "title": "Donations",
       "confirmations": {
         "delete": "Are you sure you want to delete this donation?"
-      },
-      "form": {
-        "foodItems": {
-          "label": "Food items"
-        },
-        "description": {
-          "label": "Description"
-        },
-        "weight": {
-          "label": "Weight"
-        },
-        "location": {
-          "label": "Location"
-        },
-        "instructions": {
-          "label": "Instructions"
-        },
-        "from": {
-          "label": "Available from"
-        },
-        "until": {
-          "label": "Available until"
-        }
-      },
-      "modal": {
-        "add": {
-          "action": "Add",
-          "title": "Add Donation"
-        },
-        "edit": {
-          "action": "Edit",
-          "title": "Edit Donation"
-        }
-      },
-      "notifications": {
-        "addSuccess": "{{donation}} has been added!",
-        "deleteSuccess": "Donation(s) have been deleted!",
-        "updateSuccess": "{{donation}} has been updated!"
       },
       "table": {
         "headers": {
           "actions": "Actions",
           "donation": "Donation",
-          "date": "Date",
+          "createdAt": "Date",
           "status": "Status"
         }
       },
-      "toolbar": {
-        "title": "Donations"
-      }
+      "notifications": {
+        "deleteSuccess": "Donation(s) have been deleted!"
+      },
+      "active": "Active",
+      "fulfilled": "Fulfilled",
+      "noDonations": "No donations yet.",
+      "addDonationAria": "Add donation"
     }
   },
   "admin": {
@@ -564,18 +531,22 @@
   "faq": {
     "noAnswerLink": "Can't find it here? Check out our Help Center.",
     "questions": {
-      "title1": "What is React Admin?",
-      "answer1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
-      "title2": "How does it work?",
-      "answer2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
-      "title3": "What are the features available?",
-      "answer3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
-      "title4": "Who is maintaining the project?",
-      "answer4": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
-      "title5": "What is the license of the project?",
-      "answer5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
-      "title6": "How can I contribute to the project?",
-      "answer6": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget."
+      "title1": "What is the purpose of this application?",
+      "answer1": "This app is designed to reduce food waste and hunger by connecting food donors with food recipients. Food donors are restaurants, groceries, stores, or individuals who have excess food that they want to donate instead of throwing away. Food recipients are charities, organizations, or individuals who need food and can pick it up from the donors.",
+      "title2": "How does the application work?",
+      "answer2": "This app works as a food donation marketplace where food donors can post their available food items and food recipients can reserve them for pick up. Food donors can create a profile, add their location, upload photos and descriptions of their food items, and specify the pick up time and method. Food recipients can browse the food items in their area, filter them by category, distance, and availability, and reserve the ones they want.",
+      "title3": "Who can use this app?",
+      "answer3": "This app is open to anyone who wants to donate or receive food. However, food recipients need to register and verify their identity and eligibility before they can reserve food items. Food recipients can be charities, organizations, or individuals who are facing food insecurity or hardship. Food donors can be businesses or individuals who have surplus food that is still edible and safe to consume.",
+      "title4": "What types of food can be donated?",
+      "answer4": "You can donate any type of food that is still safe to eat and meets the food safety standards in your area. This includes cooked or uncooked food, packaged or unpackaged food, fresh or frozen food, and leftovers or surplus food. However, please note that the app does not accept food that has passed its expiration date, has been opened or partially consumed, or has signs of spoilage or contamination. You are responsible for ensuring that the food you donate is of good quality and condition.",
+      "title5": "How do I donate food?",
+      "answer5": "If you have excess food that you want to donate, you can register as a food donor on the website and create a food listing. When listing the food, you will need to provide a location and timeframe for the food to be picked up. Charities or individuals can then reserve these food items for pick up and will be given a QR code which they will have to present for scanning when picking up the food - this will confirm the completion of the donation.",
+      "title6": "How do I reserve food?",
+      "answer6": "To reserve a food item, you have to register as a food recipient on the app and browse the available food listings in your area. You can filter the food listings by category, distance, and availability to find the food that suits your needs and preferences. When you find a food listing that you want, you can reserve it for pick up by clicking the reserve button. You will receive a QR code that you will need to show to the food donor when you arrive to pick up the food. This will confirm the receipt of the food.",
+      "title7": "What happens if I can’t pick up my reserved food?",
+      "answer7": "If you are unable to pick up your reserved food for any reason, please cancel your reservation as soon as possible through the app. This will free up the food for other food recipients who may need it",
+      "title8": "Is there a cost to use this application?",
+      "answer8": "No, there is no cost to use this application. It is completely free for both donors and recipients."
     },
     "title": "Frequently Asked Questions"
   },

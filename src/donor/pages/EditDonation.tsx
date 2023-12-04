@@ -35,7 +35,7 @@ import AdminAppBar from "../../admin/components/AdminAppBar";
 import AdminToolbar from "../../admin/components/AdminToolbar";
 import { useSnackbar } from "../../core/contexts/SnackbarProvider";
 import { useCreateDonation } from "../hooks/useCreateDonation";
-import { useDonation } from "../hooks/useDonation";
+import { useDonations } from "../hooks/useDonations";
 import { useUpdateDonation } from "../hooks/useUpdateDonation";
 import { Donation } from "../types/Donation";
 import { DonationItem } from "../types/DonationItem";
@@ -74,19 +74,14 @@ const EditDonation = () => {
   const theme = useTheme();
   const snackbar = useSnackbar();
   const navigate = useNavigate();
-  const { data } = useDonation(id);
-
-  console.log(data);
+  const { data } = useDonations();
+  const donation = data?.find((donation) => donation.id === id);
 
   useEffect(() => {
-    if (id) {
-      if (!data) {
-        navigate(`/${process.env.PUBLIC_URL}/404`);
-      } else {
-        setItems(data.items);
-      }
+    if (donation) {
+      setItems(donation.items);
     }
-  }, [id, data, navigate]);
+  }, [donation]);
 
   const processing = isCreating || isAdding || isUpdating;
 
@@ -144,25 +139,26 @@ const EditDonation = () => {
 
   type InfoFormData = Yup.InferType<typeof infoValidationSchema>;
 
-  const handleSubmit = (data: InfoFormData) => {
+  const handleSubmit = (infoData: InfoFormData) => {
     if (items.length === 0) {
       setItemsStatus(t("donor.editDonation.noItems"));
       return;
     }
-    if (data) {
-      handleUpdateDonation(data);
+    if (donation) {
+      handleUpdateDonation(infoData);
       return;
     }
-    handleAddDonation(data);
+    handleAddDonation(infoData);
   };
 
-  const handleAddDonation = async (data: InfoFormData) => {
+  const handleAddDonation = async (infoData: InfoFormData) => {
+    console.log("add called");
     try {
-      const donationData = { ...data, items };
+      const donationData = { ...infoData, items };
       await createDonation(donationData as Donation);
       snackbar.success(
         t("donor.createDonation.notifications.createSuccess", {
-          donation: data.title,
+          donation: infoData.title,
         })
       );
       navigate(`/${process.env.PUBLIC_URL}/admin/donations`);
@@ -171,13 +167,13 @@ const EditDonation = () => {
     }
   };
 
-  const handleUpdateDonation = async (data: InfoFormData) => {
+  const handleUpdateDonation = async (infoData: InfoFormData) => {
     try {
-      const donationData = { ...data, items };
-      await updateDonation(donationData as Donation);
+      const donationData = { ...infoData, items };
+      await updateDonation({ ...donationData, id });
       snackbar.success(
         t("donor.editDonation.notifications.updateSuccess", {
-          donation: data.title,
+          donation: infoData.title,
         })
       );
       navigate(`/${process.env.PUBLIC_URL}/admin/donations`);
@@ -192,11 +188,11 @@ const EditDonation = () => {
 
   const infoFormik = useFormik({
     initialValues: {
-      title: data?.title ?? "",
-      location: data?.location ?? "",
-      from: data?.from ?? today,
-      until: data?.until ?? tomorrow,
-      additionalInfo: data?.additionalInfo ?? "",
+      title: donation?.title ?? "",
+      location: donation?.location ?? "",
+      from: donation?.from ?? today,
+      until: donation?.until ?? tomorrow,
+      additionalInfo: donation?.additionalInfo ?? "",
     },
     validationSchema: infoValidationSchema,
     onSubmit: handleSubmit,
@@ -207,7 +203,7 @@ const EditDonation = () => {
       <AdminAppBar>
         <AdminToolbar
           title={
-            data
+            donation
               ? t("donor.editDonation.title")
               : t("donor.createDonation.title")
           }
@@ -365,7 +361,7 @@ const EditDonation = () => {
                 disabled={processing}
                 loading={processing || isAdding}
               >
-                {data
+                {donation
                   ? t("donor.editDonation.infoForm.submit")
                   : t("donor.createDonation.submit")}
               </LoadingButton>

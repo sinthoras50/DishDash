@@ -4,12 +4,10 @@ import {
   AccordionDetails,
   AccordionSummary,
   Container,
-  Link,
   Typography,
 } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Link as RouterLink } from "react-router-dom";
 import AdminAppBar from "../components/AdminAppBar";
 import AdminToolbar from "../components/AdminToolbar";
 
@@ -49,11 +47,11 @@ const Faq = () => {
         <AdminToolbar />
       </AdminAppBar>
       <Container maxWidth="sm">
-        <Typography align="center" marginBottom={6} variant="h2">
+        <Typography align="center" marginBottom={3} variant="h2">
           {t("faq.title")}
         </Typography>
         {questions.map((question, index) => (
-          <Accordion key={index}>
+          <Accordion key={index} disableGutters>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography component="p" variant="h6">
                 {t(question.title)}
@@ -66,13 +64,6 @@ const Faq = () => {
             </AccordionDetails>
           </Accordion>
         ))}
-        <Link
-          component={RouterLink}
-          to={`/${process.env.PUBLIC_URL}/admin/help`}
-          variant="body2"
-        >
-          {t("faq.noAnswerLink")}
-        </Link>
       </Container>
     </React.Fragment>
   );

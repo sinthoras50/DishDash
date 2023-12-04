@@ -9,6 +9,7 @@
     "imageUrl": "https://www.signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png",
     "imageAlt": "Placeholder",
     "active": true,
-    "items": [{ "name": "Pizza", "quantity": 1, "type": "preparedFood" }]
+    "items": [{ "name": "Pizza", "quantity": 1, "type": "preparedFood" }],
+    "createdAt": "2023-12-04T10:37:20.069Z"
   }
 ]

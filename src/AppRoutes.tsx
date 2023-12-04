@@ -31,7 +31,10 @@ const NotFound = lazy(() => import("./core/pages/NotFound"));
 const Landing = lazy(() => import("./landing/pages/Landing"));
 
 // Donations
-const DonationManagement = lazy(() => import("./users/pages/EditDonation"));
+const EditDonation = lazy(() => import("./donor/pages/EditDonation"));
+const DonationManagement = lazy(
+  () => import("./donor/pages/DonationManagement")
+);
 
 const AppRoutes = () => {
   return (
@@ -47,7 +50,8 @@ const AppRoutes = () => {
           <PrivateRoute path="information" element={<ProfileInformation />} />
           <PrivateRoute path="password" element={<ProfilePassword />} />
         </PrivateRoute>
-        <PrivateRoute path="donations/:id" element={<DonationManagement />} />
+        <PrivateRoute path="donations/new" element={<EditDonation />} />
+        <PrivateRoute path="donations/:id" element={<EditDonation />} />
         <PrivateRoute path="donations" element={<DonationManagement />} />
       </PrivateRoute>
       <Route path="forgot-password" element={<ForgotPassword />} />

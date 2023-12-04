@@ -87,10 +87,15 @@ mock.onGet(/\/api\/donations\/\d+/).reply((config) => {
   return [200, donationData];
 });
 mock.onGet("/api/donations").reply(200, donations);
-mock
-  .onPost("/api/donations")
-  .reply(({ data }) => [
-    201,
-    { ...JSON.parse(data), id: generateId(), active: true },
-  ]);
-mock.onPut("/api/donations").reply(({ data }) => [200, data]);
+mock.onPost("/api/donations").reply((config) => {
+  const newData = {
+    ...JSON.parse(config.data),
+    id: generateId(),
+    active: true,
+    createdAt: new Date(),
+  };
+  return [201, newData];
+});
+mock.onPut("/api/donations").reply((config) => {
+  return [200, config.data];
+});

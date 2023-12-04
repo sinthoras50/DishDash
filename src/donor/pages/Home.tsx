@@ -16,8 +16,8 @@ const Home = () => {
   const { t } = useTranslation();
 
   const donationData = donations.map((donation) => ({
-    title: donation.foodItems,
-    description: donation.description,
+    title: donation.title,
+    description: donation.location,
     imageAlt: donation.imageAlt,
     imageUrl: donation.imageUrl,
     actionText: t("donor.home.activeDonations.action"),
