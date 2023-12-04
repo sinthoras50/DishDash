@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-import { Donation } from "../types/donation";
+import { Donation } from "../types/Donation";
 
 const fetchDonations = async (): Promise<Donation[]> => {
   const { data } = await axios.get("/api/donations");

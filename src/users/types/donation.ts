@@ -1,12 +1,12 @@
+import { DonationItem } from "./DonationItem";
+
 export interface Donation {
-  id: string;
-  foodItems: string;
-  weight: number;
+  id?: string;
+  title: string;
   location: string;
-  instructions: string;
-  date: number;
-  from: string;
-  until: string;
-  description: string;
-  active: boolean;
+  from: Date;
+  until: Date;
+  additionalInfo: string;
+  active?: boolean;
+  items: DonationItem[];
 }

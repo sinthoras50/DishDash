@@ -1,4 +1,6 @@
 import { CssBaseline, ThemeProvider as MuiThemeProvider } from "@mui/material";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import React, {
   createContext,
   useContext,
@@ -77,8 +79,10 @@ const SettingsProvider = ({ children }: SettingsProviderProps) => {
       }}
     >
       <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-        {children}
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <CssBaseline />
+          {children}
+        </LocalizationProvider>
       </MuiThemeProvider>
     </SettingsContext.Provider>
   );

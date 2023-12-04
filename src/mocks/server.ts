@@ -80,8 +80,17 @@ mock.onPut("/api/user").reply(({ data }) => [200, data]);
 
 // Donations
 mock.onDelete("/api/donations").reply(({ data }) => [200, data]);
+mock.onGet(/\/api\/donations\/\d+/).reply((config) => {
+  const id = config.url?.split("/").pop() ?? "";
+  const donationData = donations.find((donation) => donation.id === id);
+
+  return [200, donationData];
+});
 mock.onGet("/api/donations").reply(200, donations);
 mock
   .onPost("/api/donations")
-  .reply(({ data }) => [201, { ...JSON.parse(data), id: generateId() }]);
+  .reply(({ data }) => [
+    201,
+    { ...JSON.parse(data), id: generateId(), active: true },
+  ]);
 mock.onPut("/api/donations").reply(({ data }) => [200, data]);
