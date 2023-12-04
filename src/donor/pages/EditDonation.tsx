@@ -132,8 +132,8 @@ const EditDonation = () => {
   const infoValidationSchema = Yup.object({
     title: Yup.string().required(t("common.validations.required")),
     location: Yup.string().required(t("common.validations.required")),
-    from: Yup.date().required(t("common.validations.required")),
-    until: Yup.date().required(t("common.validations.required")),
+    from: Yup.string().required(t("common.validations.required")),
+    until: Yup.string().required(t("common.validations.required")),
     additionalInfo: Yup.string(),
   });
 
@@ -190,8 +190,8 @@ const EditDonation = () => {
     initialValues: {
       title: donation?.title ?? "",
       location: donation?.location ?? "",
-      from: donation?.from ?? today,
-      until: donation?.until ?? tomorrow,
+      from: donation?.from ?? today.toISOString(),
+      until: donation?.until ?? tomorrow.toISOString(),
       additionalInfo: donation?.additionalInfo ?? "",
     },
     validationSchema: infoValidationSchema,
@@ -267,12 +267,13 @@ const EditDonation = () => {
                   value={dayjs(infoFormik.values.from)}
                   onChange={(date) => {
                     const updatedDate = new Date(dayjs(date).toDate());
+                    const currentDate = new Date(infoFormik.values.from);
                     updatedDate.setHours(
-                      infoFormik.values.from.getHours(),
-                      infoFormik.values.from.getMinutes(),
-                      infoFormik.values.from.getSeconds()
+                      currentDate.getHours(),
+                      currentDate.getMinutes(),
+                      currentDate.getSeconds()
                     );
-                    infoFormik.setFieldValue("from", updatedDate);
+                    infoFormik.setFieldValue("from", updatedDate.toISOString());
                   }}
                   disabled={processing}
                   sx={{ width: "100%" }}
@@ -284,7 +285,9 @@ const EditDonation = () => {
                   value={dayjs(infoFormik.values.from)}
                   onChange={(time) => {
                     const updatedTime = new Date(dayjs(time).toDate());
-                    updatedTime.setDate(infoFormik.values.from.getDate());
+                    updatedTime.setDate(
+                      new Date(infoFormik.values.from).getDate()
+                    );
                     infoFormik.setFieldValue("from", updatedTime);
                   }}
                   disabled={processing}
@@ -308,12 +311,16 @@ const EditDonation = () => {
                   value={dayjs(infoFormik.values.until)}
                   onChange={(date) => {
                     const updatedDate = new Date(dayjs(date).toDate());
+                    const currentDate = new Date(infoFormik.values.until);
                     updatedDate.setHours(
-                      infoFormik.values.until.getHours(),
-                      infoFormik.values.until.getMinutes(),
-                      infoFormik.values.until.getSeconds()
+                      currentDate.getHours(),
+                      currentDate.getMinutes(),
+                      currentDate.getSeconds()
                     );
-                    infoFormik.setFieldValue("until", updatedDate);
+                    infoFormik.setFieldValue(
+                      "until",
+                      updatedDate.toISOString()
+                    );
                   }}
                   disabled={processing}
                   sx={{ width: "100%" }}
@@ -325,7 +332,9 @@ const EditDonation = () => {
                   value={dayjs(infoFormik.values.until)}
                   onChange={(time) => {
                     const updatedTime = new Date(dayjs(time).toDate());
-                    updatedTime.setDate(infoFormik.values.until.getDate());
+                    updatedTime.setDate(
+                      new Date(infoFormik.values.until).getDate()
+                    );
                     infoFormik.setFieldValue("until", updatedTime);
                   }}
                   disabled={processing}

@@ -111,7 +111,7 @@ const DonationRow = ({
   donation,
 }: DonationRowProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const labelId = `enhanced-table-checkbox-${index}`;
   const openActions = Boolean(anchorEl);
@@ -132,6 +132,13 @@ const DonationRow = ({
   const handleEdit = () => {
     handleCloseActions();
     onEdit(donation.id);
+  };
+
+  const formatDate = (dateData: string) => {
+    const date = new Date(dateData);
+    return `${date.toLocaleDateString(i18n.language)} ${date.toLocaleTimeString(
+      i18n.language
+    )}`;
   };
 
   return (
@@ -169,7 +176,7 @@ const DonationRow = ({
         </Box>
       </TableCell>
       <TableCell align="center">
-        {new Date(donation.createdAt ?? new Date()).toLocaleDateString("sk-SK")}
+        {formatDate(donation.createdAt ?? new Date().toISOString())}
       </TableCell>
       <TableCell align="center">
         {donation.active ? (

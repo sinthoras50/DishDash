@@ -4,10 +4,10 @@ export interface Donation {
   id: string;
   title: string;
   location: string;
-  from: Date;
-  until: Date;
+  from: string;
+  until: string;
   additionalInfo?: string;
   active?: boolean;
   items: DonationItem[];
-  createdAt?: Date;
+  createdAt?: string;
 }

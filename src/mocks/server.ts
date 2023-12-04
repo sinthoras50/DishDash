@@ -92,7 +92,7 @@ mock.onPost("/api/donations").reply((config) => {
     ...JSON.parse(config.data),
     id: generateId(),
     active: true,
-    createdAt: new Date(),
+    createdAt: new Date().toISOString(),
   };
   return [201, newData];
 });
