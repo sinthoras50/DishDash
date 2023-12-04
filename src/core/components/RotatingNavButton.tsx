@@ -1,6 +1,7 @@
 import { keyframes } from "@emotion/react";
 import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 const rotationAnimation = keyframes`
   0% {
@@ -20,12 +21,12 @@ const rotationAnimation = keyframes`
   }
 `;
 
-interface RotatingButtonProps {
+interface RotatingNavButtonProps {
   buttonText: string;
-  handleClick: () => void;
+  to: string;
 }
 
-const RotatingButton = ({ buttonText, handleClick}: RotatingButtonProps) => {
+const RotatingNavButton = ({ buttonText, to }: RotatingNavButtonProps) => {
   const [rotate, setRotate] = useState(false);
 
   useEffect(() => {
@@ -41,16 +42,16 @@ const RotatingButton = ({ buttonText, handleClick}: RotatingButtonProps) => {
 
   return (
     <Button
-      variant="contained"
-      onClick={handleClick}
+      component={RouterLink}
+      to={to}
       sx={{
-        mb: 7,
         animation: rotate ? `${rotationAnimation} 0.5s ease-in-out` : "none",
       }}
+      variant="contained"
     >
       {buttonText}
     </Button>
   );
 };
 
-export default RotatingButton;
+export default RotatingNavButton;

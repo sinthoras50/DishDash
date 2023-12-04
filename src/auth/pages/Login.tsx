@@ -49,7 +49,7 @@ const Login = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: "laura@core.com",
+      email: "tester@uniba.sk",
       password: "Password123",
     },
     validationSchema,
@@ -59,10 +59,20 @@ const Login = () => {
   return (
     <LandingLayout>
       <BoxedLayout>
-        <Typography component="h1" variant="h2" sx={{ mb: 2 }}>
+        <Typography
+          component="h1"
+          variant="h2"
+          sx={{ mb: 2 }}
+          textAlign="center"
+        >
           {t("auth.login.title")}
         </Typography>
-        <Typography component="h1" variant="body1" sx={{ mb: 2 }}>
+        <Typography
+          component="h1"
+          variant="body1"
+          sx={{ mb: 2 }}
+          textAlign="center"
+        >
           {t("auth.login.subTitle")}
         </Typography>
 

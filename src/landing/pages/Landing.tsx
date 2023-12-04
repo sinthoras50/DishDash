@@ -4,7 +4,6 @@ import {
 } from "@mui/icons-material";
 import {
   Box,
-  Button,
   Card,
   CardContent,
   CardMedia,
@@ -16,7 +15,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link as RouterLink } from "react-router-dom";
+import RotatingNavButton from "../../core/components/RotatingNavButton";
 import ContactForm from "../components/ContactForm";
 import LandingLayout from "../components/LandingLayout";
 
@@ -36,28 +35,28 @@ const Landing = () => {
       title: "landing.aboutUs.paragraphs.story.title",
       text: "landing.aboutUs.paragraphs.story.text",
       imageUrl:
-        "https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/f/f9/Fmfi_f1_zelen.jpg",
       imageAlt: "landing.aboutUs.paragraphs.story.imageAlt",
     },
     {
       title: "landing.aboutUs.paragraphs.mission.title",
       text: "landing.aboutUs.paragraphs.mission.text",
       imageUrl:
-        "https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg",
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       imageAlt: "landing.aboutUs.paragraphs.mission.imageAlt",
     },
     {
       title: "landing.aboutUs.paragraphs.goal.title",
       text: "landing.aboutUs.paragraphs.goal.text",
       imageUrl:
-        "https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg",
+        "https://images.unsplash.com/photo-1523815462886-2487223ab7b9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       imageAlt: "landing.aboutUs.paragraphs.goal.imageAlt",
     },
     {
       title: "landing.aboutUs.paragraphs.help.title",
       text: "landing.aboutUs.paragraphs.help.text",
       imageUrl:
-        "https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       imageAlt: "landing.aboutUs.paragraphs.help.imageAlt",
     },
   ];
@@ -74,11 +73,11 @@ const Landing = () => {
             mb: 10,
           }}
         >
-          <Grid item container xs={12} md={6}>
+          <Grid item container xs={12} md={5}>
             <Typography
               variant="h1"
               color="text.primary"
-              sx={{ mb: 3, width: "100%" }}
+              sx={{ mb: 2, width: "100%" }}
             >
               {t("landing.hero.title")}
             </Typography>
@@ -89,28 +88,25 @@ const Landing = () => {
             >
               {t("landing.hero.subTitle")}
             </Typography>
-            <Button
-              component={RouterLink}
-              to={`/${process.env.PUBLIC_URL}/register`}
-              variant="contained"
-              sx={{
-                mr: "auto",
-              }}
-            >
-              {t("landing.hero.cta")}
-            </Button>
+            <Box sx={{ mr: "auto" }}>
+              <RotatingNavButton
+                buttonText={t("landing.hero.cta")}
+                to={`/${process.env.PUBLIC_URL}/register`}
+              />
+            </Box>
           </Grid>
 
-          <Grid item xs>
+          <Grid item xs={12} md>
             <Box
               component="img"
               sx={{
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
+                borderRadius: "12px",
               }}
               alt={t("landing.hero.imgAlt")}
-              src="https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg"
+              src={t("landing.hero.imgUrl")}
             />
           </Grid>
         </Grid>
@@ -166,17 +162,27 @@ const Landing = () => {
           container
           spacing={3}
           justifyContent="center"
+          alignItems="stretch"
         >
           {[1, 2, 3, 4].map((step) => (
-            <Grid item xs justifyContent="center" key={step}>
-              <Card sx={{ height: "320px " }}>
+            <Grid item xs key={step} sx={{ display: "flex" }}>
+              <Card
+                sx={{
+                  bgcolor: "background.default",
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
+                }}
+              >
                 <CardMedia
                   component="img"
-                  image="https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg"
+                  image={t(
+                    `landing.howItWorks.${userRole}.steps.${step}.imgUrl`
+                  )}
                   alt={t(`landing.howItWorks.${userRole}.steps.${step}.imgAlt`)}
                 />
-                <CardContent>
-                  <Typography variant="h4">
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography variant="h3" sx={{ mb: 1 }}>
                     {t(`landing.howItWorks.${userRole}.steps.${step}.title`)}
                   </Typography>
                   <Typography variant="body1">
@@ -222,7 +228,7 @@ const Landing = () => {
                   </Grid>
                   <Grid item xs={12} sm={5}>
                     <img
-                      src={t(item.imageUrl)}
+                      src={item.imageUrl}
                       alt={t(item.imageAlt)}
                       style={{ width: "100%", height: "auto" }}
                     />
@@ -232,7 +238,7 @@ const Landing = () => {
                 <>
                   <Grid item xs={12} sm={5}>
                     <img
-                      src={t(item.imageUrl)}
+                      src={item.imageUrl}
                       alt={t(item.imageAlt)}
                       style={{ width: "100%", height: "auto" }}
                     />
@@ -269,9 +275,17 @@ const Landing = () => {
             variant="h2"
             align="center"
             color="text.primary"
-            marginBottom={3}
+            marginBottom={2}
           >
             {t("landing.getInTouch.title")}
+          </Typography>
+          <Typography
+            variant="body1"
+            align="center"
+            color="text.primary"
+            sx={{ mb: 3 }}
+          >
+            {t("landing.getInTouch.subtitle")}
           </Typography>
           <ContactForm />
         </Box>

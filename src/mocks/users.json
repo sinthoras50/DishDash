@@ -34,7 +34,7 @@
   },
   {
     "id": "4",
-    "email": "lytvyn4@uniba.sk",
+    "email": "lytvyn3@uniba.sk",
     "firstName": "Oleksandr",
     "lastName": "Lytvyn",
     "role": "donor",
@@ -42,5 +42,16 @@
     "phone": "+421951589026",
     "avatar": "",
     "token": "Rerh3XOZc1ZbcK"
+  },
+  {
+    "id": "5",
+    "email": "tester@uniba.sk",
+    "firstName": "Tester",
+    "lastName": "Dear",
+    "role": "donor",
+    "password": "Password123",
+    "phone": "+421951589027",
+    "avatar": "",
+    "token": "tur73XiZc12bcj"
   }
 ]

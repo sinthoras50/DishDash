@@ -90,7 +90,7 @@ const Register = () => {
             sx={{
               width: "100%",
             }}
-            src="https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg"
+            src="img/startup.svg"
             alt={t("auth.register.imageAlt")}
           />
         </Grid>

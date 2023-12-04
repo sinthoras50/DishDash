@@ -93,13 +93,14 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
               ))}
             </Tabs>
 
-            <Box>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
               <Button
                 component={RouterLink}
                 to={`/${process.env.PUBLIC_URL}/login`}
                 variant="contained"
                 startIcon={<LoginIcon />}
                 sx={{ mr: 1 }}
+                size="small"
               >
                 {t("landing.nav.cta")}
               </Button>

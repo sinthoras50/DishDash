@@ -1,5 +1,5 @@
 import { Add as AddIcon } from "@mui/icons-material";
-import { Fab } from "@mui/material";
+import { Button } from "@mui/material";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
@@ -68,15 +68,15 @@ const DonationManagement = () => {
       <AdminAppBar>
         {!selected.length ? (
           <AdminToolbar title={t("donor.donationManagement.title")}>
-            <Fab
-              aria-label={t("donor.donationManagement.addDonationAria")}
-              color="primary"
+            <Button
+              variant="contained"
+              startIcon={<AddIcon />}
               disabled={processing}
               onClick={handleAddDonation}
               size="small"
             >
-              <AddIcon />
-            </Fab>
+              {t("donor.donationManagement.addDonation")}
+            </Button>
           </AdminToolbar>
         ) : (
           <SelectToolbar
