@@ -22,9 +22,10 @@ const rotationAnimation = keyframes`
 
 interface RotatingButtonProps {
   buttonText: string;
+  handleClick: () => void;
 }
 
-const RotatingButton = ({ buttonText }: RotatingButtonProps) => {
+const RotatingButton = ({ buttonText, handleClick}: RotatingButtonProps) => {
   const [rotate, setRotate] = useState(false);
 
   useEffect(() => {
@@ -41,6 +42,7 @@ const RotatingButton = ({ buttonText }: RotatingButtonProps) => {
   return (
     <Button
       variant="contained"
+      onClick={handleClick}
       sx={{
         mb: 7,
         animation: rotate ? `${rotationAnimation} 0.5s ease-in-out` : "none",

@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 import AdminAppBar from "../../admin/components/AdminAppBar";
 import AdminToolbar from "../../admin/components/AdminToolbar";
 import RecentNotifications from "../../admin/components/RecentNotifications";
@@ -14,6 +15,7 @@ import RotatingButton from "../components/RotatingButton";
 const Home = () => {
   const { userInfo } = useAuth();
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const donationData = donations.map((donation) => ({
     title: donation.title,
@@ -33,6 +35,10 @@ const Home = () => {
     actionText: t("donor.home.community.action"),
   }));
 
+  const handleDonate = () => {
+    navigate(`/${process.env.PUBLIC_URL}/admin/donations/new`);
+  };
+
   return (
     <>
       <AdminAppBar>
@@ -46,7 +52,10 @@ const Home = () => {
       <Typography component="div" sx={{ fontWeight: 300, mb: 3 }} variant="h3">
         {t("admin.home.welcome.subTitle")}
       </Typography>
-      <RotatingButton buttonText={t("admin.home.welcome.cta")} />
+      <RotatingButton
+        buttonText={t("admin.home.welcome.cta")}
+        handleClick={handleDonate}
+      />
       <Typography component="div" variant="h2" sx={{ mt: 3 }}>
         {t("admin.home.carousels.activeDonations.title")}
       </Typography>
