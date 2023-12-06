@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Harvest Festival Food Drive",
+    "location": "Bratislava Town Square",
+    "description": "Celebrate the season of giving at our Harvest Festival Food Drive. Bring non-perishable food items to donate, enjoy live music, and participate in fun activities for the whole family.",
+    "imageUrl": "https://www.travelsouthdakota.com/sites/default/files/styles/hero_l/public/2020-02/strawbalewineryharvestfest0089opt.jpg?h=88dc8d8e&itok=CW7N2emm",
+    "imageAlt": "Harvest Festival Food Drive"
+  },
+  {
+    "id": "3",
+    "title": "Cooking Class for a Cause",
+    "location": "Bratislava Culinary Academy",
+    "description": "Join our special cooking class where you'll learn new recipes and cooking techniques. All proceeds will go towards supporting local food banks and helping those in need.",
+    "imageUrl": "https://www.essexresort.com/i/SITE_170315_14300405_91EOU/content/CMS_10022017_111254590_R3HK4/A07CD8A2-D44E-3AEF-DE94D1A92EE1B1B3.JPG",
+    "imageAlt": "Cooking Class for a Cause"
+  },
+  {
+    "id": "3",
+    "title": "Bratislava Food Festival for Charity",
+    "location": "City Center Plaza, Bratislava",
+    "description": "Indulge in a culinary adventure at the Bratislava Food Festival for Charity. Local restaurants and vendors will showcase their specialties, and a portion of the proceeds will go towards supporting local food banks. Join us for a day of great food and giving back to the community!",
+    "imageUrl": "https://www.mainefiddleheadfestival.com/wp-content/uploads/2020/06/Food-Fest.jpg",
+    "imageAlt": "Bratislava Food Festival for Charity"
+  }
+]

@@ -1,0 +1,666 @@
+{
+  "landing": {
+    "nav": {
+      "getStarted": "Get started",
+      "howItWorks": "How it works",
+      "aboutUs": "About us",
+      "contact": "Contact",
+      "cta": "Sign in",
+      "settingsAria": "Settings",
+      "tabsAria": "Navigation links"
+    },
+    "hero": {
+      "title": "Join Us in the Fight Against Hunger",
+      "subTitle": "Welcome to DishDash, where a passion for good food meets a commitment to making the world a better place. We are a platform dedicated to transforming surplus restaurant food into opportunities to feed those who need it most!",
+      "imgUrl": "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imgAlt": "People sharing food donation boxes",
+      "cta": "Get started"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "donor": {
+        "toggleText": "Donor",
+        "toggleAriaLabel": "Donor role",
+        "steps": {
+          "1": {
+            "title": " Register as a food donor ",
+            "description": "If you have excess food that you want to donate, you can sign up on our website as a food donor. You will need to provide some basic information, such as your name, email and phone number.",
+            "imgUrl": "img/register-as-donor.jpg",
+            "imgAlt": "User registering into app using laptop"
+          },
+          "2": {
+            "title": "Create a food listing",
+            "description": "Once you are registered, you can create a new food listing on our website. You will need to provide some information about the food you want to donate and specify the location and timeframe for the food to be picked up by the food receiver.",
+            "imgUrl": "img/create-donation.jpg",
+            "imgAlt": "Food image on a website opened in laptop and mobile"
+          },
+          "3": {
+            "title": "Receive a notification",
+            "description": "When a food receiver reserves your food, you will receive a notification. You can view the details of the reservation, such as the name and contact of the food recipient and the pick-up time.",
+            "imgUrl": "img/receive-notification.jpg",
+            "imgAlt": "Woman receiving a notification on mobile, while holding a cup"
+          },
+          "4": {
+            "title": "Scan the QR code",
+            "description": "When the food recipient arrives to pick up the food, scan the QR code they were given. The QR code will contain information about the food items that are to be dispensed.",
+            "imgUrl": "img/scan-qr.jpg",
+            "imgAlt": "Donor, scaning a qr code on mobile, while meeting a receiver"
+          }
+        }
+      },
+      "receiver": {
+        "toggleText": "Receiver",
+        "toggleAriaLabel": "Donor role",
+        "steps": {
+          "1": {
+            "title": "<Receiver step 1>",
+            "imgAlt": "<Receiver step 1 image alt>",
+            "description": "<Receiver step 1 description>"
+          },
+          "2": {
+            "title": "<Receiver step 2>",
+            "imgAlt": "<Receiver step 2 image alt>",
+            "description": "<Receiver step 2 description>"
+          },
+          "3": {
+            "title": "<Receiver step 3>",
+            "imgAlt": "<Receiver step 3 image alt>",
+            "description": "<Receiver step 3 description>"
+          },
+          "4": {
+            "title": "<Receiver step 4>",
+            "imgAlt": "<Receiver step 4 image alt>",
+            "description": "<Receiver step 4 description>"
+          }
+        }
+      }
+    },
+    "aboutUs": {
+      "title": "About us",
+      "paragraphs": {
+        "story": {
+          "title": "Our story",
+          "text": "From a university project, the idea of creating positive change by connecting donors with those in need was born. We are a group of students passionate about fighting food waste and feeding those in need. The story of DishDash is the story of how a simple idea became a mission that brings the community together to make the world a better place.",
+          "imgAlt": "Photo of Faculty of mathematics physics and informatics Comenius University in Bratislava"
+        },
+        "mission": {
+          "title": "Our mission",
+          "text": "At DishDash, we are dedicated to reducing food waste and fighting hunger at the same time. Our mission is to build bridges between donors and receivers, who share the same vision of a world where everyone has access to nutritious food. We believe that every plate counts, and every food donation is a step towards a more sustainable and caring future.",
+          "imgAlt": "People working on laptops"
+        },
+        "goal": {
+          "title": "What we do",
+          "text": "We are an innovative platform that connects donor with surplus quality food with people in economic hardship. We facilitate food donation, ensuring that every unconsumed portion becomes an opportunity to feed someone in need.",
+          "imgAlt": "Man holding a cup which says: Do what you love"
+        },
+        "help": {
+          "title": "How you can help",
+          "text": "We invite anyone and everyone to join us in our fight against hunger. With just a few clicks, you can make a donation to support those who need a helping hand. Every contribution counts and makes a difference. Help us spread the word. Share our platform on your social networks, tell your friends and family about us. The more people who join our cause, the more impact we can have.",
+          "imgAlt": "Many people holding hands"
+        }
+      }
+    },
+    "getInTouch": {
+      "title": "Get in touch",
+      "subtitle": "Have inquiries or concerns? Reach out to us without hesitation! We're here to assist you with any questions you may have.",
+      "form": {
+        "email": {
+          "label": "Email Address"
+        },
+        "message": {
+          "label": "Message"
+        },
+        "submit": "Send"
+      }
+    },
+    "notifications": {
+      "messageSend": "Message has been sent successfully!"
+    }
+  },
+  "auth": {
+    "register": {
+      "title": "Sign up",
+      "subTitle": "Sign Up as a donor or receiver and join us now!",
+      "form": {
+        "firstName": {
+          "label": "First Name"
+        },
+        "lastName": {
+          "label": "Last Name"
+        },
+        "email": {
+          "label": "E-mail Address"
+        },
+        "phone": {
+          "label": "Phone"
+        },
+        "password": {
+          "label": "Password"
+        },
+        "role": {
+          "label": "Role",
+          "aria": "Role",
+          "options": {
+            "donor": "Donor",
+            "receiver": "Receiver"
+          }
+        },
+        "submit": "Sign up"
+      },
+      "existingAccount": {
+        "question": "Already have an account?",
+        "action": "Sign In!"
+      },
+      "notifications": {
+        "success": "Your account has been created successfully!"
+      }
+    },
+    "login": {
+      "title": "Sign in",
+      "subTitle": "Enter your credentials to access your account or create a new one",
+      "form": {
+        "email": {
+          "label": "E-mail Address"
+        },
+        "password": {
+          "label": "Password"
+        },
+        "submit": "Sign in"
+      },
+      "forgotPassword": "Forgot password?",
+      "newAccount": {
+        "question": "Don't have an account?",
+        "action": "Sign up"
+      },
+      "invalidCredentials": "Incorrect e-mail address or password"
+    },
+    "forgotPassword": {
+      "title": "Get validation code",
+      "subTitle": "Enter your email to reset your password and regain access to your account.",
+      "form": {
+        "email": {
+          "label": "E-mail Address"
+        },
+        "submit": "Send Confirmation"
+      },
+      "notifications": {
+        "success": "Email has been sent successfully!"
+      },
+      "backToLogin": "Back to login"
+    },
+    "forgotPasswordSubmit": {
+      "title": "Change your password",
+      "subTitle": "Enter the code from your email and set a new password.",
+      "form": {
+        "code": {
+          "label": "Code"
+        },
+        "newPassword": {
+          "label": "New Password"
+        },
+        "confirmPassword": {
+          "label": "Confirm Password"
+        },
+        "submit": "Change password"
+      },
+      "notifications": {
+        "success": "Your password has been changed successfully!"
+      },
+      "backToLogin": "Back to login",
+      "invalidCode": "Invalid validation code"
+    }
+  },
+  "donor": {
+    "home": {
+      "welcome": {
+        "subTitle": "Welcome back, feeling generous?",
+        "title": "Hi {{name}},",
+        "cta": "Let's donate"
+      },
+      "toolbar": {
+        "title": "Home"
+      },
+      "activeDonations": {
+        "title": "Active donations",
+        "action": "View"
+      },
+      "upcomingEvents": {
+        "title": "Upcoming Events",
+        "action": "Learn more"
+      },
+      "community": {
+        "title": "Community",
+        "action": "Read more"
+      }
+    },
+    "editDonation": {
+      "title": "Edit Donation",
+      "infoForm": {
+        "title": "Information",
+        "donationTitle": {
+          "label": "Title"
+        },
+        "location": {
+          "label": "Location"
+        },
+        "from": {
+          "label": "Available From*",
+          "date": "Date",
+          "time": "Time"
+        },
+        "until": {
+          "label": "Available Until*",
+          "date": "Date",
+          "time": "Time"
+        },
+        "additionalInfo": {
+          "label": "Additional Information"
+        },
+        "submit": "Update"
+      },
+      "itemForm": {
+        "title": "Items",
+        "name": {
+          "label": "Item name"
+        },
+        "quantity": {
+          "label": "Quantity"
+        },
+        "type": {
+          "label": "Type",
+          "aria": "Type"
+        },
+        "submit": "Add"
+      },
+      "foodTypes": {
+        "beverages": {
+          "label": "Beverages"
+        },
+        "grocery": {
+          "label": "Grocery"
+        },
+        "petFood": {
+          "label": "Pet food"
+        },
+        "preparedFood": {
+          "label": "Prepared food"
+        },
+        "fruitsVegetables": {
+          "label": "Fruits & vegetables"
+        }
+      },
+      "removeItemAria": "Remove item",
+      "noItems": "No items added",
+      "notifications": {
+        "updateSuccess": "{{donation}} has been updated!"
+      }
+    },
+    "createDonation": {
+      "title": "Create Donation",
+      "submit": "Create",
+      "notifications": {
+        "createSuccess": "{{donation}} has been created!",
+        "updateSuccess": "{{donation}} has been updated!"
+      }
+    },
+    "donationManagement": {
+      "title": "Donations",
+      "confirmations": {
+        "delete": "Are you sure you want to delete this donation?"
+      },
+      "table": {
+        "headers": {
+          "actions": "Actions",
+          "donation": "Donation",
+          "createdAt": "Date",
+          "status": "Status"
+        }
+      },
+      "notifications": {
+        "deleteSuccess": "Donation(s) have been deleted!"
+      },
+      "active": "Active",
+      "fulfilled": "Fulfilled",
+      "noDonations": "No donations yet.",
+      "addDonation": "Add donation"
+    }
+  },
+  "admin": {
+    "drawer": {
+      "menu": {
+        "calendar": "Calendar",
+        "dashboard": "Dashboard",
+        "help": "Help",
+        "home": "Home",
+        "projects": "Projects",
+        "settings": "Settings",
+        "donationManagement": "Donations"
+      }
+    },
+    "header": {
+      "notifications": {
+        "empty": {
+          "title": "Your notification list is empty"
+        },
+        "seeAll": "See all notifications"
+      }
+    },
+    "home": {
+      "achievement": {
+        "action": "View Profile",
+        "description": "You have completed {{progress}}% of your profile. Your current progress is great.",
+        "title": "Congratulations {{name}}"
+      },
+      "followers": {
+        "units": {
+          "likes": "Likes",
+          "love": "Love",
+          "smiles": "Smiles"
+        }
+      },
+      "meeting": {
+        "title": "Meetings"
+      },
+      "targets": {
+        "income": "Income",
+        "followers": "Followers",
+        "title": "Targets",
+        "views": "Views"
+      },
+      "views": {
+        "action": "View Dashboard",
+        "unit": "Views"
+      },
+      "welcome": {
+        "subTitle": "Welcome back, feeling generous?",
+        "title": "Hi {{name}},",
+        "cta": "Let's donate"
+      },
+      "toolbar": {
+        "title": "Home"
+      },
+      "carousels": {
+        "activeDonations": {
+          "title": "Active donations"
+        },
+        "upcomingEvents": {
+          "title": "Upcoming Events"
+        }
+      },
+      "view": "View",
+      "community": {
+        "title": "Community"
+      }
+    }
+  },
+  "calendar": {
+    "confirmations": {
+      "delete": "Are you sure you want to delete this event?"
+    },
+    "form": {
+      "color": {
+        "label": "Color"
+      },
+      "description": {
+        "label": "Description"
+      },
+      "end": {
+        "label": "End Date"
+      },
+      "start": {
+        "label": "Start Date"
+      },
+      "title": {
+        "label": "Title"
+      }
+    },
+    "modal": {
+      "add": {
+        "action": "Add",
+        "title": "Add Event"
+      },
+      "edit": {
+        "action": "Edit",
+        "title": "Edit Event"
+      }
+    },
+    "notifications": {
+      "addSuccess": "{{event}} has been added!",
+      "deleteSuccess": "Event has been deleted!",
+      "updateSuccess": "{{event}} has been updated!"
+    },
+    "title": "Calendar"
+  },
+  "common": {
+    "backHome": "Back to Home",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "confirmation": "Confirmation",
+    "delete": "Delete",
+    "edit": "Edit",
+    "errors": {
+      "forbidden": {
+        "subTitle": "You don't have access to view this page"
+      },
+      "notFound": {
+        "subTitle": "Sorry, we couldn’t find the page you’re looking for. Perhaps you’ve mistyped the URL? Be sure to check your spelling.",
+        "title": "Oops!"
+      },
+      "unexpected": {
+        "subTitle": "Something went wrong! If the problem persists, contact us!",
+        "title": "Oops!"
+      },
+      "underConstructions": {
+        "subTitle": "We are actively working on this page.",
+        "title": "Under constructions!"
+      }
+    },
+    "reset": "Reset",
+    "retry": "Try Again",
+    "selected": "Selected",
+    "snackbar": {
+      "error": "Error",
+      "success": "Success"
+    },
+    "today": "Today",
+    "update": "Update",
+    "validations": {
+      "email": "Invalid email address",
+      "phone": "Invalid phone number",
+      "max": "Must be {{size}} characters or less",
+      "min": "Must be {{size}} characters or more",
+      "passwordMatch": "Password does not match",
+      "required": "Required",
+      "invalid": "Invalid value"
+    },
+    "carousel": {
+      "prevPage": "Previous",
+      "nextPage": "Next"
+    }
+  },
+  "dashboard": {
+    "activity": {
+      "title": "Activity"
+    },
+    "budget": {
+      "legend": {
+        "unit": "Budget ($K)"
+      },
+      "title": "Budget"
+    },
+    "orderProgress": {
+      "title": "Orders"
+    },
+    "overview": {
+      "orders": "Orders",
+      "sales": "Sales",
+      "users": "Users",
+      "visits": "Visits"
+    },
+    "progress": {
+      "title": "Progress"
+    },
+    "salesByAge": {
+      "title": "Sales by Age"
+    },
+    "salesByCategory": {
+      "legend": {
+        "books": "Books",
+        "movies": "Movies & TV",
+        "software": "Software"
+      },
+      "title": "Sales by Category"
+    },
+    "salesHistory": {
+      "title": "Sales History",
+      "unit": "$ today"
+    },
+    "salesProgress": {
+      "title": "Sales"
+    },
+    "teams": {
+      "columns": {
+        "progress": "Progress",
+        "team": "Team",
+        "value": "Value"
+      },
+      "title": "Teams Progress"
+    },
+    "users": {
+      "title": "Recent Users"
+    },
+    "visitProgress": {
+      "title": "Visits"
+    },
+    "title": "Dashboard"
+  },
+  "faq": {
+    "noAnswerLink": "Can't find it here? Check out our Help Center.",
+    "questions": {
+      "title1": "What is the purpose of this application?",
+      "answer1": "This app is designed to reduce food waste and hunger by connecting food donors with food recipients. Food donors are restaurants, groceries, stores, or individuals who have excess food that they want to donate instead of throwing away. Food recipients are charities, organizations, or individuals who need food and can pick it up from the donors.",
+      "title2": "How does the application work?",
+      "answer2": "This app works as a food donation marketplace where food donors can post their available food items and food recipients can reserve them for pick up. Food donors can create a profile, add their location, upload photos and descriptions of their food items, and specify the pick up time and method. Food recipients can browse the food items in their area, filter them by category, distance, and availability, and reserve the ones they want.",
+      "title3": "Who can use this app?",
+      "answer3": "This app is open to anyone who wants to donate or receive food. However, food recipients need to register and verify their identity and eligibility before they can reserve food items. Food recipients can be charities, organizations, or individuals who are facing food insecurity or hardship. Food donors can be businesses or individuals who have surplus food that is still edible and safe to consume.",
+      "title4": "What types of food can be donated?",
+      "answer4": "You can donate any type of food that is still safe to eat and meets the food safety standards in your area. This includes cooked or uncooked food, packaged or unpackaged food, fresh or frozen food, and leftovers or surplus food. However, please note that the app does not accept food that has passed its expiration date, has been opened or partially consumed, or has signs of spoilage or contamination. You are responsible for ensuring that the food you donate is of good quality and condition.",
+      "title5": "How do I donate food?",
+      "answer5": "If you have excess food that you want to donate, you can register as a food donor on the website and create a food listing. When listing the food, you will need to provide a location and timeframe for the food to be picked up. Charities or individuals can then reserve these food items for pick up and will be given a QR code which they will have to present for scanning when picking up the food - this will confirm the completion of the donation.",
+      "title6": "How do I reserve food?",
+      "answer6": "To reserve a food item, you have to register as a food recipient on the app and browse the available food listings in your area. You can filter the food listings by category, distance, and availability to find the food that suits your needs and preferences. When you find a food listing that you want, you can reserve it for pick up by clicking the reserve button. You will receive a QR code that you will need to show to the food donor when you arrive to pick up the food. This will confirm the receipt of the food.",
+      "title7": "What happens if I can’t pick up my reserved food?",
+      "answer7": "If you are unable to pick up your reserved food for any reason, please cancel your reservation as soon as possible through the app. This will free up the food for other food recipients who may need it",
+      "title8": "Is there a cost to use this application?",
+      "answer8": "No, there is no cost to use this application. It is completely free for both donors and recipients."
+    },
+    "title": "Frequently Asked Questions"
+  },
+  "help": {
+    "menu": {
+      "contact": "Contact",
+      "faq": "FAQ",
+      "guide": "Guide",
+      "support": "Support"
+    },
+    "title": "Help Center"
+  },
+  "notifications": {
+    "newComment": "<bold>{{user}}</bold> has written a new comment on your profile",
+    "unreadMessages": "You have <bold>{{quantity}}</bold> unread messages"
+  },
+  "profile": {
+    "activity": {
+      "empty": "Logs of your activity will show up here!",
+      "logs": {
+        "eventAdded": "<bold>You</bold> created a new event: <bold>{{resource}}</bold>",
+        "eventUpdated": "<bold>You</bold> updated event: <bold>{{resource}}</bold>",
+        "userAdded": "<bold>You</bold> added a new user: <bold>{{resource}}</bold>",
+        "userDeleted": "<bold>You</bold> deleted user: <bold>{{resource}}</bold>",
+        "userUpdated": "<bold>You</bold> updated user: <bold>{{resource}}</bold>"
+      }
+    },
+    "completion": {
+      "title": "Profile Completion"
+    },
+    "info": {
+      "form": {
+        "email": {
+          "label": "Email Address"
+        },
+        "firstName": {
+          "label": "First Name"
+        },
+        "gender": {
+          "label": "Gender",
+          "options": {
+            "f": "Female",
+            "m": "Male",
+            "n": "NC"
+          }
+        },
+        "lastName": {
+          "label": "Last Name"
+        }
+      },
+      "title": "Update profile"
+    },
+    "menu": {
+      "activity": "Activity",
+      "info": "Information",
+      "password": "Password"
+    },
+    "notifications": {
+      "informationUpdated": "Information updated!",
+      "passwordChanged": "Password changed!"
+    },
+    "password": {
+      "form": {
+        "current": {
+          "label": "Current Password"
+        },
+        "confirm": {
+          "label": "Confirm Password"
+        },
+        "new": {
+          "label": "New Password"
+        }
+      },
+      "title": "Change your password"
+    }
+  },
+  "settings": {
+    "drawer": {
+      "direction": {
+        "label": "Direction",
+        "options": {
+          "ltr": "LTR",
+          "rtl": "RTL"
+        }
+      },
+      "language": {
+        "label": "Language",
+        "aria": "Language",
+        "options": {
+          "en": "English",
+          "fr": "Français"
+        }
+      },
+      "mode": {
+        "label": "Mode",
+        "options": {
+          "dark": "Dark",
+          "light": "Light"
+        }
+      },
+      "sidebar": {
+        "label": "Sidebar",
+        "options": {
+          "collapsed": "Collapsed",
+          "full": "Full"
+        }
+      },
+      "title": "Settings"
+    }
+  }
+}
