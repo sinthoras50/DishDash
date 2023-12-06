@@ -32,10 +32,10 @@ import { visuallyHidden } from '@mui/utils';
 
 
 function descendingComparator(a: any, b: any, orderBy: string) {
-  let order = 
-    orderBy === 'donation' ? 'title' as keyof Donation :
-    orderBy === 'date' ? 'createdAt' as keyof Donation :
-    orderBy === 'status' ? 'active' as keyof Donation : 'title' as keyof Donation;
+  const order = 
+    orderBy === 'donation' ? 'title' :
+    orderBy === 'date' ? 'createdAt' :
+    orderBy === 'status' ? 'active' : 'title';
 
   const c1 = orderBy === 'date' ? Date.parse(a?.[order]) : (a?.[order] ?? '0');
   const c2 = orderBy === 'date' ? Date.parse(b?.[order]) : (b?.[order] ?? '0');
@@ -413,21 +413,6 @@ const DonationTable = ({
                   />
                 ))
               }
-            {/* {donations
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((donation, index) => (
-                <DonationRow
-                  index={index}
-                  key={donation.id}
-                  onCheck={handleClick}
-                  onDelete={onDelete}
-                  onEdit={onEdit}
-                  processing={processing}
-                  selected={isSelected(donation.id ?? "")}
-                  donation={donation}
-                />
-              ))
-            } */}
           </TableBody>
         </Table>
       </TableContainer>
