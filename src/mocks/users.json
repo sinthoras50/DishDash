@@ -1,0 +1,57 @@
+[
+  {
+    "id": "1",
+    "email": "repisky7@uniba.sk",
+    "firstName": "Pavol",
+    "lastName": "Repiský",
+    "role": "donor",
+    "password": "Password123",
+    "phone": "+421951589023",
+    "avatar": "",
+    "token": "cP7BVkzoVhbioR"
+  },
+  {
+    "id": "2",
+    "email": "jogil17@yahoo.es",
+    "firstName": "Jogil",
+    "lastName": "Martínez",
+    "role": "donor",
+    "password": "Password123",
+    "phone": "+421951589024",
+    "avatar": "",
+    "token": "v52kcQbqvMPIP0"
+  },
+  {
+    "id": "3",
+    "email": "lichvar4@uniba.sk",
+    "firstName": "Marek",
+    "lastName": "Lichvár",
+    "role": "donor",
+    "password": "Password123",
+    "phone": "+421951589025",
+    "avatar": "",
+    "token": "sPVQ5grgG7Gpyp"
+  },
+  {
+    "id": "4",
+    "email": "lytvyn3@uniba.sk",
+    "firstName": "Oleksandr",
+    "lastName": "Lytvyn",
+    "role": "donor",
+    "password": "Password123",
+    "phone": "+421951589026",
+    "avatar": "",
+    "token": "Rerh3XOZc1ZbcK"
+  },
+  {
+    "id": "5",
+    "email": "tester@uniba.sk",
+    "firstName": "Tester",
+    "lastName": "Dear",
+    "role": "donor",
+    "password": "Password123",
+    "phone": "+421951589027",
+    "avatar": "",
+    "token": "tur73XiZc12bcj"
+  }
+]
