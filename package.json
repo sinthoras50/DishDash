@@ -3,7 +3,7 @@
   "version": "0.1.0-alpha",
   "description": "Free and open-source admin application made with React",
   "author": "repisky <repisky7@uniba.sk>",
-  "homepage": ".",
+  "homepage": "",
   "license": "MIT",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
