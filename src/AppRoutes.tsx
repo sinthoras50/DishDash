@@ -1,7 +1,6 @@
 import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import PrivateRoute from "./core/components/PrivateRoute";
-import Landing from "./landing/pages/Landing";
 
 // Admin
 const Admin = lazy(() => import("./admin/pages/Admin"));
@@ -29,7 +28,7 @@ const Forbidden = lazy(() => import("./core/pages/Forbidden"));
 const NotFound = lazy(() => import("./core/pages/NotFound"));
 
 // Landing
-// const Landing = lazy(() => import("./landing/pages/Landing"));
+const Landing = lazy(() => import("./landing/pages/Landing"));
 
 // Donations
 const EditDonation = lazy(() => import("./donor/pages/EditDonation"));
