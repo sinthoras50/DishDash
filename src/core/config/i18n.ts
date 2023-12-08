@@ -9,7 +9,7 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     backend: {
-      loadPath: `${process.env.PUBLIC_URL}/locales/{{lng}}/translation.json`,
+      loadPath: `https://test2--dishdashproj.netlify.app/locales/{{lng}}/translation.json`,
     },
     fallbackLng: "en",
     interpolation: {
