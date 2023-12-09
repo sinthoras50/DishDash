@@ -81,16 +81,16 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
             </Box>
 
             <Tabs aria-label={t("landing.nav.tabsAria")} value={false}>
-              {landingNavItems.map((item) => (
+              {landingNavItems.map((item, i) => (
                 <Tab
-                  key={item.key}
-                  activeClassName="Mui-selected"
-                  end={true}
-                  component={NavLink}
-                  label={t(item.key)}
-                  to={`/${process.env.PUBLIC_URL}/${item.path}`}
-                />
-              ))}
+                key={item.key}
+                activeClassName="Mui-selected"
+                end={true}
+                component={NavLink}
+                label={t(item.key)}
+                to={(i === 0) ? `/${process.env.PUBLIC_URL}/${item.path}` : `/${process.env.PUBLIC_URL}/#${item.path}`}
+                />)
+              )}
             </Tabs>
 
             <Box sx={{ display: "flex", alignItems: "center" }}>
