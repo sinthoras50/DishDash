@@ -57,7 +57,7 @@ const AppRoutes = () => {
       <Route path="forgot-password" element={<ForgotPassword />} />
       <Route path="forgot-password-submit" element={<ForgotPasswordSubmit />} />
       <Route path="login" element={<Login />} />
-      <Route path="register" element={<Register />} />
+      <Route path="/register" element={<Register />} />
       <Route path="403" element={<Forbidden />} />
       <Route path="404" element={<NotFound />} />
       <Route
