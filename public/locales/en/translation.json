@@ -53,24 +53,28 @@
         "toggleAriaLabel": "Receiver steps toggle button",
         "steps": {
           "1": {
-            "title": "<Receiver step 1>",
-            "imgAlt": "<Receiver step 1 image alt>",
-            "description": "<Receiver step 1 description>"
+            "title": "Register as a food recipient",
+            "imgUrl": "img/register-as-receiver.jpg",
+            "imgAlt": "User identifying as a charity worker",
+            "description": "If you need food, you can sign up on our website as a food recipient. You will need to provide some basic information, such as your name, email, phone number, and address. You will also need to verify your identity and eligibility by uploading a proof of income, hardship or charity employment."
           },
           "2": {
-            "title": "<Receiver step 2>",
-            "imgAlt": "<Receiver step 2 image alt>",
-            "description": "<Receiver step 2 description>"
+            "title": "Browse and reserve food listings",
+            "imgUrl": "img/browse-food.jpg",
+            "imgAlt": "Receiver browsing the available food listings on a laptop",
+            "description": "Once you are registered, you can browse the available food listings in your area by clicking the <To be implemented> button on our website. You can filter the food listings by category, distance, and availability to find the food that suits your needs and preferences. When you find a food listing that you want, you can reserve it for pick up by clicking the reserve button."
           },
           "3": {
-            "title": "<Receiver step 3>",
-            "imgAlt": "<Receiver step 3 image alt>",
-            "description": "<Receiver step 3 description>"
+            "title": "Receive a QR code",
+            "imgUrl": "img/receive-qrcode.jpg",
+            "imgAlt": "Receiver receiving a confirmation with the QR code on their phone",
+            "description": "You will receive a confirmation email with the details of the food donor, the pick-up location, and the pick-up time. You will also receive a QR code that you will need to show to the food donor when you arrive to pick up the food."
           },
           "4": {
-            "title": "<Receiver step 4>",
-            "imgAlt": "<Receiver step 4 image alt>",
-            "description": "<Receiver step 4 description>"
+            "title": "Pick up the food",
+            "imgUrl": "img/food-pickup.jpg",
+            "imgAlt": "Receiver presenting themselves with a QR code, picking up the food",
+            "description": "Follow the instructions specified by the food donor. After presenting yourself with your QR code, you will be able to pick up the food from the donor."
           }
         }
       }
