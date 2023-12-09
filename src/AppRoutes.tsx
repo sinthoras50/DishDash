@@ -38,7 +38,7 @@ const DonationManagement = lazy(
 
 const AppRoutes = () => {
   return (
-    <Routes basename="">
+    <Routes basename="/">
       <Route path="/" element={<Landing />} />
       <PrivateRoute path="admin" element={<Admin />}>
         <PrivateRoute path="/" element={<Home />} />
@@ -57,7 +57,7 @@ const AppRoutes = () => {
       <Route path="forgot-password" element={<ForgotPassword />} />
       <Route path="forgot-password-submit" element={<ForgotPasswordSubmit />} />
       <Route path="login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="register" element={<Register />} />
       <Route path="403" element={<Forbidden />} />
       <Route path="404" element={<NotFound />} />
       <Route
