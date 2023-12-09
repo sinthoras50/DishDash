@@ -179,7 +179,7 @@ const Register = () => {
                       <Select
                         value={areaCode}
                         onChange={handleNumberChange}
-                        sx={{ "& fieldset": { border: "none" } }}
+                        sx={{ "& fieldset": { border: "none" }, "& .MuiSelect-select": { paddingRight: 0, paddingLeft: 0 }}}
                       >
                         {sortedcountryCodes.map((option) => (
                           <MenuItem key={option.code} value={option.dial_code}>
