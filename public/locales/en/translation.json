@@ -59,10 +59,10 @@
             "description": "If you need food, you can sign up on our website as a food recipient. You will need to provide some basic information, such as your name, email, phone number, and address. You will also need to verify your identity and eligibility by uploading a proof of income, hardship or charity employment."
           },
           "2": {
-            "title": "Browse and reserve food listings",
+            "title": "Browse food listings",
             "imgUrl": "img/browse-food.jpg",
             "imgAlt": "Receiver browsing the available food listings on a laptop",
-            "description": "Once you are registered, you can browse the available food listings in your area by clicking the <To be implemented> button on our website. You can filter the food listings by category, distance, and availability to find the food that suits your needs and preferences. When you find a food listing that you want, you can reserve it for pick up by clicking the reserve button."
+            "description": "Once you are registered, you can browse the available food listings on our website. You can filter the food listings by category, distance, and availability to find the food that suits your needs and preferences. When you find a food listing that you want, you can reserve it for pick up by clicking the reserve button."
           },
           "3": {
             "title": "Receive a QR code",
