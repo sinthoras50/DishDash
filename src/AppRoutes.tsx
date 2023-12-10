@@ -38,7 +38,7 @@ const DonationManagement = lazy(
 
 const AppRoutes = () => {
   return (
-    <Routes basename={process.env.PUBLIC_URL}>
+    <Routes basename="/">
       <Route path="/" element={<Landing />} />
       <PrivateRoute path="admin" element={<Admin />}>
         <PrivateRoute path="/" element={<Home />} />

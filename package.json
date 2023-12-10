@@ -3,7 +3,7 @@
   "version": "0.1.0-alpha",
   "description": "Free and open-source admin application made with React",
   "author": "m6v3l9 <m6v3l9@gmail.com>",
-  "homepage": "https://m6v3l9.github.io/react-material-admin",
+  "homepage": "",
   "license": "MIT",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",

@@ -124,6 +124,7 @@ const Landing = () => {
         }}
       >
         <Typography
+          id="howItWorks"
           variant="h2"
           align="center"
           color="text.primary"
@@ -209,6 +210,7 @@ const Landing = () => {
         }}
       >
         <Typography
+          id='aboutUs'
           variant="h2"
           align="center"
           color="text.primary"
@@ -282,6 +284,7 @@ const Landing = () => {
             {t("landing.getInTouch.title")}
           </Typography>
           <Typography
+            id='contact'
             variant="body1"
             align="center"
             color="text.primary"
