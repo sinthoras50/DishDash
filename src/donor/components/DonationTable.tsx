@@ -3,6 +3,7 @@ import {
   Edit as EditIcon,
   MoreVert as MoreVertIcon,
   Photo as PhotoIcon,
+  Repeat as RepeatIcon,
 } from "@mui/icons-material";
 import {
   Box,
@@ -185,6 +186,7 @@ type DonationRowProps = {
   onCheck: (id: string) => void;
   onDelete: (donationIds: string[]) => void;
   onEdit: (donationId: string) => void;
+  onRepeat: (donationId: string) => void;
   processing: boolean;
   selected: boolean;
   donation: Donation;
@@ -195,6 +197,7 @@ const DonationRow = ({
   onCheck,
   onDelete,
   onEdit,
+  onRepeat,
   processing,
   selected,
   donation,
@@ -221,6 +224,11 @@ const DonationRow = ({
   const handleEdit = () => {
     handleCloseActions();
     onEdit(donation.id);
+  };
+
+  const handleRepeat = () => {
+    handleCloseActions();
+    onRepeat(donation.id);
   };
 
   const formatDate = (dateData: string) => {
@@ -310,6 +318,12 @@ const DonationRow = ({
             </ListItemIcon>{" "}
             {t("common.edit")}
           </MenuItem>
+          <MenuItem onClick={handleRepeat}>
+            <ListItemIcon>
+              <RepeatIcon />
+            </ListItemIcon>{" "}
+            {t("common.repeat")}
+          </MenuItem>
           <MenuItem onClick={handleDelete}>
             <ListItemIcon>
               <DeleteIcon />
@@ -326,6 +340,7 @@ type DonationTableProps = {
   processing: boolean;
   onDelete: (donationIds: string[]) => void;
   onEdit: (donationId: string) => void;
+  onRepeat: (donationId: string) => void;
   onSelectedChange: (selected: string[]) => void;
   selected: string[];
   donations?: Donation[];
@@ -334,6 +349,7 @@ type DonationTableProps = {
 const DonationTable = ({
   onDelete,
   onEdit,
+  onRepeat,
   onSelectedChange,
   processing,
   selected,
@@ -421,6 +437,7 @@ const DonationTable = ({
                 onCheck={handleClick}
                 onDelete={onDelete}
                 onEdit={onEdit}
+                onRepeat={onRepeat}
                 processing={processing}
                 selected={isSelected(donation.id ?? "")}
                 donation={donation}

@@ -43,7 +43,11 @@ const DonationManagement = () => {
   };
 
   const handleEditDonation = (donationId: string) => {
-    navigate(`/${process.env.PUBLIC_URL}/admin/donations/${donationId}`);
+    navigate(`/${process.env.PUBLIC_URL}/admin/donations/edit/${donationId}`);
+  };
+
+  const handleRepeatDonation = (donationId: string) => {
+    navigate(`/${process.env.PUBLIC_URL}/admin/donations/repeat/${donationId}`);
   };
 
   const handleAddDonation = () => {
@@ -91,6 +95,7 @@ const DonationManagement = () => {
         processing={processing}
         onDelete={handleOpenConfirmDeleteDialog}
         onEdit={handleEditDonation}
+        onRepeat={handleRepeatDonation}
         onSelectedChange={handleSelectedChange}
         selected={selected}
         donations={data}
