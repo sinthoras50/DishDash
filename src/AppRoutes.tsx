@@ -51,7 +51,8 @@ const AppRoutes = () => {
           <PrivateRoute path="password" element={<ProfilePassword />} />
         </PrivateRoute>
         <PrivateRoute path="donations/new" element={<EditDonation />} />
-        <PrivateRoute path="donations/:id" element={<EditDonation />} />
+        <PrivateRoute path="donations/edit/:id" element={<EditDonation />} />
+        <PrivateRoute path="donations/repeat/:id" element={<EditDonation />} />
         <PrivateRoute path="donations" element={<DonationManagement />} />
       </PrivateRoute>
       <Route path="forgot-password" element={<ForgotPassword />} />

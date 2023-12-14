@@ -10,9 +10,19 @@
     "imageAlt": "Canned Vegetables",
     "active": false,
     "items": [
-      { "name": "Canned Green Beans", "quantity": 100, "type": "grocery" },
-      { "name": "Canned Corn", "quantity": 75, "type": "grocery" },
-      { "name": "Canned Peas", "quantity": 50, "type": "grocery" }
+      {
+        "name": "Canned Green Beans",
+        "quantity": 100,
+        "type": "grocery",
+        "unit": "pc"
+      },
+      {
+        "name": "Canned Corn",
+        "quantity": 75,
+        "type": "grocery",
+        "unit": "pc"
+      },
+      { "name": "Canned Peas", "quantity": 50, "type": "grocery", "unit": "pc" }
     ],
     "createdAt": "2023-12-01T10:30:00Z"
   },
@@ -27,9 +37,9 @@
     "imageAlt": "Grocery Bag",
     "active": false,
     "items": [
-      { "name": "Rice (1kg)", "quantity": 50, "type": "grocery" },
-      { "name": "Pasta", "quantity": 30, "type": "grocery" },
-      { "name": "Canned Soup", "quantity": 40, "type": "grocery" }
+      { "name": "Rice", "quantity": 3, "type": "grocery", "unit": "kg" },
+      { "name": "Pasta", "quantity": 2, "type": "grocery", "unit": "kg" },
+      { "name": "Canned Soup", "quantity": 10, "type": "grocery", "unit": "pc" }
     ],
     "createdAt": "2023-11-25T14:45:00Z"
   },
@@ -44,9 +54,24 @@
     "imageAlt": "Hot Meals",
     "active": true,
     "items": [
-      { "name": "Vegetable Curry", "quantity": 50, "type": "preparedFood" },
-      { "name": "Chicken Alfredo", "quantity": 30, "type": "preparedFood" },
-      { "name": "Vegan Chili", "quantity": 40, "type": "preparedFood" }
+      {
+        "name": "Vegetable Curry",
+        "quantity": 500,
+        "type": "preparedFood",
+        "unit": "g"
+      },
+      {
+        "name": "Chicken Alfredo",
+        "quantity": 300,
+        "type": "preparedFood",
+        "unit": "g"
+      },
+      {
+        "name": "Vegan Chili",
+        "quantity": 400,
+        "type": "preparedFood",
+        "unit": "g"
+      }
     ],
     "createdAt": "2023-12-02T09:15:00Z"
   },
@@ -61,9 +86,24 @@
     "imageAlt": "Fresh Produce",
     "active": false,
     "items": [
-      { "name": "Apples", "quantity": 100, "type": "fruitsVegetables" },
-      { "name": "Carrots", "quantity": 75, "type": "fruitsVegetables" },
-      { "name": "Oranges", "quantity": 50, "type": "fruitsVegetables" }
+      {
+        "name": "Apples",
+        "quantity": 5,
+        "type": "fruitsVegetables",
+        "unit": "kg"
+      },
+      {
+        "name": "Carrots",
+        "quantity": 2,
+        "type": "fruitsVegetables",
+        "unit": "kg"
+      },
+      {
+        "name": "Oranges",
+        "quantity": 5,
+        "type": "fruitsVegetables",
+        "unit": "kg"
+      }
     ],
     "createdAt": "2023-11-28T12:00:00Z"
   },
@@ -78,9 +118,24 @@
     "imageAlt": "Pet Food",
     "active": true,
     "items": [
-      { "name": "Dry Cat Food", "quantity": 30, "type": "petFood" },
-      { "name": "Canned Dog Food", "quantity": 20, "type": "petFood" },
-      { "name": "Treats Variety Pack", "quantity": 25, "type": "petFood" }
+      {
+        "name": "Dry Cat Food",
+        "quantity": 10,
+        "type": "petFood",
+        "unit": "kg"
+      },
+      {
+        "name": "Canned Dog Food",
+        "quantity": 20,
+        "type": "petFood",
+        "unit": "pc"
+      },
+      {
+        "name": "Treats Variety Pack",
+        "quantity": 3,
+        "type": "petFood",
+        "unit": "kg"
+      }
     ],
     "createdAt": "2023-12-05T11:00:00Z"
   },
@@ -95,9 +150,24 @@
     "imageAlt": "Cereal Boxes",
     "active": true,
     "items": [
-      { "name": "Cereal Boxes", "quantity": 40, "type": "grocery" },
-      { "name": "Peanut Butter (500g)", "quantity": 25, "type": "grocery" },
-      { "name": "Canned Tomatoes", "quantity": 30, "type": "grocery" }
+      {
+        "name": "Cereal Boxes",
+        "quantity": 15,
+        "type": "grocery",
+        "unit": "pc"
+      },
+      {
+        "name": "Peanut Butter",
+        "quantity": 500,
+        "type": "grocery",
+        "unit": "g"
+      },
+      {
+        "name": "Canned Tomatoes",
+        "quantity": 10,
+        "type": "grocery",
+        "unit": "pc"
+      }
     ],
     "createdAt": "2023-11-10T14:30:00Z"
   },
@@ -112,9 +182,24 @@
     "imageAlt": "Prepared Meals",
     "active": true,
     "items": [
-      { "name": "Lasagna", "quantity": 20, "type": "preparedFood" },
-      { "name": "Vegetarian Stir-Fry", "quantity": 15, "type": "preparedFood" },
-      { "name": "Beef Stew", "quantity": 25, "type": "preparedFood" }
+      {
+        "name": "Lasagna",
+        "quantity": 600,
+        "type": "preparedFood",
+        "unit": "g"
+      },
+      {
+        "name": "Vegetarian Stir-Fry",
+        "quantity": 800,
+        "type": "preparedFood",
+        "unit": "g"
+      },
+      {
+        "name": "Beef Stew",
+        "quantity": 500,
+        "type": "preparedFood",
+        "unit": "g"
+      }
     ],
     "createdAt": "2023-11-15T10:00:00Z"
   },
@@ -129,9 +214,24 @@
     "imageAlt": "Fresh Harvest",
     "active": false,
     "items": [
-      { "name": "Strawberries", "quantity": 50, "type": "fruitsVegetables" },
-      { "name": "Broccoli", "quantity": 40, "type": "fruitsVegetables" },
-      { "name": "Grapes", "quantity": 30, "type": "fruitsVegetables" }
+      {
+        "name": "Strawberries",
+        "quantity": 5,
+        "type": "fruitsVegetables",
+        "unit": "kg"
+      },
+      {
+        "name": "Broccoli",
+        "quantity": 2,
+        "type": "fruitsVegetables",
+        "unit": "kg"
+      },
+      {
+        "name": "Grapes",
+        "quantity": 10,
+        "type": "fruitsVegetables",
+        "unit": "kg"
+      }
     ],
     "createdAt": "2023-10-12T12:30:00Z"
   },
@@ -146,8 +246,8 @@
     "imageAlt": "Pet Supplies",
     "active": true,
     "items": [
-      { "name": "Dog Treats", "quantity": 20, "type": "petFood" },
-      { "name": "Bird Seed", "quantity": 10, "type": "petFood" }
+      { "name": "Dog Treats", "quantity": 4, "type": "petFood", "unit": "kg" },
+      { "name": "Bird Seed", "quantity": 1, "type": "petFood", "unit": "kg" }
     ],
     "createdAt": "2023-12-07T15:45:00Z"
   },
@@ -162,9 +262,14 @@
     "imageAlt": "Grocery Collection",
     "active": true,
     "items": [
-      { "name": "Pasta", "quantity": 50, "type": "grocery" },
-      { "name": "Canned Beans", "quantity": 40, "type": "grocery" },
-      { "name": "Cooking Oil", "quantity": 30, "type": "grocery" }
+      { "name": "Pasta", "quantity": 2, "type": "grocery", "unit": "kg" },
+      {
+        "name": "Canned Beans",
+        "quantity": 8,
+        "type": "grocery",
+        "unit": "pc"
+      },
+      { "name": "Cooking Oil", "quantity": 4, "type": "grocery", "unit": "l" }
     ],
     "createdAt": "2023-12-03T12:30:00Z"
   }

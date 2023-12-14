@@ -228,6 +228,10 @@
         "title": "Active donations",
         "action": "View"
       },
+      "fulfilledDonations": {
+        "title": "Fulfilled donations",
+        "action": "View"
+      },
       "upcomingEvents": {
         "title": "Upcoming Events",
         "action": "Learn more"
@@ -376,53 +380,6 @@
         },
         "seeAll": "See all notifications"
       }
-    },
-    "home": {
-      "achievement": {
-        "action": "View Profile",
-        "description": "You have completed {{progress}}% of your profile. Your current progress is great.",
-        "title": "Congratulations {{name}}"
-      },
-      "followers": {
-        "units": {
-          "likes": "Likes",
-          "love": "Love",
-          "smiles": "Smiles"
-        }
-      },
-      "meeting": {
-        "title": "Meetings"
-      },
-      "targets": {
-        "income": "Income",
-        "followers": "Followers",
-        "title": "Targets",
-        "views": "Views"
-      },
-      "views": {
-        "action": "View Dashboard",
-        "unit": "Views"
-      },
-      "welcome": {
-        "subTitle": "Welcome back, feeling generous?",
-        "title": "Hi {{name}},",
-        "cta": "Let's donate"
-      },
-      "toolbar": {
-        "title": "Home"
-      },
-      "carousels": {
-        "activeDonations": {
-          "title": "Active donations"
-        },
-        "upcomingEvents": {
-          "title": "Upcoming Events"
-        }
-      },
-      "view": "View",
-      "community": {
-        "title": "Community"
-      }
     }
   },
   "calendar": {
@@ -469,6 +426,8 @@
     "confirm": "Confirm",
     "confirmation": "Confirmation",
     "delete": "Delete",
+    "view": "View",
+    "repeat": "Repeat",
     "edit": "Edit",
     "errors": {
       "forbidden": {

@@ -19,7 +19,9 @@ interface CardCarouselProps {
     description: string;
     imageUrl: string;
     imageAlt: string;
-    actionText: string;
+    primaryActionText: string;
+    secondaryActionText?: string;
+    secondaryAction?: () => void;
   }>;
   cardsPerPage: number;
 }
@@ -111,12 +113,23 @@ const CardCarousel = ({ cards, cardsPerPage }: CardCarouselProps) => {
                   </Typography>
                 </CardContent>
                 <CardActions sx={{ mt: "auto" }}>
+                  {card.secondaryAction && (
+                    <Button
+                      size="small"
+                      variant="outlined"
+                      sx={{ py: 0, mt: "auto" }}
+                      onClick={card.secondaryAction}
+                    >
+                      {card.secondaryActionText}
+                    </Button>
+                  )}
+
                   <Button
                     size="small"
-                    variant="outlined"
+                    variant="contained"
                     sx={{ py: 0, mt: "auto" }}
                   >
-                    {card.actionText}
+                    {card.primaryActionText}
                   </Button>
                 </CardActions>
               </Card>
