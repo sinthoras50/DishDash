@@ -104,11 +104,16 @@ const EditDonation = () => {
   const { data } = useDonations();
   const donation = data?.find((donation) => donation.id === id);
 
+  const editMode = window.location.href.includes("/edit/");
+  const repeatMode = window.location.href.includes("/repeat/");
+
   useEffect(() => {
     if (donation) {
       setItems(donation.items);
+    } else if (editMode || repeatMode) {
+      navigate(`/${process.env.PUBLIC_URL}/404`);
     }
-  }, [donation]);
+  }, [donation, navigate, editMode, repeatMode]);
 
   const processing = isCreating || isAdding || isUpdating;
 
@@ -171,7 +176,7 @@ const EditDonation = () => {
       setItemsStatus(t("donor.editDonation.noItems"));
       return;
     }
-    if (donation) {
+    if (editMode) {
       handleUpdateDonation(infoData);
       return;
     }
@@ -229,7 +234,7 @@ const EditDonation = () => {
       <AdminAppBar>
         <AdminToolbar
           title={
-            donation
+            editMode
               ? t("donor.editDonation.title")
               : t("donor.createDonation.title")
           }
@@ -407,7 +412,7 @@ const EditDonation = () => {
                 disabled={processing}
                 loading={processing || isAdding}
               >
-                {donation
+                {editMode
                   ? t("donor.editDonation.infoForm.submit")
                   : t("donor.createDonation.submit")}
               </LoadingButton>
