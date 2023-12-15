@@ -2,6 +2,8 @@ import {
   Login as LoginIcon,
   Settings as SettingsIcon,
 } from "@mui/icons-material";
+import MenuIcon from '@mui/icons-material/Menu';
+
 import {
   AppBar,
   Box,
@@ -12,6 +14,9 @@ import {
   Tabs,
   Toolbar,
   Typography,
+  Container,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -46,6 +51,16 @@ const landingNavItems = [
 const LandingLayout = ({ children }: LandingLayoutProps) => {
   const { t } = useTranslation();
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(null);
+  };
+
 
   const handleSettingsToggle = () => {
     setSettingsOpen(!settingsOpen);
@@ -53,77 +68,153 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
 
   return (
     <Paper square>
-      <AppBar color="transparent" position="relative" sx={{ mb: 5 }}>
-        <Toolbar>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              flexGrow: 1,
-            }}
-          >
-            <Box
-              component={RouterLink}
-              to={`/${process.env.PUBLIC_URL}`}
+      <AppBar color='transparent' position='static' sx={{ mb: 5 }}>
+        <Container maxWidth={false}>
+          <Toolbar disableGutters>
+
+            {/* Main flex container */}
+            <Box 
               sx={{
-                display: "flex",
-                alignItems: "center",
-                mt: -2,
-                textDecoration: "none",
-                color: "text.primary",
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexGrow: 1
               }}
             >
-              <Logo size={24} sx={{ mr: 1 }} />
-              <Typography variant="h6" color="inherit" noWrap sx={{ mt: -0.5 }}>
-                {process.env.REACT_APP_NAME}
-              </Typography>
-            </Box>
-
-            <Tabs aria-label={t("landing.nav.tabsAria")} value={false}>
-              {landingNavItems.map((item, i) => (
-                <Tab
-                key={item.key}
-                activeClassName="Mui-selected"
-                end={true}
-                component={NavLink}
-                label={t(item.key)}
-                to={(i === 0) ? `/${process.env.PUBLIC_URL}/${item.path}` : `/${process.env.PUBLIC_URL}/#${item.path}`}
-                />)
-              )}
-            </Tabs>
-
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Button
+              {/* Logo Container left - hide when display is xs */}
+              <Box
                 component={RouterLink}
-                to={`/${process.env.PUBLIC_URL}/login`}
-                variant="contained"
-                startIcon={<LoginIcon />}
-                sx={{ mr: 1 }}
-                size="small"
+                to={`/${process.env.PUBLIC_URL}`}
+                sx={{
+                  display: { xs: 'none', md: 'flex' },
+                  alignItems: 'center',
+                  mt: -2,
+                  textDecoration: 'none',
+                  color: 'text.primary'
+                }}
               >
-                {t("landing.nav.cta")}
-              </Button>
+                <Logo size={24} sx={{ mr:1 }} />
+                <Typography variant='h6' color='inherit' noWrap sx={{ mt: -0.5 }}>
+                  { process.env.REACT_APP_NAME}
+                </Typography>
+              </Box>
 
-              <IconButton
-                color="default"
-                aria-label={t("landing.nav.settingsAria")}
-                component="span"
-                onClick={handleSettingsToggle}
+              {/* Hamburger menu - hide when display is md or higher */}
+              <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' }} }>
+                <IconButton
+                  size='large'
+                  aria-label='navigation hamburger menu'
+                  aria-controls='menu-appbar'
+                  aria-haspopup='true'
+                  onClick={handleOpenNavMenu}
+                  color='inherit'
+                >
+                  <MenuIcon />
+                </IconButton>
+
+                <Menu
+                  id='menu-appbar'
+                  anchorEl={anchorElNav}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                  }}
+                  open={Boolean(anchorElNav)}
+                  onClose={handleCloseNavMenu}
+                  sx={{
+                    display: { xs: 'block', md: 'none' },
+                  }}
+                >
+
+                  {landingNavItems.map((item, i) => (
+                    <MenuItem 
+                      key={item.key} 
+                      onClick={handleCloseNavMenu}
+                      component={NavLink}
+                      to={(i === 0) ? `/${process.env.PUBLIC_URL}/${item.path}` : `/${process.env.PUBLIC_URL}/#${item.path}`}
+                    >
+                      <Typography textAlign='center'>{t(item.key)}</Typography>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </Box>
+
+              {/* Logo Container center - hide when display is md or higher */}
+              <Box
+                component={RouterLink}
+                to={`/${process.env.PUBLIC_URL}`}
+                sx={{
+                  display: { xs: 'flex', md: 'none' },
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  mt: 0,
+                  textDecoration: 'none',
+                  color: 'text.primary'
+                }}
               >
-                <SettingsIcon />
-              </IconButton>
-            </Box>
+                <Logo size={32} sx={{ mr:1 }} />
+                <Typography variant='h4' color='inherit' noWrap sx={{ mt: 0 }}>
+                  { process.env.REACT_APP_NAME}
+                </Typography>
+              </Box>
+
+              {/* Menu Items - hide when display is extra small */}
+              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
+                <Tabs aria-label={t('landing.nav.tabsAria')} value={false}>
+                  {landingNavItems.map((item, i) => (
+                    <Tab
+                    key={item.key}
+                    activeClassName='Mui-selected'
+                    end={true}
+                    component={NavLink}
+                    label={t(item.key)}
+                    to={(i === 0) ? `/${process.env.PUBLIC_URL}/${item.path}` : `/${process.env.PUBLIC_URL}/#${item.path}`}
+                    />)
+                  )}
+                </Tabs>              
+              </Box> 
+
+              {/* Login and settings buttons */}
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Button
+                  component={RouterLink}
+                  to={`/${process.env.PUBLIC_URL}/login`}
+                  variant="contained"
+                  startIcon={<LoginIcon />}
+                  sx={{ mr: 1 }}
+                  size="small"
+                >
+                  {t("landing.nav.cta")}
+                </Button>
+
+                <IconButton
+                  color="default"
+                  aria-label={t("landing.nav.settingsAria")}
+                  component="span"
+                  onClick={handleSettingsToggle}
+                >
+                  <SettingsIcon />
+                </IconButton>
+              </Box>
           </Box>
-        </Toolbar>
+
+          </Toolbar>
+        </Container>
       </AppBar>
+
+
 
       <SettingsDrawer
         onDrawerToggle={handleSettingsToggle}
         open={settingsOpen}
       />
 
-      <Box component="main" sx={{ px: "5%" }}>
+      <Box component='main' sx={{ px: '5%' }}>
         {children}
       </Box>
 
