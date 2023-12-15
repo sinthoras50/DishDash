@@ -68,7 +68,7 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
 
   return (
     <Paper square>
-      <AppBar position='static'>
+      <AppBar color='transparent' position='static' sx={{ mb: 5 }}>
         <Container maxWidth={false}>
           <Toolbar disableGutters>
 
