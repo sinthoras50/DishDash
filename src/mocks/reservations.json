@@ -2,27 +2,27 @@
   {
     "id": "1",
     "title": "Canned Vegetables",
-    "location": "bratislava, Staré Grunty 36",
+    "location": "Bratislava, Staré Grunty 36",
     "from": "2023-12-10T08:00:00Z",
     "until": "2023-12-15T18:00:00Z",
     "additionalInfo": "",
     "imageUrl": "https://plantbasedjuniors.com/wp-content/uploads/2021/01/Canned-plant-based-foods1-scaled.jpg",
     "imageAlt": "Canned Vegetables",
-    "active": false,
+    "pickedUp": false,
     "items": [
       {
         "name": "Canned Green Beans",
-        "quantity": 100,
+        "quantity": 1,
         "type": "grocery",
         "unit": "pc"
       },
       {
         "name": "Canned Corn",
-        "quantity": 75,
+        "quantity": 5,
         "type": "grocery",
         "unit": "pc"
       },
-      { "name": "Canned Peas", "quantity": 50, "type": "grocery", "unit": "pc" }
+      { "name": "Canned Peas", "quantity": 2, "type": "grocery", "unit": "pc" }
     ],
     "createdAt": "2023-12-01T10:30:00Z"
   },
@@ -35,11 +35,10 @@
     "additionalInfo": "Donate a bag of essential groceries to support families in need.",
     "imageUrl": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FLifestyle%2F2021-07-MEGALIST-Brilliant-Ways-To-Reuse-Plastic-Grocery-Bags%20%2Fkitchn-2021-plastic-grocery-bags-1",
     "imageAlt": "Grocery Bag",
-    "active": false,
+    "pickedUp": false,
     "items": [
-      { "name": "Rice", "quantity": 3, "type": "grocery", "unit": "kg" },
-      { "name": "Pasta", "quantity": 2, "type": "grocery", "unit": "kg" },
-      { "name": "Canned Soup", "quantity": 10, "type": "grocery", "unit": "pc" }
+      { "name": "Rice", "quantity": 1, "type": "grocery", "unit": "kg" },
+      { "name": "Pasta", "quantity": 1, "type": "grocery", "unit": "kg" }
     ],
     "createdAt": "2023-11-25T14:45:00Z"
   },
@@ -52,7 +51,7 @@
     "additionalInfo": "Provide warm, nutritious meals.",
     "imageUrl": "https://i.cbc.ca/1.4560064.1698961615!/fileImage/httpImage/image.jpg_gen/derivatives/original_780/root-vegetable-stew.jpg",
     "imageAlt": "Hot Meals",
-    "active": true,
+    "pickedUp": false,
     "items": [
       {
         "name": "Vegetable Curry",
@@ -84,30 +83,21 @@
     "additionalInfo": "Support local farmers and provide fresh produce to those in need.",
     "imageUrl": "https://cdn.statefoodsafety.com/blog/2017/09/Is_Fresh_Produce_Safe_to_Eat_Small-compressor.jpeg",
     "imageAlt": "Fresh Produce",
-    "active": false,
+    "pickedUp": false,
     "items": [
       {
         "name": "Apples",
-        "quantity": 5,
+        "quantity": 3,
         "type": "fruitsVegetables",
         "unit": "kg"
       },
       {
         "name": "Carrots",
-        "quantity": 2,
-        "type": "fruitsVegetables",
-        "unit": "kg"
-      },
-      {
-        "name": "Oranges",
-        "quantity": 5,
+        "quantity": 1,
         "type": "fruitsVegetables",
         "unit": "kg"
       }
     ],
-    "reservations": {
-
-    },
     "createdAt": "2023-11-28T12:00:00Z"
   },
   {
@@ -119,23 +109,11 @@
     "additionalInfo": "Donating pet food for cats and dogs.",
     "imageUrl": "https://ga-petfoodpartners.co.uk/content/uploads/2021/11/Pet-Food-Trends-Main-Banner.png",
     "imageAlt": "Pet Food",
-    "active": true,
+    "pickedUp": true,
     "items": [
       {
         "name": "Dry Cat Food",
-        "quantity": 10,
-        "type": "petFood",
-        "unit": "kg"
-      },
-      {
-        "name": "Canned Dog Food",
-        "quantity": 20,
-        "type": "petFood",
-        "unit": "pc"
-      },
-      {
-        "name": "Treats Variety Pack",
-        "quantity": 3,
+        "quantity": 5,
         "type": "petFood",
         "unit": "kg"
       }
@@ -151,11 +129,11 @@
     "additionalInfo": "Contribute to our community grocery drive and help families in need.",
     "imageUrl": "https://miro.medium.com/v2/resize:fit:1004/0*j0IVk3RVnZ6tz3iS.jpg",
     "imageAlt": "Cereal Boxes",
-    "active": true,
+    "pickedUp": true,
     "items": [
       {
         "name": "Cereal Boxes",
-        "quantity": 15,
+        "quantity": 2,
         "type": "grocery",
         "unit": "pc"
       },
@@ -167,7 +145,7 @@
       },
       {
         "name": "Canned Tomatoes",
-        "quantity": 10,
+        "quantity": 2,
         "type": "grocery",
         "unit": "pc"
       }
@@ -183,7 +161,7 @@
     "additionalInfo": "Donate homemade meals to bring warmth and comfort to those in need.",
     "imageUrl": "https://hometaste.my/wp-content/uploads/2020/12/istock-588595864-1199x800.jpg",
     "imageAlt": "Prepared Meals",
-    "active": true,
+    "pickedUp": true,
     "items": [
       {
         "name": "Lasagna",
@@ -215,23 +193,23 @@
     "additionalInfo": "Support local farmers and share the goodness of fresh fruits and vegetables.",
     "imageUrl": "https://www.instacart.com/company/wp-content/uploads/2022/12/strawberry-season-hero.jpg",
     "imageAlt": "Fresh Harvest",
-    "active": false,
+    "pickedUp": false,
     "items": [
       {
         "name": "Strawberries",
-        "quantity": 5,
+        "quantity": 1,
         "type": "fruitsVegetables",
         "unit": "kg"
       },
       {
         "name": "Broccoli",
-        "quantity": 2,
+        "quantity": 1,
         "type": "fruitsVegetables",
         "unit": "kg"
       },
       {
         "name": "Grapes",
-        "quantity": 10,
+        "quantity": 1,
         "type": "fruitsVegetables",
         "unit": "kg"
       }
@@ -247,10 +225,9 @@
     "additionalInfo": "Help furry friends in need by donating pet food and supplies.",
     "imageUrl": "https://www.allrecipes.com/thmb/62wdNuSvQguM7MqxsUXN6Zr_sfo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/133123-Peanut-Butter-and-Pumpkin-Dog-Treats-mfs-018-0ba2166a6f1a4f56840f08d2cc8948c2.jpg",
     "imageAlt": "Pet Supplies",
-    "active": true,
+    "pickedUp": true,
     "items": [
-      { "name": "Dog Treats", "quantity": 4, "type": "petFood", "unit": "kg" },
-      { "name": "Bird Seed", "quantity": 1, "type": "petFood", "unit": "kg" }
+      { "name": "Dog Treats", "quantity": 1, "type": "petFood", "unit": "kg" }
     ],
     "createdAt": "2023-12-07T15:45:00Z"
   },
@@ -263,16 +240,9 @@
     "additionalInfo": "Join us in gathering essential groceries for families in Bratislava.",
     "imageUrl": "https://www.tastingtable.com/img/gallery/12-best-canned-baked-beans-ranked/l-intro-1653336642.jpg",
     "imageAlt": "Grocery Collection",
-    "active": true,
+    "pickedUp": true,
     "items": [
-      { "name": "Pasta", "quantity": 2, "type": "grocery", "unit": "kg" },
-      {
-        "name": "Canned Beans",
-        "quantity": 8,
-        "type": "grocery",
-        "unit": "pc"
-      },
-      { "name": "Cooking Oil", "quantity": 4, "type": "grocery", "unit": "l" }
+      { "name": "Pasta", "quantity": 2, "type": "grocery", "unit": "kg" }
     ],
     "createdAt": "2023-12-03T12:30:00Z"
   }

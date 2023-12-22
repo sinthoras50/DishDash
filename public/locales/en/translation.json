@@ -215,6 +215,14 @@
     }
   },
   "donor": {
+    "drawer": {
+      "menu": {
+        "help": "Help",
+        "home": "Home",
+        "settings": "Settings",
+        "donationManagement": "Donations"
+      }
+    },
     "home": {
       "welcome": {
         "subTitle": "Welcome back, feeling generous?",
@@ -361,6 +369,41 @@
       "addDonation": "Add donation"
     }
   },
+  "receiver": {
+    "drawer": {
+      "menu": {
+        "home": "Home"
+      }
+    },
+    "home": {
+      "welcome": {
+        "subTitle": "Welcome back, feeling hungry?",
+        "title": "Hi {{name}},",
+        "cta": "Browse donations"
+      },
+      "toolbar": {
+        "title": "Home"
+      },
+      "activeReservations": {
+        "title": "Active reservations",
+        "action": "View"
+      },
+      "upcomingEvents": {
+        "title": "Upcoming Events",
+        "action": "Learn more"
+      },
+      "community": {
+        "title": "Community",
+        "action": "Read more"
+      },
+      "confirmations": {
+        "cancel": "Are you sure you want to cancel this reservation?"
+      },
+      "notifications": {
+        "cancelSuccess": "Reservation have been canceled!"
+      }
+    }
+  },
   "admin": {
     "drawer": {
       "menu": {
@@ -381,44 +424,6 @@
         "seeAll": "See all notifications"
       }
     }
-  },
-  "calendar": {
-    "confirmations": {
-      "delete": "Are you sure you want to delete this event?"
-    },
-    "form": {
-      "color": {
-        "label": "Color"
-      },
-      "description": {
-        "label": "Description"
-      },
-      "end": {
-        "label": "End Date"
-      },
-      "start": {
-        "label": "Start Date"
-      },
-      "title": {
-        "label": "Title"
-      }
-    },
-    "modal": {
-      "add": {
-        "action": "Add",
-        "title": "Add Event"
-      },
-      "edit": {
-        "action": "Edit",
-        "title": "Edit Event"
-      }
-    },
-    "notifications": {
-      "addSuccess": "{{event}} has been added!",
-      "deleteSuccess": "Event has been deleted!",
-      "updateSuccess": "{{event}} has been updated!"
-    },
-    "title": "Calendar"
   },
   "common": {
     "backHome": "Back to Home",

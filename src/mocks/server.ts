@@ -4,6 +4,7 @@ import activityLogs from "./activityLogs.json";
 import donations from "./donations.json";
 import events from "./events.json";
 import notifications from "./notifications.json";
+import reservations from "./reservations.json";
 import users from "./users.json";
 
 const now = Date.now();
@@ -43,7 +44,8 @@ mock.onPost("/api/login").reply((config) => {
   );
 
   if (user) {
-    return [200, { token: user.token }];
+    user.password = "";
+    return [200, user];
   } else {
     return [401, { error: "Invalid credentials" }];
   }
@@ -99,3 +101,6 @@ mock.onPost("/api/donations").reply((config) => {
 mock.onPut("/api/donations").reply((config) => {
   return [200, config.data];
 });
+
+mock.onDelete("/api/reservations").reply(({ data }) => [200, data]);
+mock.onGet("/api/reservations").reply(200, reservations);

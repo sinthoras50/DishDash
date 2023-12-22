@@ -1,9 +1,6 @@
 import {
-  HelpCenter as HelpCenterIcon,
-  Home as HomeIcon,
   Person as PersonIcon,
   Settings as SettingsIcon,
-  VolunteerActivism as VolunteerActivismIcon,
 } from "@mui/icons-material";
 import {
   Avatar,
@@ -19,40 +16,24 @@ import {
 import { useTranslation } from "react-i18next";
 import { NavLink, Link as RouterLink } from "react-router-dom";
 import { useAuth } from "../../auth/contexts/AuthProvider";
-import Logo from "../../core/components/Logo";
-import { drawerCollapsedWidth, drawerWidth } from "../../core/config/layout";
+import { drawerCollapsedWidth, drawerWidth } from "../config/layout";
+import Logo from "./Logo";
 
-type AdminDrawerProps = {
+type SidebarProps = {
   collapsed: boolean;
   mobileOpen: boolean;
   onDrawerToggle: () => void;
   onSettingsToggle: () => void;
+  menuItems: { icon: any; key: string; path: string }[];
 };
 
-export const menuItems = [
-  {
-    icon: HomeIcon,
-    key: "admin.drawer.menu.home",
-    path: "/admin",
-  },
-  {
-    icon: VolunteerActivismIcon,
-    key: "admin.drawer.menu.donationManagement",
-    path: "/admin/donations",
-  },
-  {
-    icon: HelpCenterIcon,
-    key: "admin.drawer.menu.help",
-    path: "/admin/help",
-  },
-];
-
-const AdminDrawer = ({
+const Sidebar = ({
   collapsed,
   mobileOpen,
   onDrawerToggle,
   onSettingsToggle,
-}: AdminDrawerProps) => {
+  menuItems,
+}: SidebarProps) => {
   const { userInfo } = useAuth();
   const { t } = useTranslation();
   const theme = useTheme();
@@ -106,7 +87,9 @@ const AdminDrawer = ({
         <ListItem
           button
           component={NavLink}
-          to={`/${process.env.PUBLIC_URL}/admin/profile`}
+          to={`/${process.env.PUBLIC_URL}/${
+            userInfo?.role.includes("donor") ? "donor" : "receiver"
+          }/profile`}
         >
           <ListItemAvatar>
             <Avatar>
@@ -148,7 +131,6 @@ const AdminDrawer = ({
         flexShrink: { lg: 0 },
       }}
     >
-      {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
       <Drawer
         variant="temporary"
         open={mobileOpen}
@@ -183,4 +165,4 @@ const AdminDrawer = ({
   );
 };
 
-export default AdminDrawer;
+export default Sidebar;
