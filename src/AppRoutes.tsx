@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import PrivateRoute from "./core/components/PrivateRoute";
+import Event from "./events/pages/Event";
 
 // Auth
 const Login = lazy(() => import("./auth/pages/Login"));
@@ -52,6 +53,7 @@ const AppRoutes = () => {
         <PrivateRoute path="/" element={<DonorHome />} />
         <PrivateRoute path="faq" element={<Faq />} />
         <PrivateRoute path="help" element={<HelpCenter />} />
+        <PrivateRoute path="event/:id" element={<Event />} />
 
         <PrivateRoute path="profile" element={<Profile />}>
           <PrivateRoute path="/" element={<ProfileActivity />} />
@@ -91,3 +93,4 @@ const AppRoutes = () => {
 };
 
 export default AppRoutes;
+
