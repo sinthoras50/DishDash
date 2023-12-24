@@ -31,6 +31,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
       return true;
     }
     if (!userInfo) {
+      console.log("no user info");
       return false;
     }
     return roles.includes(userInfo.role);
@@ -38,9 +39,9 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const handleLogin = async (email: string, password: string) => {
     try {
-      const { token } = await login({ email, password });
-      setAuthKey(token);
-      return token;
+      const user = await login({ email, password });
+      setAuthKey(user.token);
+      return user;
     } catch (err: any) {
       throw err;
     }

@@ -192,7 +192,7 @@ const EditDonation = () => {
           donation: infoData.title,
         })
       );
-      navigate(`/${process.env.PUBLIC_URL}/admin/donations`);
+      navigate(`/${process.env.PUBLIC_URL}/donor/donations`);
     } catch (err: any) {
       snackbar.error(t("common.errors.unexpected.subTitle"));
     }
@@ -207,7 +207,7 @@ const EditDonation = () => {
           donation: infoData.title,
         })
       );
-      navigate(`/${process.env.PUBLIC_URL}/admin/donations`);
+      navigate(`/${process.env.PUBLIC_URL}/donor/donations`);
     } catch (err: any) {
       snackbar.error(t("common.errors.unexpected.subTitle"));
     }

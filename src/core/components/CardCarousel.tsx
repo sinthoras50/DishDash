@@ -20,6 +20,7 @@ interface CardCarouselProps {
     imageUrl: string;
     imageAlt: string;
     primaryActionText: string;
+    primaryAction?: () => void;
     secondaryActionText?: string;
     secondaryAction?: () => void;
   }>;
@@ -47,9 +48,6 @@ const CardCarousel = ({ cards, cardsPerPage }: CardCarouselProps) => {
 
   const startIndex = currentPage * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
-
-  console.log(cardRef.current);
-  console.log(cardRef.current?.offsetWidth);
 
   return (
     <>
@@ -79,8 +77,9 @@ const CardCarousel = ({ cards, cardsPerPage }: CardCarouselProps) => {
       <Slide direction="left" in mountOnEnter unmountOnExit>
         <Grid container spacing={3} justifyContent="left">
           {cards.slice(startIndex, endIndex).map((card, index) => (
-            <Grid item key={index} xs={ Math.round(12 / cardsPerPage) }>
-              <Card ref={cardRef}
+            <Grid item key={index} xs={Math.round(12 / cardsPerPage)}>
+              <Card
+                ref={cardRef}
                 sx={{
                   display: "flex",
                   flexDirection: "column",
@@ -101,12 +100,12 @@ const CardCarousel = ({ cards, cardsPerPage }: CardCarouselProps) => {
                     textOverflow: "ellipsis",
                   }}
                 >
-                  <Typography 
+                  <Typography
                     variant="h5"
                     component="div"
                     noWrap
-                    width={ '100%' }
-                    textOverflow={ 'ellipsis' }
+                    width={"100%"}
+                    textOverflow={"ellipsis"}
                     sx={{
                       mb: 1,
                       textOverflow: "ellipsis",
@@ -119,7 +118,7 @@ const CardCarousel = ({ cards, cardsPerPage }: CardCarouselProps) => {
                     {card.description}
                   </Typography>
                 </CardContent>
-                <CardActions sx={{ mt: "auto" }}>
+                <CardActions sx={{ mt: "auto", justifyContent: "start" }}>
                   {card.secondaryAction && (
                     <Button
                       size="small"
@@ -135,6 +134,7 @@ const CardCarousel = ({ cards, cardsPerPage }: CardCarouselProps) => {
                     size="small"
                     variant="contained"
                     sx={{ py: 0, mt: "auto" }}
+                    onClick={card.primaryAction}
                   >
                     {card.primaryActionText}
                   </Button>

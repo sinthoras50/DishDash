@@ -36,9 +36,15 @@ const Login = () => {
 
   const handleLogin = async (data: FormData) => {
     try {
-      await login(data.email, data.password);
-      navigate(`/${process.env.PUBLIC_URL}/admin`, { replace: true });
+      const user = await login(data.email, data.password);
+      navigate(
+        `/${process.env.PUBLIC_URL}/${
+          user.role === "donor" ? "donor" : "receiver"
+        }`,
+        { replace: true }
+      );
     } catch (err: any) {
+      console.log(err);
       if (err.response && err.response.status === 401) {
         setLoginStatus(t("auth.login.invalidCredentials"));
         return;
