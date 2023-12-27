@@ -1,4 +1,9 @@
-import { Home as HomeIcon } from "@mui/icons-material";
+import {
+  Home as HomeIcon,
+  Inventory as InventoryIcon,
+  VolunteerActivism as VolunteerActivismIcon,
+  Event as EventIcon
+} from "@mui/icons-material";
 import { Box, Toolbar } from "@mui/material";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
@@ -13,6 +18,21 @@ const menuItems = [
     key: "receiver.drawer.menu.home",
     path: "/receiver",
   },
+  {
+    icon: InventoryIcon,
+    key: "receiver.drawer.menu.reservationManagement",
+    path: "/receiver/reservations",
+  },
+  {
+    icon: VolunteerActivismIcon,
+    key: "receiver.drawer.menu.donations",
+    path: "/receiver/donations",
+  },
+  {
+    icon: EventIcon,
+    key: "donor.drawer.menu.events",
+    path: "/receiver/event/0",
+  }
 ];
 
 const DonorLayout = () => {

@@ -1,7 +1,6 @@
 import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import PrivateRoute from "./core/components/PrivateRoute";
-import Event from "./events/pages/Event";
 
 // Auth
 const Login = lazy(() => import("./auth/pages/Login"));
@@ -33,12 +32,21 @@ const ProfileInformation = lazy(
   () => import("./admin/pages/ProfileInformation")
 );
 const ProfilePassword = lazy(() => import("./admin/pages/ProfilePassword"));
+const Event = lazy(() => import("./core/pages/Event"));
 
 // Reciver
 const ReceiverHome = lazy(() => import("./receiver/pages/Home"));
 const ReceiverLayout = lazy(
   () => import("./receiver/components/ReceiverLayout")
 );
+const ReservationManagement = lazy(
+  () => import("./receiver/pages/ReservationManagement")
+);
+const DonationListing = lazy(() => import("./receiver/pages/DonationListing"));
+const EditReservation = lazy(() => import("./receiver/pages/EditReservation"));
+
+
+// Routes
 
 const AppRoutes = () => {
   return (
@@ -74,11 +82,21 @@ const AppRoutes = () => {
       >
         <PrivateRoute path="/" element={<ReceiverHome />} />
 
+        <PrivateRoute path="reservations" element={<ReservationManagement />} />
+        <PrivateRoute path="donations" element={<DonationListing />} />
+        <PrivateRoute path="event/:id" element={<Event />} />
+
         <PrivateRoute path="profile" element={<Profile />}>
           <PrivateRoute path="/" element={<ProfileActivity />} />
           <PrivateRoute path="information" element={<ProfileInformation />} />
           <PrivateRoute path="password" element={<ProfilePassword />} />
         </PrivateRoute>
+
+        <PrivateRoute path="reservations/new" element={<EditReservation />} />
+        <PrivateRoute
+          path="reservations/edit/:id"
+          element={<EditReservation />}
+        />
       </PrivateRoute>
 
       <Route path="403" element={<Forbidden />} />
@@ -93,4 +111,3 @@ const AppRoutes = () => {
 };
 
 export default AppRoutes;
-

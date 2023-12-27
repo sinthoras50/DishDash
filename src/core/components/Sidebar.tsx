@@ -20,6 +20,7 @@ import { drawerCollapsedWidth, drawerWidth } from "../config/layout";
 import Logo from "./Logo";
 import { useEffect } from "react";
 
+
 type SidebarProps = {
   collapsed: boolean;
   mobileOpen: boolean;
@@ -44,7 +45,7 @@ const Sidebar = ({
 
   useEffect(() => {
     const eventsBtn = document.getElementsByClassName("events420")[0] as HTMLElement;
-    if (pathname.includes("/donor/event")) {
+    if (pathname.includes("event")) {
       console.log("triggered useffect");
       eventsBtn.classList.add("Mui-selected");    
     } else {
@@ -75,7 +76,7 @@ const Sidebar = ({
             button
             component={NavLink}
             key={item.path}
-            className={item.path === "/donor/event/0" ? "events420" : ""} // tuttifrutti classname hack
+            className={item.path.includes("event/0") ? "events420" : ""}
             activeClassName="Mui-selected"
             end={true}
             to={`/${process.env.PUBLIC_URL}${item.path}`}
