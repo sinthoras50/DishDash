@@ -210,7 +210,7 @@
     },
     "login": {
       "title": "Sign in",
-      "subTitle": "Enter your credentials to access your account or create a new one",
+      "subTitle": "Enter your credentials to access your account.",
       "form": {
         "email": {
           "label": "E-mail Address"
@@ -223,7 +223,7 @@
       "forgotPassword": "Forgot password?",
       "newAccount": {
         "question": "Don't have an account?",
-        "action": "Sign up"
+        "action": "Sign up!"
       },
       "invalidCredentials": "Incorrect e-mail address or password"
     },

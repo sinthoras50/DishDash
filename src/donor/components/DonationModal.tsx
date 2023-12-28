@@ -68,10 +68,8 @@ const DonationModal = (props: DonationModalProps) => {
   }
 
   useEffect(() => {
-    console.log(id);
     if (donation) {
-      setItems(donation.items);
-      console.log(items);
+      setItems(donation.items);;
     }
   }, [donation]);
 
