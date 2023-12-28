@@ -1,4 +1,53 @@
 {
+  "common": {
+    "backHome": "Back to Home",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "confirmation": "Confirmation",
+    "delete": "Delete",
+    "view": "View",
+    "repeat": "Repeat",
+    "edit": "Edit",
+    "apply": "Apply",
+    "reset": "Reset",
+    "retry": "Try Again",
+    "selected": "Selected",
+    "update": "Update",
+    "errors": {
+      "forbidden": {
+        "subTitle": "You don't have access to view this page"
+      },
+      "notFound": {
+        "subTitle": "Sorry, we couldn’t find the page you’re looking for. Perhaps you’ve mistyped the URL? Be sure to check your spelling.",
+        "title": "Oops!"
+      },
+      "unexpected": {
+        "subTitle": "Something went wrong! If the problem persists, contact us!",
+        "title": "Oops!"
+      },
+      "underConstructions": {
+        "subTitle": "We are actively working on this page.",
+        "title": "Under constructions!"
+      }
+    },
+    "snackbar": {
+      "error": "Error",
+      "success": "Success"
+    },
+    "validations": {
+      "email": "Invalid email address",
+      "phone": "Invalid phone number",
+      "max": "Must be {{size}} characters or less",
+      "min": "Must be {{size}} characters or more",
+      "passwordMatch": "Password does not match",
+      "required": "Required",
+      "invalid": "Invalid value"
+    },
+    "carousel": {
+      "prevPage": "Previous",
+      "nextPage": "Next"
+    }
+  },
   "landing": {
     "nav": {
       "getStarted": "Get started",
@@ -6,8 +55,8 @@
       "aboutUs": "About us",
       "contact": "Contact",
       "cta": "Sign in",
-      "settingsAria": "Settings",
-      "tabsAria": "Navigation links"
+      "settingsAria": "Settings toggle button",
+      "tabsAria": "Navigation links menu"
     },
     "hero": {
       "title": "Join Us in the Fight Against Hunger",
@@ -23,7 +72,7 @@
         "toggleAriaLabel": "Donation procedure toggle button",
         "steps": {
           "1": {
-            "title": " Register as a food donor ",
+            "title": "Register as a food donor",
             "description": "If you have excess food that you want to donate, you can sign up on our website as a food donor. You will need to provide some basic information, such as your name, email and phone number.",
             "imgUrl": "img/register-as-donor.jpg",
             "imgAlt": "User registering into app using laptop"
@@ -522,56 +571,6 @@
         },
         "seeAll": "See all notifications"
       }
-    }
-  },
-  "common": {
-    "backHome": "Back to Home",
-    "cancel": "Cancel",
-    "confirm": "Confirm",
-    "confirmation": "Confirmation",
-    "delete": "Delete",
-    "view": "View",
-    "repeat": "Repeat",
-    "edit": "Edit",
-    "apply": "Apply",
-    "errors": {
-      "forbidden": {
-        "subTitle": "You don't have access to view this page"
-      },
-      "notFound": {
-        "subTitle": "Sorry, we couldn’t find the page you’re looking for. Perhaps you’ve mistyped the URL? Be sure to check your spelling.",
-        "title": "Oops!"
-      },
-      "unexpected": {
-        "subTitle": "Something went wrong! If the problem persists, contact us!",
-        "title": "Oops!"
-      },
-      "underConstructions": {
-        "subTitle": "We are actively working on this page.",
-        "title": "Under constructions!"
-      }
-    },
-    "reset": "Reset",
-    "retry": "Try Again",
-    "selected": "Selected",
-    "snackbar": {
-      "error": "Error",
-      "success": "Success"
-    },
-    "today": "Today",
-    "update": "Update",
-    "validations": {
-      "email": "Invalid email address",
-      "phone": "Invalid phone number",
-      "max": "Must be {{size}} characters or less",
-      "min": "Must be {{size}} characters or more",
-      "passwordMatch": "Password does not match",
-      "required": "Required",
-      "invalid": "Invalid value"
-    },
-    "carousel": {
-      "prevPage": "Previous",
-      "nextPage": "Next"
     }
   },
   "dashboard": {
