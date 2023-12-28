@@ -125,7 +125,7 @@ const Sidebar = ({
             </Avatar>
           </ListItemAvatar>
           <ListItemText
-            primary={t("admin.drawer.menu.settings")}
+            primary={t("common.header.settings")}
             sx={{
               display: collapsed ? "none" : "block",
             }}

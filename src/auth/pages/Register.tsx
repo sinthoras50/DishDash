@@ -168,6 +168,8 @@ const Register = () => {
                       <Select
                         value={areaCode}
                         onChange={handleNumberChange}
+                        name="countryCode"
+                        id="countryCode"
                         sx={{
                           "& fieldset": { border: "none" },
                           "& .MuiSelect-select": {
@@ -249,9 +251,7 @@ const Register = () => {
                         : "none",
                   }}
                 >
-                  <Typography variant="body2" sx={{ fontSize: "0.75rem" }}>
-                    {formik.errors.role}
-                  </Typography>
+                  {formik.errors.role}
                 </FormHelperText>
                 <RadioGroup
                   row

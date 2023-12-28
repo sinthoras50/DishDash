@@ -1,12 +1,13 @@
 import {
+  Event as EventIcon,
   HelpCenter as HelpCenterIcon,
   Home as HomeIcon,
   VolunteerActivism as VolunteerActivismIcon,
-  Event as EventIcon
 } from "@mui/icons-material";
 import { Box, Toolbar } from "@mui/material";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "../../core/components/Footer";
 import QueryWrapper from "../../core/components/QueryWrapper";
 import SettingsDrawer from "../../core/components/SettingsDrawer";
 import Sidebar from "../../core/components/Sidebar";
@@ -22,7 +23,7 @@ const menuItems = [
     icon: VolunteerActivismIcon,
     key: "donor.drawer.menu.donationManagement",
     path: "/donor/donations",
-  },  
+  },
   {
     icon: EventIcon,
     key: "donor.drawer.menu.events",
@@ -32,7 +33,7 @@ const menuItems = [
     icon: HelpCenterIcon,
     key: "donor.drawer.menu.help",
     path: "/donor/help",
-  }
+  },
 ];
 
 const DonorLayout = () => {
@@ -62,6 +63,7 @@ const DonorLayout = () => {
         <QueryWrapper>
           <Outlet />
         </QueryWrapper>
+        <Footer />
       </Box>
     </Box>
   );

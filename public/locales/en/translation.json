@@ -46,6 +46,17 @@
     "carousel": {
       "prevPage": "Previous",
       "nextPage": "Next"
+    },
+    "header": {
+      "settings": "Settings",
+      "notifications": {
+        "empty": {
+          "title": "Your notification list is empty"
+        },
+        "seeAll": "See all notifications",
+        "ariaControls": "Notifications popover",
+        "ariaLabel": ""
+      }
     }
   },
   "landing": {
@@ -284,11 +295,13 @@
       },
       "activeDonations": {
         "title": "Active donations",
-        "action": "View"
+        "action": "View",
+        "actionAlt": "Repeat"
       },
       "fulfilledDonations": {
         "title": "Fulfilled donations",
-        "action": "View"
+        "action": "View",
+        "actionAlt": "Repeat"
       },
       "upcomingEvents": {
         "title": "Upcoming Events",
@@ -552,83 +565,6 @@
       }
     }
   },
-  "admin": {
-    "drawer": {
-      "menu": {
-        "calendar": "Calendar",
-        "dashboard": "Dashboard",
-        "help": "Help",
-        "home": "Home",
-        "projects": "Projects",
-        "settings": "Settings",
-        "donationManagement": "Donations"
-      }
-    },
-    "header": {
-      "notifications": {
-        "empty": {
-          "title": "Your notification list is empty"
-        },
-        "seeAll": "See all notifications"
-      }
-    }
-  },
-  "dashboard": {
-    "activity": {
-      "title": "Activity"
-    },
-    "budget": {
-      "legend": {
-        "unit": "Budget ($K)"
-      },
-      "title": "Budget"
-    },
-    "orderProgress": {
-      "title": "Orders"
-    },
-    "overview": {
-      "orders": "Orders",
-      "sales": "Sales",
-      "users": "Users",
-      "visits": "Visits"
-    },
-    "progress": {
-      "title": "Progress"
-    },
-    "salesByAge": {
-      "title": "Sales by Age"
-    },
-    "salesByCategory": {
-      "legend": {
-        "books": "Books",
-        "movies": "Movies & TV",
-        "software": "Software"
-      },
-      "title": "Sales by Category"
-    },
-    "salesHistory": {
-      "title": "Sales History",
-      "unit": "$ today"
-    },
-    "salesProgress": {
-      "title": "Sales"
-    },
-    "teams": {
-      "columns": {
-        "progress": "Progress",
-        "team": "Team",
-        "value": "Value"
-      },
-      "title": "Teams Progress"
-    },
-    "users": {
-      "title": "Recent Users"
-    },
-    "visitProgress": {
-      "title": "Visits"
-    },
-    "title": "Dashboard"
-  },
   "faq": {
     "noAnswerLink": "Can't find it here? Check out our Help Center.",
     "questions": {
@@ -661,8 +597,7 @@
     "title": "Help Center"
   },
   "notifications": {
-    "newComment": "<bold>{{user}}</bold> has written a new comment on your profile",
-    "unreadMessages": "You have <bold>{{quantity}}</bold> unread messages"
+    "newReservation": "Items were reserved from your donation: {{donation}}."
   },
   "profile": {
     "activity": {
