@@ -57,10 +57,10 @@ const AppRoutes = () => {
       <Route path="forgot-password-submit" element={<ForgotPasswordSubmit />} />
 
       <PrivateRoute path="donor" element={<DonorLayout />} roles={["donor"]}>
-        <PrivateRoute path="/" element={<DonorHome />} />
-        <PrivateRoute path="faq" element={<Faq />} />
-        <PrivateRoute path="help" element={<HelpCenter />} />
-        <PrivateRoute path="event/:id" element={<Event />} />
+        <PrivateRoute path="donations/new" element={<EditDonation />} />
+        <PrivateRoute path="donations/edit/:id" element={<EditDonation />} />
+        <PrivateRoute path="donations/repeat/:id" element={<EditDonation />} />
+        <PrivateRoute path="donations" element={<DonationManagement />} />
 
         <PrivateRoute path="profile" element={<Profile />}>
           <PrivateRoute path="/" element={<ProfileActivity />} />
@@ -68,10 +68,10 @@ const AppRoutes = () => {
           <PrivateRoute path="password" element={<ProfilePassword />} />
         </PrivateRoute>
 
-        <PrivateRoute path="donations/new" element={<EditDonation />} />
-        <PrivateRoute path="donations/edit/:id" element={<EditDonation />} />
-        <PrivateRoute path="donations/repeat/:id" element={<EditDonation />} />
-        <PrivateRoute path="donations" element={<DonationManagement />} />
+        <PrivateRoute path="/" element={<DonorHome />} />
+        <PrivateRoute path="faq" element={<Faq />} />
+        <PrivateRoute path="help" element={<HelpCenter />} />
+        <PrivateRoute path="event/:id" element={<Event />} />
       </PrivateRoute>
 
       <PrivateRoute

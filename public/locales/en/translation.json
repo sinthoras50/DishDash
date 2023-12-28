@@ -313,6 +313,30 @@
         "actionAlt": "Read less"
       }
     },
+    "donationManagement": {
+      "title": "Donations",
+      "confirmations": {
+        "delete": "Are you sure you want to delete this donation?"
+      },
+      "table": {
+        "headers": {
+          "actions": "Actions",
+          "donation": "Donation",
+          "createdAt": "Date",
+          "status": "Status"
+        },
+        "selectAria": "Select all donations",
+        "actionsAria": "Donations actions",
+        "actionsMenuAria": "Donations actions menu"
+      },
+      "notifications": {
+        "deleteSuccess": "Donation(s) have been deleted!"
+      },
+      "active": "Active",
+      "fulfilled": "Fulfilled",
+      "noDonations": "No donations yet.",
+      "addDonation": "Add donation"
+    },
     "editDonation": {
       "title": "Edit Donation",
       "infoForm": {
@@ -413,27 +437,6 @@
         "createSuccess": "{{donation}} has been created!",
         "updateSuccess": "{{donation}} has been updated!"
       }
-    },
-    "donationManagement": {
-      "title": "Donations",
-      "confirmations": {
-        "delete": "Are you sure you want to delete this donation?"
-      },
-      "table": {
-        "headers": {
-          "actions": "Actions",
-          "donation": "Donation",
-          "createdAt": "Date",
-          "status": "Status"
-        }
-      },
-      "notifications": {
-        "deleteSuccess": "Donation(s) have been deleted!"
-      },
-      "active": "Active",
-      "fulfilled": "Fulfilled",
-      "noDonations": "No donations yet.",
-      "addDonation": "Add donation"
     }
   },
   "receiver": {

@@ -148,7 +148,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
             inputProps={{
-              "aria-label": "select all donations",
+              "aria-label": t("donor.donationManagement.table.selectAria"),
             }}
           />
         </TableCell>
@@ -288,7 +288,7 @@ const DonationRow = ({
       >
         <IconButton
           id="donation-row-menu-button"
-          aria-label="donation actions"
+          aria-label={t("donor.donationManagement.table.actionsAria")}
           aria-controls="donation-row-menu"
           aria-haspopup="true"
           aria-expanded={openActions ? "true" : "false"}
@@ -311,6 +311,7 @@ const DonationRow = ({
             vertical: "top",
             horizontal: "right",
           }}
+          sx={{ p: 2 }}
         >
           <MenuItem onClick={handleEdit}>
             <ListItemIcon>

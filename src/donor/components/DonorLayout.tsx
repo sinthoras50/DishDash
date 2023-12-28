@@ -7,7 +7,6 @@ import {
 import { Box, Toolbar } from "@mui/material";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import Footer from "../../core/components/Footer";
 import QueryWrapper from "../../core/components/QueryWrapper";
 import SettingsDrawer from "../../core/components/SettingsDrawer";
 import Sidebar from "../../core/components/Sidebar";
@@ -63,7 +62,6 @@ const DonorLayout = () => {
         <QueryWrapper>
           <Outlet />
         </QueryWrapper>
-        <Footer />
       </Box>
     </Box>
   );
