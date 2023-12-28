@@ -32,7 +32,7 @@ type LandingLayoutProps = {
 
 const landingNavItems = [
   {
-    key: "landing.nav.getStarted",
+    key: "landing.nav.signUp",
     path: "register",
   },
   {

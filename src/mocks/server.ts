@@ -19,6 +19,9 @@ let mock = new MockAdapter(axios, { delayResponse: 100 });
 // Landing
 mock.onPost("/api/message").reply(200);
 
+// Auth
+mock.onPost("/api/register").reply(({ data }) => [201, data]);
+
 // Activity
 mock.onGet("/api/activity").reply(200, activityLogs);
 
@@ -51,7 +54,6 @@ mock.onPost("/api/login").reply((config) => {
   }
 });
 mock.onPost("/api/logout").reply(200);
-mock.onPost("/api/register").reply(201);
 
 // Events
 mock.onDelete("/api/events").reply(({ data }) => [200, data]);
