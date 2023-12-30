@@ -606,15 +606,10 @@
     "activity": {
       "empty": "Logs of your activity will show up here!",
       "logs": {
-        "eventAdded": "<bold>You</bold> created a new event: <bold>{{resource}}</bold>",
-        "eventUpdated": "<bold>You</bold> updated event: <bold>{{resource}}</bold>",
-        "userAdded": "<bold>You</bold> added a new user: <bold>{{resource}}</bold>",
-        "userDeleted": "<bold>You</bold> deleted user: <bold>{{resource}}</bold>",
-        "userUpdated": "<bold>You</bold> updated user: <bold>{{resource}}</bold>"
+        "donationAdded": "<bold>You</bold> have created a new donation: <bold>{{resource}}</bold>",
+        "donationUpdated": "<bold>You</bold> have updated the donation: <bold>{{resource}}</bold>",
+        "donationDeleted": "<bold>You</bold> have deleted donation: <bold>{{resource}}</bold>"
       }
-    },
-    "completion": {
-      "title": "Profile Completion"
     },
     "info": {
       "form": {
