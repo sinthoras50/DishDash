@@ -10,5 +10,5 @@ export interface Donation {
   additionalInfo?: string;
   active: boolean;
   items: DonationItem[];
-  createdAt: string;
+  createdAt?: string;
 }

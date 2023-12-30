@@ -53,8 +53,7 @@ const Event = () => {
     .map((event) => ({
       id: event.id,
       title: event.title,
-      description: event.location,
-      imageAlt: event.imageAlt,
+      location: event.location,
       imageUrl: event.imageUrl,
       primaryActionText: t("donor.home.upcomingEvents.action"),
       primaryAction: () => handleEventSelect(event.id),
