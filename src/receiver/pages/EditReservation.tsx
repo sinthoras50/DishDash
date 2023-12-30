@@ -216,7 +216,6 @@ const EditReservation = () => {
                       : 0
                   }
                   onChange={(event: Event, value: number | number[]) => {
-                    console.log(items);
                     setItems((prevItems) =>
                       prevItems.map((prevItem) =>
                         prevItem.name === item.name
@@ -227,7 +226,6 @@ const EditReservation = () => {
                           : prevItem
                       )
                     );
-                    console.log(items);
                   }}
                   aria-labelledby="input-slider"
                   min={0}
