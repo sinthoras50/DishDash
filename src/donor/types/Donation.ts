@@ -11,4 +11,6 @@ export interface Donation {
   active: boolean;
   items: DonationItem[];
   createdAt?: string;
+  imageAlt?: string;
+  images?: string[];
 }

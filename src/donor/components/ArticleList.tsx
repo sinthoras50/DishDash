@@ -14,6 +14,11 @@ interface Extra {
   text: string;
 }
 
+interface Extra {
+  heading: string;
+  text: string
+}
+
 interface ArticleCardProps {
   id: string;
   title: string;

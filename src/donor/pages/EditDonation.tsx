@@ -39,6 +39,7 @@ import { useDonations } from "../hooks/useDonations";
 import { useUpdateDonation } from "../hooks/useUpdateDonation";
 import { Donation } from "../types/Donation";
 import { DonationItem } from "../types/DonationItem";
+import ImagePicker from "../components/ImagePicker";
 
 const foodTypes = [
   {
@@ -94,6 +95,7 @@ const EditDonation = () => {
   const { id } = useParams();
   const { t } = useTranslation();
   const [items, setItems] = useState<DonationItem[]>([]);
+  const [imgItems, setImgItems] = useState<string[]>([]);
   const [isAdding, setIsAdding] = useState(false);
   const [itemsStatus, setItemsStatus] = useState("");
   const { createDonation, isCreating } = useCreateDonation();
@@ -110,6 +112,11 @@ const EditDonation = () => {
   useEffect(() => {
     if (donation) {
       setItems(donation.items);
+      
+      if (donation.images) {
+        setImgItems(donation.images);
+      }
+
     } else if (editMode || repeatMode) {
       navigate(`/${process.env.PUBLIC_URL}/404`);
     }
@@ -190,7 +197,7 @@ const EditDonation = () => {
 
   const handleAddDonation = async (infoData: InfoFormData) => {
     try {
-      const donationData = { ...infoData, items };
+      const donationData = { ...infoData, items, images: imgItems };
       await createDonation(donationData as Donation);
       snackbar.success(
         t("donor.createDonation.notifications.createSuccess", {
@@ -593,7 +600,12 @@ const EditDonation = () => {
             ))}
           </List>
         </Grid>
+
+        <Grid item xs={12}>
+          <ImagePicker items={imgItems} setItems={setImgItems} />
+        </Grid>
       </Grid>
+
     </>
   );
 };

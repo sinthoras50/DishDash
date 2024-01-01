@@ -84,6 +84,8 @@ const Home = () => {
     actionTextAlt: t("donor.home.community.actionAlt"),
   }));
 
+  console.log(articleData);
+
   const handleOpenDonationModal = (id: string) => {
     setModalId(id);
     setIsDonationVisible(true);
