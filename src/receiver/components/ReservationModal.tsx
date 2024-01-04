@@ -21,58 +21,76 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
-import { useReservations } from "../../receiver/hooks/useReservations";
-import { useDonations } from "../hooks/useDonations";
-import { DonationItem } from "../types/DonationItem";
+import { useNavigate } from "react-router-dom";
+import ConfirmDialog from "../../core/components/ConfirmDialog";
+import { useSnackbar } from "../../core/contexts/SnackbarProvider";
+import { useDonations } from "../../donor/hooks/useDonations";
+import { Donation } from "../../donor/types/Donation";
+import { DonationItem } from "../../donor/types/DonationItem";
+import { useDeleteReservations } from "../hooks/useDeleteReservations";
+import { useReservations } from "../hooks/useReservations";
 
-interface DonationModalProps {
+interface ReservationModalProps {
   open: boolean;
   handleClose: () => void;
   id: string;
-  reserve?: boolean;
+  onClose: () => void;
 }
 
-
-
-const itemIcons = {
-  coffee: CoffeeIcon,
-  egg: EggIcon,
-  pizza: LocalPizzaIcon,
-  pet: PetsIcon,
-  other: ShoppingBagIcon,
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "auto",
+  bgcolor: "background.paper",
+  boxShadow: 24,
+  borderRadius: "25px",
+  p: 4,
 };
 
-const DonationModal = ({
+const ReservationModal = ({
   open,
   handleClose,
   id,
-  reserve,
-}: DonationModalProps) => {
+  onClose,
+}: ReservationModalProps) => {
   const { t, i18n } = useTranslation();
   const [items, setItems] = useState<DonationItem[]>([]);
   const theme = useTheme();
-  const navigate = useNavigate();
   const { data: allDonations } = useDonations();
   const { data: allReservations } = useReservations();
-  const donation = allDonations?.find((donation) => donation.id === id);
-  const reservations = allReservations?.filter(
-    (reservation) => reservation.donationId === id
+  const reservation = allReservations?.find(
+    (reservation) => reservation.id === id
   );
+  const donation = allDonations?.find(
+    (donation: Donation) => donation.id === reservation?.donationId
+  );
+  const navigate = useNavigate();
+  const { deleteReservations, isDeleting } = useDeleteReservations();
+  const snackbar = useSnackbar();
+  const [openConfirmCancelDialog, setOpenConfirmCancelDialog] = useState(false);
 
-  const style = {
-    position: "absolute" as "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "auto",
-    bgcolor: "background.paper",
-    boxShadow: 24,
-    borderRadius: "25px",
-    p: 4,
-    [theme.breakpoints.down("md")]: {
-      width: "90%",
-      overflow: "scroll"
+  const handleEditReservation = () => {
+    navigate(`/${process.env.PUBLIC_URL}/receiver/reservations/edit/${id}`);
+  };
+
+  const handleCloseConfirmCancelDialog = () => {
+    setOpenConfirmCancelDialog(false);
+  };
+
+  const handleOpenConfirmCancelDialog = () => {
+    setOpenConfirmCancelDialog(true);
+  };
+
+  const handleCancelReservation = async () => {
+    try {
+      await deleteReservations([id]);
+      snackbar.success(t("receiver.home.notifications.cancelSuccess"));
+      setOpenConfirmCancelDialog(false);
+      onClose();
+    } catch (err: any) {
+      snackbar.error(t("common.errors.unexpected.subTitle"));
     }
   };
 
@@ -83,10 +101,6 @@ const DonationModal = ({
     )}`;
   };
 
-  const handleReserveDonation = () => {
-    navigate(`/${process.env.PUBLIC_URL}/receiver/reservations/new/${id}`);
-  };
-
   const textFieldStyle = {
     "& .MuiInputBase-input.Mui-disabled": {
       WebkitTextFillColor: `${theme.palette.text.primary}`,
@@ -94,10 +108,23 @@ const DonationModal = ({
   };
 
   useEffect(() => {
-    if (donation) {
-      setItems(donation.items);
+    if (reservation && donation) {
+      let reservedItems = reservation.items.map((reservedItem) => {
+        const donationItem = donation.items.find(
+          (item) => item.id === reservedItem.id
+        );
+
+        return {
+          ...donationItem,
+          name: donationItem?.name ?? "",
+          type: donationItem?.type ?? "",
+          unit: donationItem?.unit ?? "",
+          quantity: reservedItem.quantity,
+        };
+      });
+      setItems(reservedItems);
     }
-  }, [donation]);
+  }, [donation, reservation]);
 
   return (
     <Modal
@@ -206,24 +233,11 @@ const DonationModal = ({
               </Typography>
               <Box sx={{ mt: 3 }}>
                 <List>
-                  {items.map((donationItem, index) => {
-                    const availableQuantity =
-                      donationItem.quantity -
-                      (reservations || [])
-                        .flatMap((reservation) => reservation.items || [])
-                        .filter((item) => item.id === donationItem.id)
-                        .reduce((sum, item) => sum + item.quantity, 0);
-
-                    const gradientPercentage =
-                      (availableQuantity / donationItem.quantity) * 100;
-
-                    const backgroundColor = `linear-gradient(to right, ${theme.palette.background.default} ${gradientPercentage}%, ${theme.palette.primary.contrastText} ${gradientPercentage}%)`;
-
+                  {items.map((reservationItem, index) => {
                     return (
                       <ListItem
                         key={index}
                         sx={{
-                          background: backgroundColor,
                           borderRadius: 16,
                           border: "1px solid",
                           borderColor: "grey.200",
@@ -231,19 +245,21 @@ const DonationModal = ({
                           mb: 1,
                         }}
                       >
-                        {donationItem.type === "grocery" && <ShoppingBagIcon />}
-                        {donationItem.type === "preparedFood" && (
+                        {reservationItem.type === "grocery" && (
+                          <ShoppingBagIcon />
+                        )}
+                        {reservationItem.type === "preparedFood" && (
                           <LocalPizzaIcon />
                         )}
-                        {donationItem.type === "fruitsVegetables" && (
+                        {reservationItem.type === "fruitsVegetables" && (
                           <EggIcon />
                         )}
-                        {donationItem.type === "beverages" && <CoffeeIcon />}
-                        {donationItem.type === "petFood" && <PetsIcon />}
+                        {reservationItem.type === "beverages" && <CoffeeIcon />}
+                        {reservationItem.type === "petFood" && <PetsIcon />}
 
                         <ListItemText
-                          primary={donationItem.name}
-                          secondary={`${availableQuantity} ${donationItem.unit} / ${donationItem.quantity} ${donationItem.unit}`}
+                          primary={reservationItem.name}
+                          secondary={`${reservationItem.quantity} ${reservationItem.unit}`}
                           sx={{
                             ml: 2,
                             whiteSpace: "nowrap",
@@ -258,22 +274,32 @@ const DonationModal = ({
               </Box>
             </Grid>
 
-            {reserve && (
-              <Grid
-                item
-                xs={12}
-                sx={{ display: "flex", justifyContent: "end" }}
+            <Grid item xs={12} sx={{ display: "flex", justifyContent: "end" }}>
+              <Button
+                variant="outlined"
+                onClick={handleOpenConfirmCancelDialog}
+                sx={{ mr: 1 }}
               >
-                <Button variant="contained" onClick={handleReserveDonation}>
-                  {t("receiver.donationListing.reserve")}
-                </Button>
-              </Grid>
-            )}
+                {t("common.cancel")}
+              </Button>
+              <Button variant="contained" onClick={handleEditReservation}>
+                {t("common.edit")}
+              </Button>
+            </Grid>
           </Grid>
+
+          <ConfirmDialog
+            description={t("receiver.home.confirmations.cancel")}
+            pending={isDeleting}
+            onClose={handleCloseConfirmCancelDialog}
+            onConfirm={handleCancelReservation}
+            open={openConfirmCancelDialog}
+            title={t("common.confirmation")}
+          />
         </Box>
       </Fade>
     </Modal>
   );
 };
 
-export default DonationModal;
+export default ReservationModal;
