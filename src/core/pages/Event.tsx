@@ -10,10 +10,10 @@ import {
   Stack,
   Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from "@mui/material";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import AdminAppBar from "../../admin/components/AdminAppBar";
@@ -21,15 +21,18 @@ import AdminToolbar from "../../admin/components/AdminToolbar";
 import events from "../../mocks/events.json";
 import CardCarousel from "../components/CardCarousel";
 import RecentNotifications from "../components/RecentNotifications";
+import BlurredEdgeImage from "../components/BlurredEdgeImage";
 
 const Event = () => {
   const { i18n, t } = useTranslation();
   const navigate = useNavigate();
   const { id } = useParams();
   const { pathname } = useLocation();
+  const descriptionRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const imageRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   const theme = useTheme();
-  const xs = useMediaQuery(theme.breakpoints.down(450));
+  const xs = useMediaQuery(theme.breakpoints.down(450), {noSsr: true});
 
   const upcomingEventId = events.reduce((prev, curr) =>
     Math.abs(Date.parse(curr.date) - Date.now()) <
@@ -68,9 +71,50 @@ const Event = () => {
     )}`;
   };
 
+  const boxStyle = {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    background: `${theme.palette.background.paper}`,
+    mb: 10,
+    py: "24px",
+    borderRadius: "25px",
+    boxSizing: "border-box"        
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+
+    // calculate and update image margin depending on where the bottom of the previous text is located
+    setTimeout(() => {
+
+      // disable on mobile
+      if (xs) return;
+
+      const arraySize = Math.min(imageRefs.current.length, descriptionRefs.current.length);
+      for (let index = 1; index < arraySize; index++) {
+        const imageEl = imageRefs.current[index];
+        const descEl = descriptionRefs.current[index];
+        const prevImageEl = imageRefs.current[index-1];
+        const prevDescEl = descriptionRefs.current[index-1];
+  
+        if (imageEl === null || descEl === null || prevImageEl === null || prevDescEl === null) continue;
+  
+        const image = imageEl.childNodes[0] as HTMLElement;
+        const currImgTop = image.getBoundingClientRect().top;
+        const prevDesc = (prevDescEl as HTMLElement).childNodes[0] as HTMLElement;
+        const prevDescBottom = (prevDesc.childNodes[1] as HTMLElement).getBoundingClientRect().bottom;
+
+        const margin = 90;
+        const diff = currImgTop - prevDescBottom - margin;
+
+        if (diff > 0)
+          imageEl.style.marginTop = `-${diff}px`;
+      }
+    }, 30)
+    
+
+  }, [xs]);
 
   return (
     <>
@@ -80,28 +124,25 @@ const Event = () => {
         </AdminToolbar>
       </AdminAppBar>
 
+      <Container component={"nav"} disableGutters>
+        <Typography component="div" variant="h2" sx={{ mt: 0 }}>
+          {t("donor.home.upcomingEvents.browse")}
+        </Typography>
+
+        <CardCarousel cards={eventData} cardsPerPage={xs ? 1 : 3} />
+      </Container>
+
+
       <Typography
         variant="h2"
         align="center"
         color="text.primary"
-        sx={{ mb: 10 }}
+        sx={{ my: 10 }}
       >
         {currentEvent?.title}
       </Typography>
 
-      <Container
-        component={"section"}
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          background: "white",
-          mb: 10,
-          py: "24px",
-          borderRadius: "25px",
-          boxSizing: "border-box"        
-        }}
-      >
+      <Container component={"section"} sx={boxStyle} >
         <Grid container columnSpacing={5}>
           <Grid item xs={12} sm={7}>
             <Typography variant="body1">{currentEvent?.description}</Typography>
@@ -118,7 +159,7 @@ const Event = () => {
                 borderRadius: 1,
                 borderColor: "grey.200",
                 px: 3,
-                bgcolor: "background.paper",
+                bgcolor: `${theme.palette.background.paper}`,
               }}
             >
               <Box sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -186,51 +227,53 @@ const Event = () => {
         }}
       >
         <Grid container rowSpacing={10} columnSpacing={3}>
-          {currentEvent?.data?.map((item, index) => (
-            <React.Fragment key={index}>
-              {index % 2 === 1 ? (
-                <>
-                  <Grid item xs={12} sm={7}>
-                    <Typography variant="h3" sx={{ mb: 1 }}>
-                      {t(item.heading)}
-                    </Typography>
-                    <Typography variant="body1">{t(item.text)}</Typography>
-                  </Grid>
-                  <Grid item xs={12} sm={5}>
-                    <img
-                      src={item.imageUrl}
-                      alt={t(item.imageAlt)}
-                      style={{ width: "100%", height: "auto" }}
-                    />
-                  </Grid>
-                </>
-              ) : (
-                <>
-                  <Grid item xs={12} sm={5}>
-                    <img
-                      src={item.imageUrl}
-                      alt={t(item.imageAlt)}
-                      style={{ width: "100%", height: "auto" }}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={7}>
-                    <Typography variant="h3" sx={{ mb: 1 }}>
-                      {t(item.heading)}
-                    </Typography>
-                    <Typography variant="body1">{t(item.text)}</Typography>
-                  </Grid>
-                </>
-              )}
-            </React.Fragment>
-          ))}
+          {currentEvent?.data?.map((item, index) => {
+            return (
+              <React.Fragment key={index}>
+                {index % 2 === 1 ? (
+                  <>
+                    <Grid item ref={el => descriptionRefs.current[index] = el} xs={12} sm={7}>
+                      <Box sx={boxStyle} >
+                        <Typography variant="h3" sx={{ mx: 3}}>
+                          {t(item.heading)}
+                        </Typography>
+                        <Typography variant="body1" sx={{ mx: 3 }}>{t(item.text)}</Typography>
+                      </Box>
+
+                    </Grid>
+                    <Grid item ref={el => imageRefs.current[index] = el} xs={12} sm={5}>
+                      <BlurredEdgeImage 
+                        background={theme.palette.background.default}
+                        imageSrc={item.imageUrl}
+                        imageAlt={item.imageAlt}
+                        sx={{ mt: xs ? 0 : -5 }}
+                      />
+                    </Grid>
+                  </>
+                ) : (
+                  <>
+                    <Grid item ref={el => imageRefs.current[index] = el} xs={12} sm={5}>
+                      <BlurredEdgeImage 
+                        background={theme.palette.background.default}
+                        imageSrc={item.imageUrl}
+                        imageAlt={item.imageAlt}
+                        sx={{ mt: xs ? 0 : -5 }}
+                      />
+                    </Grid>
+                    <Grid item ref={el => descriptionRefs.current[index] = el} xs={12} sm={7}>
+                    <Box sx={boxStyle} >
+                        <Typography variant="h3" sx={{ mx: 3}}>
+                          {t(item.heading)}
+                        </Typography>
+                        <Typography variant="body1" sx={{ mx: 3 }}>{t(item.text)}</Typography>
+                      </Box>
+                    </Grid>
+                  </>
+                )}
+              </React.Fragment>
+          )})}
         </Grid>
       </Container>
-
-      <Typography component="div" variant="h2" sx={{ mt: 10 }}>
-        {t("donor.home.upcomingEvents.title")}
-      </Typography>
-
-      <CardCarousel cards={eventData} cardsPerPage={xs ? 1 : 3} />
     </>
   );
 };
