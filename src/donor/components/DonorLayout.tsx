@@ -1,4 +1,5 @@
 import {
+  Article as ArticleIcon,
   Event as EventIcon,
   HelpCenter as HelpCenterIcon,
   Home as HomeIcon,
@@ -28,6 +29,11 @@ const menuItems = [
     icon: EventIcon,
     key: "donor.drawer.menu.events",
     path: "/donor/event/0",
+  },
+  {
+    icon: ArticleIcon,
+    key: "donor.drawer.menu.articles",
+    path: "/donor/article/0",
   },
   {
     icon: HelpCenterIcon,

@@ -43,15 +43,20 @@ const Sidebar = ({
   const width = collapsed ? drawerCollapsedWidth : drawerWidth;
 
   useEffect(() => {
-    const eventsBtn = document.getElementsByClassName(
-      "events420"
-    )[0] as HTMLElement;
+    const eventsBtn = document.getElementsByClassName("events420")[0] as HTMLElement;
+    const articlesBtn = document.getElementsByClassName("articles420")[0] as HTMLElement;
     if (pathname.includes("event")) {
       eventsBtn.classList.add("Mui-selected");
     } else {
       eventsBtn.classList.remove("Mui-selected");
     }
-  });
+
+    if (pathname.includes("article")) {
+      articlesBtn.classList.add("Mui-selected");    
+    } else {
+      articlesBtn.classList.remove("Mui-selected");
+    }
+  })
 
   const drawer = (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100%" }}>
@@ -76,7 +81,7 @@ const Sidebar = ({
             button
             component={NavLink}
             key={item.path}
-            className={item.path.includes("event/0") ? "events420" : ""}
+            className={item.path.includes("event/0") ? "events420" : item.path.includes("article/0") ? "articles420" : ""}
             activeClassName="Mui-selected"
             end={true}
             to={`/${process.env.PUBLIC_URL}${item.path}`}

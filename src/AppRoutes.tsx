@@ -34,6 +34,7 @@ const ProfileInformation = lazy(
 );
 const ProfilePassword = lazy(() => import("./admin/pages/ProfilePassword"));
 const Event = lazy(() => import("./core/pages/Event"));
+const Article = lazy(() => import("./core/pages/Article"));
 
 // Receiver
 const ReceiverHome = lazy(() => import("./receiver/pages/Home"));
@@ -65,6 +66,8 @@ const AppRoutes = () => {
         element={<ForgotPasswordSubmit />}
       />
 
+      <PublicRoute path="qr/:hash" element={<ReservationDetail />} />
+
       <PrivateRoute path="donor" element={<DonorLayout />} roles={["donor"]}>
         <PrivateRoute path="/" element={<DonorHome />} />
 
@@ -82,6 +85,7 @@ const AppRoutes = () => {
         <PrivateRoute path="faq" element={<Faq />} />
         <PrivateRoute path="help" element={<HelpCenter />} />
         <PrivateRoute path="event/:id" element={<Event />} />
+        <PrivateRoute path="article/:id" element={<Article />} />
       </PrivateRoute>
 
       <PrivateRoute
@@ -94,6 +98,7 @@ const AppRoutes = () => {
         <PrivateRoute path="reservations" element={<ReservationManagement />} />
         <PrivateRoute path="donations" element={<DonationListing />} />
         <PrivateRoute path="event/:id" element={<Event />} />
+        <PrivateRoute path="article/:id" element={<Article />} />
 
         <PrivateRoute path="profile" element={<Profile />}>
           <PrivateRoute path="/" element={<ProfileActivity />} />
