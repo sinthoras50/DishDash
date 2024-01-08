@@ -52,7 +52,7 @@ const Event = () => {
   };
 
   const eventData = events
-    .filter((event) => event.id !== eventId)
+    // .filter((event) => event.id !== eventId)
     .map((event) => ({
       id: event.id,
       title: event.title,

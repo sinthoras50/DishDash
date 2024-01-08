@@ -58,7 +58,7 @@ const Article = () => {
   };
 
   const articleData = articles
-  .filter((article) => article.id !== articleId)
+  // .filter((article) => article.id !== articleId)
   .map((article) => ({
     id: article.id,
     title: article.title,
