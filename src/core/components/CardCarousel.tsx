@@ -27,18 +27,24 @@ interface CardCarouselProps {
   }>;
   variant: "regular" | "overlay";
   cardsPerPage: number;
+  selectedCard?: number;
+  disableOnClick?: boolean;
 }
 
-const CardCarousel = ({ variant, cards, cardsPerPage }: CardCarouselProps) => {
+const CardCarousel = ({ variant, cards, cardsPerPage, selectedCard, disableOnClick }: CardCarouselProps) => {
   const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(0);
+  const [currentCard, setCurrentCard] = useState(selectedCard ?? -1);
   const cardRef = useRef<any>(null);
   const theme = useTheme();
+
+  console.log(`selected card = ${selectedCard}`);
 
   const handleNext = () => {
     setCurrentPage(
       (prevPage) => (prevPage + 1) % Math.ceil(cards.length / cardsPerPage)
     );
+    setCurrentCard(-1);
   };
 
   const handlePrev = () => {
@@ -47,6 +53,7 @@ const CardCarousel = ({ variant, cards, cardsPerPage }: CardCarouselProps) => {
         (prevPage - 1 + Math.ceil(cards.length / cardsPerPage)) %
         Math.ceil(cards.length / cardsPerPage)
     );
+    setCurrentCard(-1);
   };
 
   const parseHexColor = (hex: string) => {
@@ -187,8 +194,16 @@ const CardCarousel = ({ variant, cards, cardsPerPage }: CardCarouselProps) => {
                   <Button
                     size="small"
                     variant="contained"
+                    disabled={disableOnClick && currentCard === index}
                     sx={{ py: 0, mt: "auto" }}
-                    onClick={card.primaryAction}
+                    onClick={() => {
+                      if (card.primaryAction !== undefined) {
+                        card.primaryAction();
+
+                        if (disableOnClick)
+                          setCurrentCard(index);
+                      }
+                    }}
                   >
                     {card.primaryActionText}
                   </Button>
@@ -263,8 +278,16 @@ const CardCarousel = ({ variant, cards, cardsPerPage }: CardCarouselProps) => {
                   <Button
                     size="small"
                     variant="contained"
+                    disabled={disableOnClick && currentCard === index}
                     sx={{ py: 0, mt: "auto" }}
-                    onClick={card.primaryAction}
+                    onClick={() => {
+                      if (card.primaryAction !== undefined) {
+                        card.primaryAction();
+
+                        if (disableOnClick)
+                          setCurrentCard(index);
+                      }
+                    }}
                   >
                     {card.primaryActionText}
                   </Button>

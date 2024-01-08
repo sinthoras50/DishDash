@@ -59,10 +59,11 @@ const Event = () => {
       location: event.location,
       imageUrl: event.imageUrl,
       primaryActionText: t("donor.home.upcomingEvents.action"),
-      primaryAction: () => handleEventSelect(event.id),
+      primaryAction: () => handleEventSelect(event.id)
     }));
 
   const currentEvent = events.find((event) => event.id === eventId);
+  const selectedEventIndex = eventData.findIndex((event) => event.title === currentEvent?.title);
 
   const formatDate = (dateData: string) => {
     const date = new Date(dateData);
@@ -129,7 +130,7 @@ const Event = () => {
           {t("donor.home.upcomingEvents.browse")}
         </Typography>
 
-        <CardCarousel variant="regular" cards={eventData} cardsPerPage={xs ? 1 : 3} />
+        <CardCarousel variant="regular" cards={eventData} cardsPerPage={xs ? 1 : 3} selectedCard={selectedEventIndex} disableOnClick={true}/>
       </Container>
 
 
